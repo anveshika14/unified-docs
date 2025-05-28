@@ -6,7 +6,7 @@ mode: "custom"
 
 <div 
   style={{
-    height: '350px',
+    height: '530px',
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
@@ -24,11 +24,11 @@ mode: "custom"
     }}
   >
     <img src="/logo/download.png" alt="Logo" width="90" style={{ display: 'block' }} />
-    <h2 style={{ margin: 0, fontSize: '28px' }}>WELCOME TO ENGINIFY</h2>
+    <h2 style={{ margin: 0, fontSize: '40px' }}>WELCOME TO ENGINIFY</h2>
     <p style={{ margin: 0, fontSize: '18px' }}>
-      Start your journey here to learn how to use our endpoints.
+     Explore how to authenticate, connect, and integrate — the right way.
     </p>
-    <a href="/api-reference\introduction" style={{ textDecoration: 'none' }}>
+    <a href="/docs/base-docs/guides" style={{ textDecoration: 'none' }}>
     <button
       style={{
         padding: '10px 20px',
@@ -47,61 +47,63 @@ mode: "custom"
   </div>
 </div>
 
-<p className="text-center mt-28 mb-7 text-[20px] text-[#000000] dark:text-white">
-  Explore the Docs
+
+<p className="text-center mt-20 mb-10 text-[20px] text-[#000000]  dark:text-white">
+  Our Products
 </p>
 
+<div className="flex justify-center mb-10" >
+    <div className="flex justify-center gap-[200px]">
+       <a href="https://eazype.com" target="_blank">
+        <img className="block dark:hidden" height="60" width="100" src="/logo/eazypay/logo-white.png" />
+        <img className="hidden dark:block" height="60" width="100" src="/logo/eazypay/logo-black.png" />
+       </a>
+        <a href="https://infopass.in" target="_blank">
+        <img className="block dark:hidden" height="60" width="100" src="/logo/infopass/logo-white.png" />
+        <img className="hidden dark:block" height="60" width="100" src="/logo/infopass/logo-black.png" />
 
-<div className="flex justify-center mb-10">
-  <div className="w-full max-w-5xl px-4">
-    <CardGroup cols={3}>
-      <Card
-        title="Eazype"
-        icon="play"
-        href="/docs/eazype-docs/introduction"
-        arrow="true"
-      >
-      Read about how to use Eazype APIs.
-      </Card>
-      <Card
-        title="Infopass"
-        icon="play"
-        href="/docs/infopass-docs/introduction"
-        arrow="true"
-      >
-        Read about how to use Infopass APIs.
-      </Card>
-      <Card
-        title="Eazymsg"
-        icon="play"
-        href="/docs/eazymsg-docs/introduction"
-        arrow="true"
-      >
-       Read about how to use Eazymsg APIs.
-      </Card>
-      
-    </CardGroup>
+       </a>
+        <a href="https://eazymsg.com" target="_blank">
+        <img className="block dark:hidden" height="60" width="100" src="/logo/eazymsg/logo-white.png" />
+        <img className="hidden dark:block" height="60" width="100" src="/logo/eazymsg/logo-black.png" />
+       </a>
+       
+    </div>
+</div>
 
-    <div className="mt-5" />
 
-    <CardGroup cols={2}>
-      <Card
-        title="API Reference"
-        icon="webhook"
-        href="/api-reference/introduction"
-        arrow="true"
-      >
-        Integrate the API into your workflows.
-      </Card>
-      <Card
-        title="Go to our website"
-        icon="globe"
-        href="https://enginify.in/"
-        arrow="true"
-      >
-        To know more about us, visit our website.
-      </Card>
-    </CardGroup>
-  </div>
+<p className="text-center mt-24 mb-7 text-[25px] text-[#000000] dark:text-white">
+   Explore the Docs
+</p>
+
+<div className="flex justify-center mb-16 " >
+     <div>
+        <CardGroup cols={3}>
+          <Card
+             title="Quickstart"
+             icon="play"
+             href="/docs/base-docs/guides"
+             arrow="true"
+          >
+             Start using our API in minutes.
+          </Card>
+          <Card
+             title="API Reference"
+             icon="webhook"
+             href="/api-reference/introduction"
+             arrow="true"
+          >
+             Integrate the API into your workflows.
+          </Card>
+          <Card
+             title="Go to our website"
+             icon="globe"
+             href="https://enginify.in/"
+             arrow="true"
+          >
+             To know more about us, visit our website.
+          </Card>
+        </CardGroup>
+    </div>
 </div>
 
