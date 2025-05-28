@@ -22,6 +22,46 @@
         ]
       },
       {
+        "tab": "Guides",
+        "groups": [
+          {
+            "group": "Get Started",
+            "pages": [
+              "/docs/base-docs/guides"
+            ]
+          },
+          {
+            "group": "Guides",
+            "pages": [
+              {
+                "group": "Eazype API",
+                "pages": [ "/docs/eazype-docs/introduction"
+                ]
+              },
+              {
+                "group": "Eazymsg API",
+                "pages": [ "/docs/eazymsg-docs/introduction"
+                ]
+              },
+              {
+                "group": "Infopass API",
+                "pages": [ "/docs/infopass-docs/introduction"
+                ]
+              },
+              
+                  {
+                    "group": "Products",
+                    "pages": [
+                      "products/infopass",
+                      "products/eazymsg",
+                      "products/eazype"
+                    ]
+                  }
+            ]
+          }
+        ]
+      },
+      {
         "tab": "API Reference",
         "groups": [
           {
@@ -266,27 +306,23 @@
         ]
       }
     ],
-    "global": {
-      "dropdowns": [
-        {
-          "dropdown": "Eazymsg",
-          "icon": "globe",
-          "description": "eazymsg.com",
-          "href": "https://eazymsg.com/"
-        },
-        {
-          "dropdown": "Eazype",
-          "icon": "globe",
-          "description": "eazype.com",
-          "href": "https://eazype.com"
-        },
-        {
-          "dropdown": "Infopass",
-          "icon": "globe",
-          "description": "infopass.in",
-          "href": "https://infopass.in"
-        }
-      ]
+    "global": {"anchors": [
+      {
+      "anchor": "Go to our website ",
+      "icon": "house",
+      "href": "https://enginify.in/"
+      },
+       {
+     "anchor": "Blog",
+      "icon": "newspaper",
+      "href": "https://blog.enginify.in"
+      },
+      {
+      "anchor": "Contact",
+      "icon": "phone",
+      "href": "https://enginify.in/contacts"
+      }
+    ]
     }
   },
   "logo": {
