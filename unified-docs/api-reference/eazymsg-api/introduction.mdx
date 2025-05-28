@@ -1,0 +1,57 @@
+---
+title: 'Eazymsg API Introduction 🧙‍♀️ '
+description: 'Welcome to Eazymsg API Documentation!  Our APIs provide the tools necessary to send messages efficiently and effectively across different channels.'
+---
+
+
+<Note>
+
+[Sign up](https://auth.enginify.in/signup) for a free [Eazymsg](https://eazymsg.com) account to get started. After registration, you'll receive a client_id and client_secret to build and test all Eazymsg Messaging API services using simulated data.
+
+</Note>
+
+
+## Messaging APIs ✨
+
+
+Our reliable API suite enables seamless communication across multiple channels, including Bulk SMS, Bulk Email, WhatsApp Business, Push Notifications, and Google RCS. Enhance your engagement with customers through our flexible and dependable messaging solutions.
+
+
+| API                                                                           | Description                                     |
+| :---------------------------------------------------------------------------- | :---------------------------------------------- |
+| <a href="/api-reference/sms/contacts/create-group">**Create Group**</a> | Use this API to create contact group |
+| <a href="/api-reference/sms/contacts/update-group">**Update Group**</a> | Use this API to update contact group |
+| <a href="/api-reference/sms/contacts/group-list">**Group list**</a> | Use this API to get contact group list |
+| <a href="/api-reference/sms/contacts/create-contact">**Create Contact**</a> | Use this API to create contact |
+| <a href="/api-reference/sms/contacts/update-contact">**Update Contact**</a> | Use this API to update contact |
+| <a href="/api-reference/sms/contacts/contact-list">**Contact List**</a> | Use this API to get contact list |
+| <a href="/api-reference/sms/templates/add-template">**Add Template**</a> | Use this API to add template |
+| <a href="/api-reference/sms/templates/update-template">**Update Template**</a> | Use this API to update template |
+| <a href="/api-reference/sms/templates/template-list">**Template List**</a> | Use this API to get template list |
+| <a href="/api-reference/sms/send-sms/with-variable">**SMS with Variable**</a> | Use this API to send SMS with variable |
+| <a href="/api-reference/sms/send-sms/without-variable">**SMS without Variable**</a> | Use this API to send SMS without variable |
+| <a href="/api-reference/sms-otp/send">**Send SMS OTP**</a> | Use this API to send OTP for SMS |
+| <a href="/api-reference/sms-otp/verify">**Verify SMS OTP**</a> | Use this API to verify OTP  |
+| <a href="/api-reference/send-otp/send">**Send OTP**</a> | Use this API to send OTP  |
+| <a href="/api-reference/send-otp/verify">**Verify OTP**</a>| Use this API to verify the OTP  |
+
+
+## Authentication 🛸
+
+All API endpoints are authenticated using auth key and picked up from the specification file.
+
+```json
+"security": [
+  {
+    "basicAuth": [
+      "type": "https",
+      "scheme": "basic"
+    ]
+  }
+]
+```
+
+<img
+  src="/logo/auth.png"
+  alt="Hero Light"
+/>

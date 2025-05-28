@@ -1,0 +1,182 @@
+---
+title: 'Welcome to Eazymsg'
+description: 'Discover the power of our Messaging APIs to streamline Bulk SMS, Email, WhatsApp, Push Notifications, and RCS Google integration, enhancing communication and ensuring effective customer engagement seamlessly.'
+---
+
+ <CardGroup cols={1}>
+  <Card
+  href="https://eazymsg.com"
+  >
+    <img
+      src="/logo/e1.png"
+      alt="Hero Dark"
+    />
+  </Card>
+</CardGroup>
+
+## API Overview
+
+Our APIs offer comprehensive solutions for:
+
+<CardGroup cols={1}>
+  <Card
+    icon="message"
+    href="https://eazymsg.com/sms-marketing"
+  >
+    **`Bulk SMS`** \
+    Use Bulk SMS API to Send promotional messages, alerts, reminders, OTP's to thousands of recipients at once.\
+    **- High delivery rates and low latency** \
+    **- Supports long messages and characters**
+  </Card>
+  
+  <Card
+    icon="envelope"
+    href="https://eazymsg.com/email-marketing"
+  >
+    **`Bulk Email`** \
+    Automate your email campaigns with our powerful Email API. Send transactional emails, newsletters, notifications, and more with ease.\
+    **- High deliverability and spam compliance**   
+    **- Robust analytics and reporting**
+  </Card>
+  <Card
+    icon="bell"
+    href="https://eazymsg.com/push-notification"
+  >
+    **`Push Notification`** -> `Coming Soon`\
+    Keep your users engaged with timely push notifications. Our API supports sending notifications to mobile devices and web browsers.\
+    **- Targeted and personalized messaging**   \
+    **- Rich media support (images, videos, and links)**\
+    **- Real-time delivery and analytics**
+  </Card>
+  <Card
+    icon="whatsapp"
+    href="https://eazymsg.com/email-marketing"
+  >
+    **`WhatsApp Business API`** -> `Coming Soon`\
+    Our WhatsApp Business API allows you to send messages, notifications, and updates directly to WhatsApp users.\
+   **- Issue Resolution & End-to-end encryption**\
+   **- Appointment, Account, Payment, Reservation & Personal Finance Update**
+  </Card>
+  <Card
+    icon="message"
+    href="https://eazymsg.com/email-marketing"
+  >
+    **`Google RCS Messaging`** -> `Coming Soon`\
+    Enhance your messaging experience with Google RCS which enables you to send rich, interactive messages with advanced features.\
+    **- Interactive and media-rich messages**\
+    **- Read receipts and typing indicators**   \
+    **- Integration with Google’s RCS platform** 
+
+  </Card>
+</CardGroup>
+
+## Generating an API Key
+
+Step-by-Step Guide to Generating an API Key -
+
+<Steps>
+  <Step title="Log In to Your Account">
+    * Visit our [website](https://eazymsg.com) and [log in](https://eazymsg.com/login) with your credentials.
+    * If you don't have an account, [sign up](https://auth.enginify.in/signup) for one to get started.
+    <CardGroup cols={1}>
+      <Card
+      >
+        <img
+          src="/logo/sign-in.png"
+          alt="Hero Dark"
+        />
+      </Card>
+    </CardGroup>
+  </Step>
+  <Step title="Navigate to the Developer Setting Section">
+   * Once logged in, go to your user dashboard.
+   * Find and click on the "Developer Settings" tab or section in the dashboard menu.
+   <CardGroup cols={1}>
+      <Card
+      >
+        <img
+          src="/logo/devtab.png"
+          alt="Hero Dark"
+        />
+      </Card>
+    </CardGroup>
+  </Step>
+  <Step title="Request a New API Key">
+    * In the "Developer" section, click on the "Generate API Key" button.
+    <CardGroup cols={1}>
+      <Card
+      >
+        <img
+          src="/logo/apibtn.png"
+          alt="Hero Dark"
+        />
+      </Card>
+    </CardGroup>
+    * You may be asked to provide select details for which you want to generate the API key.
+     <CardGroup cols={1}>
+      <Card
+      >
+        <img
+          src="/logo/modal.png"
+          alt="Hero Dark"
+        />
+      </Card>
+    </CardGroup>
+  </Step>
+  <Step title="Generate and Save Your API Key" >
+    * Click the "Generate" button to create your API key.
+    * Once generated, your API key will be displayed on the screen.
+     <CardGroup cols={1}>
+      <Card
+      >
+        <img
+          src="/logo/key.png"
+          alt="Hero Dark"
+        />
+      </Card>
+    </CardGroup>
+  </Step>
+  <Step title="Start Using Your API Key">
+    * Your API key is now ready to use. Include it in your API requests as specified in the [authentication section](/introduction#authenticated-requests) of our documentation.
+    <CardGroup cols={1}>
+        <Card
+        >
+          <img
+            src="/logo/table.png"
+            alt="Hero Dark"
+          />
+        </Card>
+      </CardGroup>
+  </Step>
+</Steps>
+
+<Note>
+  Keep your API key secure and do not share it publicly. \
+  If you suspect that your API key has been compromised, regenerate a new one immediately
+</Note>
+
+## API Key Management
+
+* **Regenerate Key** : If you need to regenerate your key, follow the same steps as above. The old key will be deactivate.
+
+## Authenticated requests
+
+Enable user authentication via environment variable, each front-end API request includes an API key and OAuth2 token. These authenticate the request. Without proper permissions, the backend responds with a `4XX` error.
+
+
+## API Errors
+
+If a page loads with no visible data, it could indicate either a lack of data or insufficient user permissions.
+
+If no error message appears on the page, check the browser’s network tab and inspect the API request response for full error details.
+
+<Tip>Learn how to view the network requests in Chrome by following these [instructions](https://developer.chrome.com/docs/devtools/network/)</Tip>
+
+| Error Code | Description |
+| :--------: | :---------: |
+|   `401`    | 	Expired / Invalid OAuth token |
+|   `402`    | 	Record is Invalid |
+|   `403`    | 	Invalid API Key |
+|   `403`    | 	Unauthorized access |
+|   `404`    | 	Record not found |
+|   `500  `    | 	API resource error |

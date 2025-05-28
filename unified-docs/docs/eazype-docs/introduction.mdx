@@ -1,0 +1,165 @@
+---
+title: 'Welcome to Eazype'
+description: 'Discover the power of our APIs designed to streamline and enhance your services in the fintech industry. Our APIs enable seamless integration of Mobile & DTH recharge services and more into your applications'
+---
+
+ <CardGroup cols={1}>
+  <Card
+  href="https://eazype.com"
+  >
+    <img
+      src="/logo/dash.png"
+      alt="Hero Dark"
+    />
+  </Card>
+</CardGroup>
+
+## API Overview
+
+Our APIs offer comprehensive solutions for:
+
+<CardGroup cols={3}>
+  <Card
+    icon="mobile"
+    href="https://eazype.com"
+  >
+   `Visit Website` \
+    Mobile and DTH recharge services integration.
+  </Card>
+  <Card
+    icon="plane"
+  >
+   `Coming Soon` \
+    Travel bookings including flights, hotels, and bus reservations.
+  </Card>
+  <Card
+    icon="gift"
+  >
+   `Coming Soon` \
+    Explore our versatile gift card service, ideal for all occasions
+  </Card>
+</CardGroup>
+
+## Generating an API Key
+
+Step-by-Step Guide to Generating an API Key -
+
+<Steps>
+  <Step title="Log In to Your Account">
+    * Visit our [website](https://eazype.com) and [log in](https://eazype.com/login) with your credentials.
+    * If you don't have an account, [sign up](https://eazype.com/signup) for one to get started.
+    <CardGroup cols={1}>
+      <Card
+      >
+        <img
+          src="/logo/sign-in.png"
+          alt="Hero Dark"
+        />
+      </Card>
+    </CardGroup>
+  </Step>
+  <Step title="Navigate to the Developer Setting Section">
+   * Once logged in, go to your user dashboard.
+   * Find and click on the "Developer" tab or section in the dashboard menu.
+   <CardGroup cols={1}>
+      <Card
+      >
+        <img
+          src="/logo/devtab.png"
+          alt="Hero Dark"
+        />
+      </Card>
+    </CardGroup>
+  </Step>
+  <Step title="Request a New API Key">
+    * In the "API Keys" section, click on the "Generate API Key" button.
+    <CardGroup cols={1}>
+      <Card
+      >
+        <img
+          src="/logo/apibtn.png"
+          alt="Hero Dark"
+        />
+      </Card>
+    </CardGroup>
+    * You may be asked to provide select details for which you want to generate the API key.
+     <CardGroup cols={1}>
+      <Card
+      >
+        <img
+          src="/logo/modal.png"
+          alt="Hero Dark"
+        />
+      </Card>
+    </CardGroup>
+  </Step>
+  <Step title="Generate and Save Your API Key" >
+    * Click the "Generate" button to create your API key.
+    * After click, send an otp on your registered mobile and email Id .
+     <CardGroup cols={1}>
+      <Card
+      >
+        <img
+          src="/logo/otp.png"
+          alt="Hero Dark"
+        />
+      </Card>
+    </CardGroup>
+  </Step>
+  <Step title=" Verify Your Email or Mobile Number">
+    * You might receive a verification email. Follow the instructions to verify your email address and activate the API key.
+    * Once generated, your API key will be displayed on the screen.
+     <CardGroup cols={1}>
+      <Card
+      >
+        <img
+          src="/logo/key.png"
+          alt="Hero Dark"
+        />
+      </Card>
+    </CardGroup>
+  </Step>
+  <Step title="Start Using Your API Key">
+    * Your API key is now ready to use. Include it in your API requests as specified in the [authentication section](/introduction#authenticated-requests) of our documentation.
+    <CardGroup cols={1}>
+        <Card
+        >
+          <img
+            src="/logo/table.png"
+            alt="Hero Dark"
+          />
+        </Card>
+      </CardGroup>
+  </Step>
+</Steps>
+
+<Note>
+  Keep your API key secure and do not share it publicly. \
+  If you suspect that your API key has been compromised, regenerate a new one immediately
+</Note>
+
+## API Key Management
+
+* **Regenerate Key** : If you need to regenerate your key, follow the same steps as above. The old key will be deactivate.
+
+## Authenticated requests
+
+Enable user authentication via environment variable, each front-end API request includes an API key and OAuth2 token. These authenticate the request. Without proper permissions, the backend responds with a `4XX` error.
+
+
+## API Errors
+
+If a page loads with no visible data, it could indicate either a lack of data or insufficient user permissions.
+
+If no error message appears on the page, check the browser’s network tab and inspect the API request response for full error details.
+
+<Tip>Learn how to view the network requests in Chrome by following these [instructions](https://developer.chrome.com/docs/devtools/network/)</Tip>
+
+| Error Code | Description |
+| :--------: | :---------: |
+|   `401`    | 	Expired / Invalid OAuth token |
+|   `402`    | 	Record is Invalid |
+|   `403`    | 	Invalid API Key |
+|   `403`    | 	Unauthorized access |
+|   `404`    | 	Record not found |
+|   `500  `    | 	API resource error |

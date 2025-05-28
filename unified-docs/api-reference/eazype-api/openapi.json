@@ -1,0 +1,3124 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "OpenAPI Eazype API",
+    "description": "Eazype API showcases recharge features with examples for Mobile, DTH, Flight, Hotel, Bus reservation, and Digital Gift Card",
+    "license": {
+      "name": "MIT"
+    },
+    "version": "1.0.0"
+  },
+  "servers": [
+    {
+      "url": "https://eazype.com"
+    }
+  ],
+  "paths": {
+    "/api/v1/service/recharge/balance": {
+      "get": {
+        "tags": [
+          "Recharge APIs"
+        ],
+        "summary": "Balance",
+        "security": [
+          {
+            "basicAuth": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "headers": {
+              "Connection": {
+                "schema": {
+                  "type": "string",
+                  "example": "Keep-Alive"
+                }
+              },
+              "Keep-Alive": {
+                "schema": {
+                  "type": "string",
+                  "example": "timeout=5, max=100"
+                }
+              },
+              "x-powered-by": {
+                "schema": {
+                  "type": "number",
+                  "example": "PHP/8.2.16"
+                }
+              },
+              "cache-control": {
+                "schema": {
+                  "type": "string",
+                  "example": "no-cache, private"
+                }
+              },
+              "content-type": {
+                "schema": {
+                  "type": "string",
+                  "example": "application/json"
+                }
+              },
+              "x-ratelimit-limit": {
+                "schema": {
+                  "type": "integer",
+                  "example": "60"
+                }
+              },
+              "x-ratelimit-remaining": {
+                "schema": {
+                  "type": "integer",
+                  "example": "59"
+                }
+              },
+              "access-control-allow-origin": {
+                "schema": {
+                  "type": "string",
+                  "example": "*"
+                }
+              },
+              "content-length": {
+                "schema": {
+                  "type": "integer",
+                  "example": "115"
+                }
+              },
+              "content-encoding": {
+                "schema": {
+                  "type": "string",
+                  "example": "br"
+                }
+              },
+              "vary": {
+                "schema": {
+                  "type": "string",
+                  "example": "Accept-Encoding"
+                }
+              },
+              "date": {
+                "schema": {
+                  "type": "string",
+                  "example": "Thu, 20 Jun 2024 04:44:22 GMT"
+                }
+              },
+              "server": {
+                "schema": {
+                  "type": "string",
+                  "example": "LiteSpeed"
+                }
+              },
+              "platform": {
+                "schema": {
+                  "type": "string",
+                  "example": "hostinger"
+                }
+              },
+              "content-security-policy": {
+                "schema": {
+                  "type": "string",
+                  "example": "upgrade-insecure-requests"
+                }
+              },
+              "alt-svc": {
+                "schema": {
+                  "type": "string",
+                  "example": "h3=\":443\"; ma=2592000, h3-29=\":443\"; ma=2592000, h3-Q050=\":443\"; ma=2592000, h3-Q046=\":443\"; ma=2592000, h3-Q043=\":443\"; ma=2592000, quic=\":443\"; ma=2592000; v=\"43,46\""
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                },
+                "example": {
+                  "code": "0x0200",
+                  "status": "SUCCESS",
+                  "message": "Balance fetched successfully",
+                  "data": {
+                    "balance": 40,
+                    "status": "active"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                },
+                "example":{
+                    "code": "0x0201",
+                    "message": "Something went worng, Please try after sometimes.",
+                    "status": "FAILURE"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/service/recharge/operator/mobile": {
+      "get": {
+        "tags": [
+          "Recharge APIs"
+        ],
+        "summary": "Operator Mobile",
+        "security": [
+          {
+            "basicAuth": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            },
+            "example": "application/json"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "headers": {
+              "Connection": {
+                "schema": {
+                  "type": "string",
+                  "example": "Keep-Alive"
+                }
+              },
+              "Keep-Alive": {
+                "schema": {
+                  "type": "string",
+                  "example": "timeout=5, max=100"
+                }
+              },
+              "x-powered-by": {
+                "schema": {
+                  "type": "number",
+                  "example": "PHP/8.2.16"
+                }
+              },
+              "cache-control": {
+                "schema": {
+                  "type": "string",
+                  "example": "no-cache, private"
+                }
+              },
+              "content-type": {
+                "schema": {
+                  "type": "string",
+                  "example": "application/json"
+                }
+              },
+              "x-ratelimit-limit": {
+                "schema": {
+                  "type": "integer",
+                  "example": "60"
+                }
+              },
+              "x-ratelimit-remaining": {
+                "schema": {
+                  "type": "integer",
+                  "example": "51"
+                }
+              },
+              "access-control-allow-origin": {
+                "schema": {
+                  "type": "string",
+                  "example": "*"
+                }
+              },
+              "content-length": {
+                "schema": {
+                  "type": "integer",
+                  "example": "209"
+                }
+              },
+              "content-encoding": {
+                "schema": {
+                  "type": "string",
+                  "example": "br"
+                }
+              },
+              "vary": {
+                "schema": {
+                  "type": "string",
+                  "example": "Accept-Encoding"
+                }
+              },
+              "date": {
+                "schema": {
+                  "type": "string",
+                  "example": "Thu, 20 Jun 2024 06:47:40 GMT"
+                }
+              },
+              "server": {
+                "schema": {
+                  "type": "string",
+                  "example": "LiteSpeed"
+                }
+              },
+              "platform": {
+                "schema": {
+                  "type": "string",
+                  "example": "hostinger"
+                }
+              },
+              "content-security-policy": {
+                "schema": {
+                  "type": "string",
+                  "example": "upgrade-insecure-requests"
+                }
+              },
+              "alt-svc": {
+                "schema": {
+                  "type": "string",
+                  "example": "h3=\":443\"; ma=2592000, h3-29=\":443\"; ma=2592000, h3-Q050=\":443\"; ma=2592000, h3-Q046=\":443\"; ma=2592000, h3-Q043=\":443\"; ma=2592000, quic=\":443\"; ma=2592000; v=\"43,46\""
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                },
+                "example": {
+                  "code": "0x0200",
+                  "status": "SUCCESS",
+                  "message": "success",
+                  "data": [
+                    {
+                      "operatorName": "AIRTEL",
+                      "operatorCode": "ATEL",
+                      "type": "mobile"
+                    },
+                    {
+                      "operatorName": "BSNL TOPUP",
+                      "operatorCode": "BSNLT",
+                      "type": "mobile"
+                    },
+                    {
+                      "operatorName": "BSNL SPECIAL",
+                      "operatorCode": "BSNLS",
+                      "type": "mobile"
+                    },
+                    {
+                      "operatorName": "IDEA",
+                      "operatorCode": "IDEA",
+                      "type": "mobile"
+                    },
+                    {
+                      "operatorName": "RELIANCE JIO",
+                      "operatorCode": "JIO",
+                      "type": "mobile"
+                    },
+                    {
+                      "operatorName": "VODAFONE",
+                      "operatorCode": "VODAFONE",
+                      "type": "mobile"
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                },
+                "example":{
+                    "code": "0x0201",
+                    "message": "Something went worng, Please try after sometimes.",
+                    "status": "FAILURE"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/service/recharge/operator/dth": {
+      "get": {
+        "tags": [
+          "Recharge APIs"
+        ],
+        "summary": "Operator DTH",
+        "security": [
+          {
+            "basicAuth": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            },
+            "example": "application/json"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "headers": {
+              "Connection": {
+                "schema": {
+                  "type": "string",
+                  "example": "Keep-Alive"
+                }
+              },
+              "Keep-Alive": {
+                "schema": {
+                  "type": "string",
+                  "example": "timeout=5, max=100"
+                }
+              },
+              "x-powered-by": {
+                "schema": {
+                  "type": "number",
+                  "example": "PHP/8.2.16"
+                }
+              },
+              "cache-control": {
+                "schema": {
+                  "type": "string",
+                  "example": "no-cache, private"
+                }
+              },
+              "content-type": {
+                "schema": {
+                  "type": "string",
+                  "example": "application/json"
+                }
+              },
+              "x-ratelimit-limit": {
+                "schema": {
+                  "type": "integer",
+                  "example": "60"
+                }
+              },
+              "x-ratelimit-remaining": {
+                "schema": {
+                  "type": "integer",
+                  "example": "47"
+                }
+              },
+              "access-control-allow-origin": {
+                "schema": {
+                  "type": "string",
+                  "example": "*"
+                }
+              },
+              "content-length": {
+                "schema": {
+                  "type": "integer",
+                  "example": "224"
+                }
+              },
+              "content-encoding": {
+                "schema": {
+                  "type": "string",
+                  "example": "br"
+                }
+              },
+              "vary": {
+                "schema": {
+                  "type": "string",
+                  "example": "Accept-Encoding"
+                }
+              },
+              "date": {
+                "schema": {
+                  "type": "string",
+                  "example": "Thu, 20 Jun 2024 06:47:58 GMT"
+                }
+              },
+              "server": {
+                "schema": {
+                  "type": "string",
+                  "example": "LiteSpeed"
+                }
+              },
+              "platform": {
+                "schema": {
+                  "type": "string",
+                  "example": "hostinger"
+                }
+              },
+              "content-security-policy": {
+                "schema": {
+                  "type": "string",
+                  "example": "upgrade-insecure-requests"
+                }
+              },
+              "alt-svc": {
+                "schema": {
+                  "type": "string",
+                  "example": "h3=\":443\"; ma=2592000, h3-29=\":443\"; ma=2592000, h3-Q050=\":443\"; ma=2592000, h3-Q046=\":443\"; ma=2592000, h3-Q043=\":443\"; ma=2592000, quic=\":443\"; ma=2592000; v=\"43,46\""
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                },
+                "example": {
+                  "code": "0x0200",
+                  "status": "SUCCESS",
+                  "message": "success",
+                  "data": [
+                    {
+                      "operatorName": "AIRTEL DTH",
+                      "operatorCode": "ATELDTH",
+                      "type": "dth"
+                    },
+                    {
+                      "operatorName": "DISH TV",
+                      "operatorCode": "DISHTV",
+                      "type": "dth"
+                    },
+                    {
+                      "operatorName": "RELIANCE BIGTV",
+                      "operatorCode": "BIGTV",
+                      "type": "dth"
+                    },
+                    {
+                      "operatorName": "SUN DIRECT",
+                      "operatorCode": "SUNDIRECT",
+                      "type": "dth"
+                    },
+                    {
+                      "operatorName": "TATA SKY",
+                      "operatorCode": "TATASKY",
+                      "type": "dth"
+                    },
+                    {
+                      "operatorName": "VIDEOCON D2H",
+                      "operatorCode": "D2H",
+                      "type": "dth"
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                },
+                "example":{
+                    "code": "0x0201",
+                    "message": "Something went worng, Please try after sometimes.",
+                    "status": "FAILURE"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/service/recharge/mobile/info": {
+      "post": {
+        "tags": [
+          "Recharge APIs"
+        ],
+        "summary": "Mobile Info",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "example": {
+                  "mobile": ""
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "basicAuth": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            },
+            "example": "application/json"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "headers": {
+              "Connection": {
+                "schema": {
+                  "type": "string",
+                  "example": "Keep-Alive"
+                }
+              },
+              "Keep-Alive": {
+                "schema": {
+                  "type": "string",
+                  "example": "timeout=5, max=100"
+                }
+              },
+              "x-powered-by": {
+                "schema": {
+                  "type": "number",
+                  "example": "PHP/8.2.16"
+                }
+              },
+              "cache-control": {
+                "schema": {
+                  "type": "string",
+                  "example": "no-cache, private"
+                }
+              },
+              "content-type": {
+                "schema": {
+                  "type": "string",
+                  "example": "application/json"
+                }
+              },
+              "x-ratelimit-limit": {
+                "schema": {
+                  "type": "integer",
+                  "example": "60"
+                }
+              },
+              "x-ratelimit-remaining": {
+                "schema": {
+                  "type": "integer",
+                  "example": "59"
+                }
+              },
+              "access-control-allow-origin": {
+                "schema": {
+                  "type": "string",
+                  "example": "*"
+                }
+              },
+              "content-length": {
+                "schema": {
+                  "type": "integer",
+                  "example": "249"
+                }
+              },
+              "content-encoding": {
+                "schema": {
+                  "type": "string",
+                  "example": "br"
+                }
+              },
+              "vary": {
+                "schema": {
+                  "type": "string",
+                  "example": "Accept-Encoding"
+                }
+              },
+              "date": {
+                "schema": {
+                  "type": "string",
+                  "example": "Sat, 04 May 2024 07:54:07 GMT"
+                }
+              },
+              "server": {
+                "schema": {
+                  "type": "string",
+                  "example": "LiteSpeed"
+                }
+              },
+              "platform": {
+                "schema": {
+                  "type": "string",
+                  "example": "hostinger"
+                }
+              },
+              "content-security-policy": {
+                "schema": {
+                  "type": "string",
+                  "example": "upgrade-insecure-requests"
+                }
+              },
+              "alt-svc": {
+                "schema": {
+                  "type": "string",
+                  "example": "h3=\":443\"; ma=2592000, h3-29=\":443\"; ma=2592000, h3-Q050=\":443\"; ma=2592000, h3-Q046=\":443\"; ma=2592000, h3-Q043=\":443\"; ma=2592000, quic=\":443\"; ma=2592000; v=\"43,46\""
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                },
+                "example": {
+                  "code": "0x0200",
+                  "status": "SUCCESS",
+                  "message": "Mobile Operator Fetched Successfully",
+                  "data": {
+                    "mobile": "6393323028",
+                    "operator": "Reliance Jio Infocomm Limited",
+                    "operatorCode": "11",
+                    "circle": "UP East",
+                    "circleCode": "54",
+                    "logo": "https://eazype.com/public/upload/mobile_recharge_logo/jio.png",
+                    "message": "Successfully"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                },
+                "example":{
+                    "code": "0x0201",
+                    "message": "Something went worng, Please try after sometimes.",
+                    "status": "FAILURE"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/service/recharge/dth/info": {
+      "post": {
+        "tags": [
+          "Recharge APIs"
+        ],
+        "summary": "DTH Details Fetch (DTH)",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "example": {
+                  "mobile": "3035735884",
+                  "operatorCode": "24"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "basicAuth": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            },
+            "example": "application/json"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "headers": {
+              "Host": {
+                "schema": {
+                  "type": "number",
+                  "example": "127.0.0.1:8000"
+                }
+              },
+              "Date": {
+                "schema": {
+                  "type": "string",
+                  "example": "Sat, 04 May 2024 09:06:10 GMT"
+                }
+              },
+              "Connection": {
+                "schema": {
+                  "type": "string",
+                  "example": "close"
+                }
+              },
+              "X-Powered-By": {
+                "schema": {
+                  "type": "number",
+                  "example": "PHP/8.2.0"
+                }
+              },
+              "Cache-Control": {
+                "schema": {
+                  "type": "string",
+                  "example": "no-cache, private"
+                }
+              },
+              "Content-Type": {
+                "schema": {
+                  "type": "string",
+                  "example": "application/json"
+                }
+              },
+              "X-RateLimit-Limit": {
+                "schema": {
+                  "type": "integer",
+                  "example": "60"
+                }
+              },
+              "X-RateLimit-Remaining": {
+                "schema": {
+                  "type": "integer",
+                  "example": "59"
+                }
+              },
+              "Access-Control-Allow-Origin": {
+                "schema": {
+                  "type": "string",
+                  "example": "*"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                },
+                "example": {
+                  "code": "0x0200",
+                  "status": "SUCCESS",
+                  "message": "Operator Fetch Successfully",
+                  "data": {
+                    "number": "3035735884",
+                    "name": "MR Shobha Rai",
+                    "balance": "197.78",
+                    "currentPlan": "",
+                    "nextRechargeDate": "",
+                    "plan": null
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                },
+                "example":{
+                    "code": "0x0201",
+                    "message": "Something went worng, Please try after sometimes.",
+                    "status": "FAILURE"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/service/recharge/plans/mobile": {
+      "post": {
+        "tags": [
+          "Recharge APIs"
+        ],
+        "summary": "Operator Plan  (Mobile)",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "example": {
+                  "circle": "54",
+                  "operatorCode": "24"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "basicAuth": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            },
+            "example": "application/json"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "headers": {
+              "Host": {
+                "schema": {
+                  "type": "number",
+                  "example": "127.0.0.1:8000"
+                }
+              },
+              "Date": {
+                "schema": {
+                  "type": "string",
+                  "example": "Sat, 04 May 2024 10:28:03 GMT"
+                }
+              },
+              "Connection": {
+                "schema": {
+                  "type": "string",
+                  "example": "close"
+                }
+              },
+              "X-Powered-By": {
+                "schema": {
+                  "type": "number",
+                  "example": "PHP/8.2.0"
+                }
+              },
+              "Cache-Control": {
+                "schema": {
+                  "type": "string",
+                  "example": "no-cache, private"
+                }
+              },
+              "Content-Type": {
+                "schema": {
+                  "type": "string",
+                  "example": "application/json"
+                }
+              },
+              "X-RateLimit-Limit": {
+                "schema": {
+                  "type": "integer",
+                  "example": "60"
+                }
+              },
+              "X-RateLimit-Remaining": {
+                "schema": {
+                  "type": "integer",
+                  "example": "57"
+                }
+              },
+              "Access-Control-Allow-Origin": {
+                "schema": {
+                  "type": "string",
+                  "example": "*"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                },
+                "example": {
+                  "code": "0x0200",
+                  "status": "SUCCESS",
+                  "message": "Operator Plan Successfully",
+                  "data": {
+                    "operator": "RELIANCE JIO",
+                    "circle": "DELHI",
+                    "plan": {
+                      "fulltt": [
+                        {
+                          "amount": 149,
+                          "validity": "20 Days",
+                          "desc": "1 GB/day data + Unlimited calls + 100 SMS/day + JioTV, JioCinema, JioSecurity, JioCloud app subscriptions",
+                          "type": "NEW ALL-IN-ONE"
+                        },
+                        {
+                          "amount": 155,
+                          "validity": "28 Days",
+                          "desc": "2GB data + Unlimited calls to all networks + 300 SMS+JioTV, JioCinema, JioNews, JioSecurity, JioCloud App Subscriptions.",
+                          "type": "NEW ALL-IN-ONE"
+                        },
+                        {
+                          "amount": 179,
+                          "validity": "24 Days",
+                          "desc": "1GB data/day + Unlimited calls to all networks + 100 SMS/day + JioTV, JioCinema, JioNews, JioSecurity, JioCloud App Subscriptions.",
+                          "type": "NEW ALL-IN-ONE"
+                        },
+                        {
+                          "amount": 199,
+                          "validity": "23 Days",
+                          "desc": " 1.5GB/day data + Unlimited calls to all networks+ 100 SMS/day + JioTV, JioCinema, JioNews, JioSecurity, JioCloud App Subscriptions.",
+                          "type": "NEW ALL-IN-ONE"
+                        },
+                        {
+                          "amount": 209,
+                          "validity": "28 Days",
+                          "desc": " 1GB/day data + Unlimited calls to all networks+ 100 SMS/day + JioTV, JioCinema, JioNews, JioSecurity, JioCloud App Subscriptions.",
+                          "type": "NEW ALL-IN-ONE"
+                        },
+                        {
+                          "amount": 219,
+                          "validity": "14 Days",
+                          "desc": "3 GB/day data + Unlimited calls + 100 SMS/day + JioTV, JioCinema, JioSecurity, JioCloud apps subscriptions",
+                          "type": "NEW ALL-IN-ONE"
+                        },
+                        {
+                          "amount": 239,
+                          "validity": "28 Days",
+                          "desc": "1.5 GB/day data + Unlimited calls + 100 SMS/day + JioTV, JioCinema, JioSecurity, JioCloud app subscriptions",
+                          "type": "NEW ALL-IN-ONE"
+                        },
+                        {
+                          "amount": 249,
+                          "validity": "23 Days",
+                          "desc": "2 GB/day data + Unlimited calls + 100 SMS/day + JioTV, JioCinema, JioSecurity, JioCloud app subscriptions",
+                          "type": "NEW ALL-IN-ONE"
+                        },
+                        {
+                          "amount": 259,
+                          "validity": "1 Months",
+                          "desc": "1.5 GB/day data + Unlimited calls + 100 SMS/day + JioTV, JioCinema, JioSecurity, JioCloud apps subscriptions",
+                          "type": "NEW ALL-IN-ONE"
+                        },
+                        {
+                          "amount": 296,
+                          "validity": "30 Days",
+                          "desc": "25 GB data + Unlimited calls to all networks  + 100 SMS/day + JioTV, JioCinema, JioNews, JioSecurity, JioCloud App Subscriptions.",
+                          "type": "NEW ALL-IN-ONE"
+                        },
+                        {
+                          "amount": 299,
+                          "validity": "28 Days",
+                          "desc": "2GB/day data + Unlimited calls to all networks + 100 SMS/day + JioTV, JioCinema, JioNews, JioSecurity, JioCloud App Subscriptions.",
+                          "type": "NEW ALL-IN-ONE"
+                        },
+                        {
+                          "amount": 349,
+                          "validity": "30 Days",
+                          "desc": "2.5 GB/day data + Unlimited calls + 100 SMS/day + JioTV, JioCinema, JioSecurity, JioCloud apps subscriptions",
+                          "type": "NEW ALL-IN-ONE"
+                        },
+                        {
+                          "amount": 395,
+                          "validity": "84 Days",
+                          "desc": "6GB data + Unlimited calls to all networks + 1000 SMS + JioTV, JioCinema, JioNews, JioSecurity, JioCloud App Subscriptions.",
+                          "type": "NEW ALL-IN-ONE"
+                        },
+                        {
+                          "amount": 399,
+                          "validity": "28 Days",
+                          "desc": "3 GB/day data + Unlimited calls + 100 SMS/day + JioTV, JioCinema, JioSecurity, JioCloud apps subscriptions",
+                          "type": "NEW ALL-IN-ONE"
+                        },
+                        {
+                          "amount": 479,
+                          "validity": "56 Days",
+                          "desc": " 1.5GB/day data + Unlimited calls to all networks + 100 SMS/day + JioTV, JioCinema, JioNews, JioSecurity, JioCloud App Subscriptions.",
+                          "type": "NEW ALL-IN-ONE"
+                        },
+                        {
+                          "amount": 533,
+                          "validity": "56 Days",
+                          "desc": " 2GB/day data + Unlimited calls to all networks + 100 SMS/day + JioTV, JioCinema, JioNews, JioSecurity, JioCloud App Subscriptions.",
+                          "type": "NEW ALL-IN-ONE"
+                        },
+                        {
+                          "amount": 666,
+                          "validity": "84 Days",
+                          "desc": "1.5GB/day data + Unlimited calls to all networks + 100 SMS/day + JioTV, JioCinema, JioNews, JioSecurity, JioCloud App Subscriptions.",
+                          "type": "NEW ALL-IN-ONE"
+                        },
+                        {
+                          "amount": 719,
+                          "validity": "84 Days",
+                          "desc": " 2GB/day data + Unlimited calls to all networks + 100 SMS/day + JioTV, JioCinema, JioNews, JioSecurity, JioCloud App Subscriptions.",
+                          "type": "NEW ALL-IN-ONE"
+                        },
+                        {
+                          "amount": 749,
+                          "validity": "90 Days",
+                          "desc": "2 GB/day + 100 MB data + Unlimited calls + 100 SMS/day + JioTV, JioCinema, JioSecurity, JioCloud apps subscriptions",
+                          "type": "NEW ALL-IN-ONE"
+                        },
+                        {
+                          "amount": 866,
+                          "validity": "84 days",
+                          "desc": "2 GB/day data + Unlimited calls + 100 SMS/day + Swiggy, JioTV, JioCinema, JioCloud apps subscriptions",
+                          "type": "NEW ALL-IN-ONE"
+                        },
+                        {
+                          "amount": 999,
+                          "validity": "84 Days",
+                          "desc": "3 GB/day data + Unlimited calls + 100 SMS/day + JioTV, JioCinema, JioSecurity, JioCloud apps subscriptions",
+                          "type": "NEW ALL-IN-ONE"
+                        },
+                        {
+                          "amount": 1559,
+                          "validity": "336 Days",
+                          "desc": " 24GB data + Unlimited calls to all networks + 3600 SMS + JioTV, JioCinema, JioNews, JioSecurity, JioCloud App Subscriptions.",
+                          "type": "NEW ALL-IN-ONE"
+                        },
+                        {
+                          "amount": 2545,
+                          "validity": "336 Days",
+                          "desc": "1.5GB data/day + Unlimited calls to all networks + 100SMS/day + JioTV, JioCinema, JioNews, JioSecurity, JioCloud App Subscriptions.",
+                          "type": "NEW ALL-IN-ONE"
+                        },
+                        {
+                          "amount": 2999,
+                          "validity": "365 Days",
+                          "desc": "2.5 GB/day data + Unlimited calls + 100 SMS/day + JioTV, JioCinema, JioSecurity, JioCloud apps subscriptions",
+                          "type": "NEW ALL-IN-ONE"
+                        },
+                        {
+                          "amount": 3225,
+                          "validity": "365 Days",
+                          "desc": "2 GB/day data + Unlimited calls + 100 SMS/day + ZEE5, JioTV, JioCinema, JioCloud apps subscriptions",
+                          "type": "NEW ALL-IN-ONE"
+                        },
+                        {
+                          "amount": 3226,
+                          "validity": "365 Days",
+                          "desc": "2 GB/day data + Unlimited calls + 100 SMS/day + Sony LIV, JioTV, JioCinema, JioCloud apps subscriptions",
+                          "type": "NEW ALL-IN-ONE"
+                        },
+                        {
+                          "amount": 3227,
+                          "validity": "365 Days",
+                          "desc": "2 GB/day data + Unlimited calls + 100 SMS/day + Prime Video Mobile Edition, JioTV, JioCinema, JioCloud apps subscriptions",
+                          "type": "NEW ALL-IN-ONE"
+                        },
+                        {
+                          "amount": 3662,
+                          "validity": "365 Days",
+                          "desc": "2.5 GB/day data + Unlimited calls + 100 SMS/day + Sony LIV, ZEE5, JioTV, JioCinema, JioCloud apps subscriptions",
+                          "type": "NEW ALL-IN-ONE"
+                        }
+                      ],
+                      "topup": [
+                        {
+                          "amount": 10,
+                          "validity": "Unlimited",
+                          "desc": "7.47 Talktime,7.47 Talktime",
+                          "type": "Talktime"
+                        },
+                        {
+                          "amount": 20,
+                          "validity": "Unlimited",
+                          "desc": "14.95 Talktime,14.95 Talktime",
+                          "type": "Talktime"
+                        },
+                        {
+                          "amount": 50,
+                          "validity": "Unlimited",
+                          "desc": "39.37 Talktime,39.37 Talktime",
+                          "type": "Talktime"
+                        },
+                        {
+                          "amount": 100,
+                          "validity": "Unlimited",
+                          "desc": "81.75 Talktime,81.75 Talktime",
+                          "type": "Talktime"
+                        },
+                        {
+                          "amount": 500,
+                          "validity": "Unlimited",
+                          "desc": "420.73 Talktime,420.73 Talktime",
+                          "type": "Talktime"
+                        },
+                        {
+                          "amount": 1000,
+                          "validity": "Unlimited",
+                          "desc": "844.46 Talktime,844.46 Talktime",
+                          "type": "Talktime"
+                        }
+                      ],
+                      "data": [
+                        {
+                          "amount": 15,
+                          "validity": "Valid Till Base Pack",
+                          "desc": "1GB  Data  [This recharge will get failed, if there is no active pack on your number]",
+                          "type": "Data Pack"
+                        },
+                        {
+                          "amount": 19,
+                          "validity": "Valid Till Base Pack",
+                          "desc": "1.5 GB  Data  [This recharge will get failed, if there is no active pack on your number]",
+                          "type": "Data Pack"
+                        },
+                        {
+                          "amount": 25,
+                          "validity": "Valid Till Base Pack",
+                          "desc": "2GB  Data  [This recharge will get failed, if there is no active pack on your number]",
+                          "type": "Data Pack"
+                        },
+                        {
+                          "amount": 29,
+                          "validity": "Valid Till Base Pack",
+                          "desc": "2.5 GB  Data  [This recharge will get failed, if there is no active pack on your number]",
+                          "type": "Data Pack"
+                        },
+                        {
+                          "amount": 61,
+                          "validity": "(existing)",
+                          "desc": "6 GB  Data  ",
+                          "type": "Data Pack"
+                        },
+                        {
+                          "amount": 121,
+                          "validity": "Valid Till Base Pack",
+                          "desc": "12GB  Data [This recharge will get failed, if there is no active pack on your number]",
+                          "type": "Data Pack"
+                        },
+                        {
+                          "amount": 123,
+                          "validity": "(28 days)",
+                          "desc": "0.5 GB/day data + Unlimited calls + 300 SMS + JioSaavn, JioCinema apps subscriptions  ",
+                          "type": "Data Pack"
+                        },
+                        {
+                          "amount": 181,
+                          "validity": "30 Days",
+                          "desc": "30GB  Data [This recharge will get failed, if there is no active pack on your number]",
+                          "type": "Data Pack"
+                        },
+                        {
+                          "amount": 222,
+                          "validity": "existing",
+                          "desc": "50 GB data",
+                          "type": "Data Pack"
+                        },
+                        {
+                          "amount": 241,
+                          "validity": "30 Days",
+                          "desc": "40GB  Data [This recharge will get failed, if there is no active pack on your number]",
+                          "type": "Data Pack"
+                        },
+                        {
+                          "amount": 301,
+                          "validity": "30 Days",
+                          "desc": "50 GB data",
+                          "type": "Data Pack"
+                        },
+                        {
+                          "amount": 444,
+                          "validity": "60 Days",
+                          "desc": "100 GB data",
+                          "type": "Data Pack"
+                        },
+                        {
+                          "amount": 555,
+                          "validity": "55 Days",
+                          "desc": "55 GB data + JioTV, JioCinema, JioSecurity, JioCloud apps subscriptions",
+                          "type": "Data Pack"
+                        },
+                        {
+                          "amount": 667,
+                          "validity": "90 Days",
+                          "desc": "150 GB data",
+                          "type": "Data Pack"
+                        },
+                        {
+                          "amount": 2878,
+                          "validity": "365 Days",
+                          "desc": "2 GB/day data",
+                          "type": "Data Pack"
+                        }
+                      ],
+                      "sms": "No plan Found",
+                      "rate_cutter": "No plan Found",
+                      "twog": "No plan Found",
+                      "romaing": [
+                        {
+                          "amount": 501,
+                          "validity": "28 Days",
+                          "desc": "424.58 Talktime for ISD calling",
+                          "type": "International"
+                        }
+                      ],
+                      "combo": "No plan Found",
+                      "frc": [
+                        {
+                          "amount": 151,
+                          "validity": "existing",
+                          "desc": "8 GB data + Disney+ Hotstar Mobile (3 months) apps subscriptions",
+                          "type": "FRC/non-Prime"
+                        },
+                        {
+                          "amount": 333,
+                          "validity": "28 Days",
+                          "desc": "1.5 GB/day data + Unlimited calls + 100 SMS/day + Disney+ Hotstar Mobile (3 months), JioTV, JioCinema, JioSecurity, JioCloud apps subscriptions",
+                          "type": "FRC/non-Prime"
+                        },
+                        {
+                          "amount": 499,
+                          "validity": "28 Days",
+                          "desc": "2 GB/day data + Unlimited calls + 100 SMS/day + Disney+ Hotstar Mobile (12 months), JioTV, JioCinema, JioSecurity, JioCloud apps subscriptions",
+                          "type": "FRC/non-Prime"
+                        },
+                        {
+                          "amount": 555,
+                          "validity": "55 Days",
+                          "desc": "55 GB data + Disney+ Hotstar Mobile (12 months), JioTV, JioCinema, JioSecurity, JioCloud apps subscriptions",
+                          "type": "FRC/non-Prime"
+                        },
+                        {
+                          "amount": 583,
+                          "validity": "56 Days",
+                          "desc": "1.5 GB/day data + Unlimited calls + 100 SMS/day + Disney+ Hotstar Mobile (3 months), JioTV, JioCinema, JioSecurity, JioCloud apps subscriptions",
+                          "type": "FRC/non-Prime"
+                        },
+                        {
+                          "amount": 601,
+                          "validity": "28 Days",
+                          "desc": "3 GB/day + 6 GB data + Unlimited calls + 100 SMS/day + Disney+ Hotstar Mobile (12 months), JioTV, JioCinema, JioSecurity, JioCloud apps subscriptions",
+                          "type": "FRC/non-Prime"
+                        },
+                        {
+                          "amount": 659,
+                          "validity": "56 Days",
+                          "desc": "1.5 GB/day data + Disney+ Hotstar Mobile (12 months), JioTV, JioCinema, JioSecurity, JioCloud apps subscriptions",
+                          "type": "FRC/non-Prime"
+                        },
+                        {
+                          "amount": 799,
+                          "validity": "56 Days",
+                          "desc": "2 GB/day data + Unlimited calls + 100 SMS/day + Disney+ Hotstar Mobile (12 months), JioTV, JioCinema, JioSecurity, JioCloud apps subscriptions",
+                          "type": "FRC/non-Prime"
+                        },
+                        {
+                          "amount": 1066,
+                          "validity": "84 Days",
+                          "desc": "2 GB/day + 5 GB data + Unlimited calls + 100 SMS/day + Disney+ Hotstar Mobile (12 months), JioTV, JioCinema, JioSecurity, JioCloud apps subscriptions",
+                          "type": "FRC/non-Prime"
+                        },
+                        {
+                          "amount": 1499,
+                          "validity": "84 Days",
+                          "desc": "2 GB/day data + Unlimited calls + 100 SMS/day + Disney+ Hotstar Premium (12 months), JioTV, JioCinema, JioSecurity, JioCloud apps subscriptions",
+                          "type": "FRC/non-Prime"
+                        },
+                        {
+                          "amount": 2999,
+                          "validity": "365 Days",
+                          "desc": "2.5 GB/day data + Unlimited calls + 100 SMS/day + Disney+ Hotstar Mobile (12 months), JioTV, JioCinema, JioSecurity, JioCloud apps subscriptions",
+                          "type": "FRC/non-Prime"
+                        },
+                        {
+                          "amount": 4199,
+                          "validity": "365 Days",
+                          "desc": "3 GB/day data + Unlimited calls + 100 SMS/day + Disney+ Hotstar Premium (12 months), JioTV, JioCinema, JioSecurity, JioCloud apps subscriptions",
+                          "type": "FRC/non-Prime"
+                        }
+                      ],
+                      "jiophone": [
+                        {
+                          "amount": 26,
+                          "validity": "28 Days",
+                          "desc": "2 GB data[This recharge will only work in JioPhone]",
+                          "type": "JioPhone"
+                        },
+                        {
+                          "amount": 62,
+                          "validity": "28 Days",
+                          "desc": "6 GB data[This recharge will only work in JioPhone]",
+                          "type": "JioPhone"
+                        },
+                        {
+                          "amount": 75,
+                          "validity": "23 Days",
+                          "desc": "100 MB/Day + 200MB data + Unlimited calls + 50 SMS + JioTV, JioCinema, JioSecurity, JioCloud app subscriptions",
+                          "type": "JioPhone"
+                        },
+                        {
+                          "amount": 86,
+                          "validity": "28 Days",
+                          "desc": "0.5 GB/day data[ This recharge will only work in JioPhone ]",
+                          "type": "JioPhone"
+                        },
+                        {
+                          "amount": 91,
+                          "validity": "28 Days",
+                          "desc": "100 MB/day + 200 MB data + Unlimited calls + 50 + JioTV, JioCinema, JioSecurity, JioCloud apps subscriptions",
+                          "type": "JioPhone"
+                        },
+                        {
+                          "amount": 122,
+                          "validity": "28 Days",
+                          "desc": "1 GB/day data",
+                          "type": "JioPhone"
+                        },
+                        {
+                          "amount": 125,
+                          "validity": "23 Days",
+                          "desc": "0.5 GB/day data + Unlimited calls + 300 SMS + JioTV, JioCinema, JioSecurity, JioCloud app subscriptions",
+                          "type": "JioPhone"
+                        },
+                        {
+                          "amount": 152,
+                          "validity": "28 Days",
+                          "desc": "0.5 GB/day data + Unlimited calls + 300 SMS + JioTV, JioCinema, JioSecurity, JioCloud app subscriptions",
+                          "type": "JioPhone"
+                        },
+                        {
+                          "amount": 182,
+                          "validity": "28 Days",
+                          "desc": "2 GB/day data",
+                          "type": "JioPhone"
+                        },
+                        {
+                          "amount": 186,
+                          "validity": "28 Days",
+                          "desc": "1 GB/day data + Unlimited calls + 100 SMS/day + JioTV, JioCinema, JioSecurity, JioCloud app subscriptions",
+                          "type": "JioPhone"
+                        },
+                        {
+                          "amount": 223,
+                          "validity": "28 Days",
+                          "desc": "2 GB/day data + Unlimited calls + 100 SMS/day + JioTV, JioCinema, JioSecurity, JioCloud apps subscriptions",
+                          "type": "JioPhone"
+                        },
+                        {
+                          "amount": 895,
+                          "validity": "(336 (28 days * 12 cycles))",
+                          "desc": "2 GB/28 days data + Unlimited calls + 50 SMS/28 days + JioTV, JioCinema, JioSecurity, JioCloud app subscriptions",
+                          "type": "JioPhone"
+                        }
+                      ],
+                      "stv": "No plan Found"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                },
+                "example":{
+                    "code": "0x0201",
+                    "message": "Something went worng, Please try after sometimes.",
+                    "status": "FAILURE"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/service/recharge/plans/dth": {
+      "post": {
+        "tags": [
+          "Recharge APIs"
+        ],
+        "summary": "Operator Plan  (DTH)",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "example": {
+                  "operatorCode": "24",
+                  "circle": "5"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "basicAuth": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            },
+            "example": "application/json"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "headers": {
+              "Host": {
+                "schema": {
+                  "type": "number",
+                  "example": "127.0.0.1:8000"
+                }
+              },
+              "Date": {
+                "schema": {
+                  "type": "string",
+                  "example": "Sat, 04 May 2024 10:27:49 GMT"
+                }
+              },
+              "Connection": {
+                "schema": {
+                  "type": "string",
+                  "example": "close"
+                }
+              },
+              "X-Powered-By": {
+                "schema": {
+                  "type": "number",
+                  "example": "PHP/8.2.0"
+                }
+              },
+              "Cache-Control": {
+                "schema": {
+                  "type": "string",
+                  "example": "no-cache, private"
+                }
+              },
+              "Content-Type": {
+                "schema": {
+                  "type": "string",
+                  "example": "application/json"
+                }
+              },
+              "X-RateLimit-Limit": {
+                "schema": {
+                  "type": "integer",
+                  "example": "60"
+                }
+              },
+              "X-RateLimit-Remaining": {
+                "schema": {
+                  "type": "integer",
+                  "example": "58"
+                }
+              },
+              "Access-Control-Allow-Origin": {
+                "schema": {
+                  "type": "string",
+                  "example": "*"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                },
+                "example": {
+                  "code": "0x0200",
+                  "status": "SUCCESS",
+                  "message": "Operator Plan Successfully",
+                  "data": {
+                    "operator": "AIRTEL DTH",
+                    "circle": "",
+                    "plan": [
+                      {
+                        "amount": "799",
+                        "validity": "6 MONTHS",
+                        "planName": "UDP Pack",
+                        "desc": "Channels : 71 / RS 799 : 180 DAYS / RS 1349 : 360 DAYS "
+                      },
+                      {
+                        "amount": "1497",
+                        "validity": "6 MONTHS",
+                        "planName": "FREEDOM WB Dabang",
+                        "desc": "Channels : 90"
+                      },
+                      {
+                        "amount": "1498",
+                        "validity": "6 MONTHS",
+                        "planName": "FREEDOM Gujarat Dabang",
+                        "desc": "Channels : 94"
+                      },
+                      {
+                        "amount": "1499",
+                        "validity": "6 MONTHS",
+                        "planName": "FREEDOM Hindi Dabang",
+                        "desc": "Channels : 96"
+                      },
+                      {
+                        "amount": "153",
+                        "validity": "1 MONTHS",
+                        "planName": "BST ROI Pack",
+                        "desc": "Channels : 102 "
+                      },
+                      {
+                        "amount": "153",
+                        "validity": "1 MONTHS",
+                        "planName": "BST South Pack",
+                        "desc": "Channels : 102"
+                      },
+                      {
+                        "amount": "153.4",
+                        "validity": "1 MONTHS",
+                        "planName": "Welcome North",
+                        "desc": "NCF = Rs. 130 (w/o tax) + Rs. 23.4 (GST) = Rs.153.4 (Total Price with tax) for first 100 channels and Rs.20 (w/o tax) + Rs. 3.60 (GST) = Rs. 23.60 (Total price with tax) for every 25 additional channels thereof."
+                      },
+                      {
+                        "amount": "153.4",
+                        "validity": "1 MONTHS",
+                        "planName": "Welcome South",
+                        "desc": "NCF = Rs. 130 (w/o tax) + Rs. 23.4 (GST) = Rs.153.4 (Total Price with tax) for first 100 channels and Rs.20 (w/o tax) + Rs. 3.60 (GST) = Rs. 23.60 (Total price with tax) for every 25 additional channels thereof."
+                      },
+                      {
+                        "amount": "601",
+                        "validity": "3 MONTHS",
+                        "planName": "New Orissa SD",
+                        "desc": "Channels : 43 / RS 601 ME 97 DAY"
+                      },
+                      {
+                        "amount": "2266",
+                        "validity": "1 YEAR",
+                        "planName": "New MAH SD",
+                        "desc": "Channels : 43 / RS 618 ME 97 DAYS / RS1236 ME 195DAYS / RS2266 ME 360DAYS"
+                      },
+                      {
+                        "amount": "657",
+                        "validity": "3 MONTHS",
+                        "planName": "New Kerala SD Pack",
+                        "desc": "Channels : 53 / RS 657 ME 97 DAYS "
+                      },
+                      {
+                        "amount": "658",
+                        "validity": "3 MONTHS",
+                        "planName": "New WB SD Pack",
+                        "desc": "Channels : 47 / RS 658 ME 97 DAYS "
+                      },
+                      {
+                        "amount": "2641",
+                        "validity": "1 YEAR",
+                        "planName": "Hindi Value Lite SD Pack",
+                        "desc": "Channels : 73 / RS 718 ME 97 DAYS / RS 1441 ME 195 DAYS / RS 2641 ME 360 DAYS"
+                      },
+                      {
+                        "amount": "2643",
+                        "validity": "1 YEAR",
+                        "planName": "Gujarat Value Lite SD",
+                        "desc": "Channels : 65 / RS 719 ME 97DAYS / RS 1439 ME 195 DAYS / RS 2642 ME 360 DAYS"
+                      },
+                      {
+                        "amount": "2651",
+                        "validity": "1 YEAR",
+                        "planName": "New MAH HD",
+                        "desc": "Channels : 43 / RS 723 : 97 DAYS / RS 1446 : 195 DAYS / RS 2651 : 360 DAYS"
+                      },
+                      {
+                        "amount": "732",
+                        "validity": "3 MONTHS",
+                        "planName": "New WB HD",
+                        "desc": "Channels : 47 / RS 732 : 97 DAYS"
+                      },
+                      {
+                        "amount": "2793",
+                        "validity": "1 YEAR",
+                        "planName": "Gujarat Value Lite SD Pack (ZEE-TV18)_New",
+                        "desc": "Channels : 84 / RS 761 : 97 DAYS / RS 1523 : 195 DAYS / RS 2793 : 360 DAYS"
+                      },
+                      {
+                        "amount": "2794",
+                        "validity": "1 YEAR",
+                        "planName": "Hindi Value Lite SD Pack (ZEE-TV18)_New",
+                        "desc": "Channels : 84 / RS 762 : 97 DAYS / RS 1524 : 195 DAYS / RS 2794 : 360 DAYS"
+                      },
+                      {
+                        "amount": "819",
+                        "validity": "3 MONTHS",
+                        "planName": "New Karnataka SD plus",
+                        "desc": "Channels : 84 / RS 819 : 97 DAYS / RS"
+                      },
+                      {
+                        "amount": "2992",
+                        "validity": "1 YEAR",
+                        "planName": "WB Value Lite SD",
+                        "desc": "Channels : 74 / RS 816 : 97 DAYS / RS 1632 : 195 DAYS / RS 2992 : 360 DAYS"
+                      },
+                      {
+                        "amount": "3024",
+                        "validity": "1 YEAR",
+                        "planName": "Kerala Value Lite SD ",
+                        "desc": "Channels : 68 / RS 821 : 97 DAYS / RS 1646 : 195 DAYS / RS 3024 : 360 DAYS"
+                      },
+                      {
+                        "amount": "3026",
+                        "validity": "1 YEAR",
+                        "planName": "TN Value Lite SD ",
+                        "desc": "Channels : 83 / RS 822 : 97 DAYS / RS 1651 : 195 DAYS / RS 3026 : 360 DAYS"
+                      },
+                      {
+                        "amount": "3023",
+                        "validity": "1 YEAR",
+                        "planName": "Orissa Value Lite SD",
+                        "desc": "Channels : 76 / RS 823 : 97 DAYS / RS 1644 : 195 DAYS / RS 3023 : 360 DAYS"
+                      },
+                      {
+                        "amount": "831",
+                        "validity": "3 MONTHS",
+                        "planName": "New Kerala HD",
+                        "desc": "Channels : 53 / RS 831 : 97 DAYS"
+                      },
+                      {
+                        "amount": "837",
+                        "validity": "3 MONTHS",
+                        "planName": "New AP SD plus",
+                        "desc": "Channels : 72 / RS 837 : 97 DAYS "
+                      },
+                      {
+                        "amount": "280",
+                        "validity": "1 MONTHS",
+                        "planName": "Dabang SD",
+                        "desc": "Channels : 95"
+                      },
+                      {
+                        "amount": "3136",
+                        "validity": "1 YEAR",
+                        "planName": "Karnataka Value Lite SD",
+                        "desc": "Channels : 82 / RS 854 : 97 DAYS / RS 1711 : 195 DAYS / RS 3136 : 360 DAYS"
+                      },
+                      {
+                        "amount": "3146",
+                        "validity": "1 YEAR",
+                        "planName": "Gujarat Value Lite HD",
+                        "desc": "Channels : 69 / RS 858 : 97 DAYS / RS 1716 : 195 DAYS / RS 3146 : 360 DAYS"
+                      },
+                      {
+                        "amount": "3147",
+                        "validity": "1 YEAR",
+                        "planName": "Marathi Dabang Sports ",
+                        "desc": "Channels : 84 / RS 859 : 97 DAYS / RS 1717 : 195 DAYS / RS 3147 : 360 DAYS"
+                      },
+                      {
+                        "amount": "867",
+                        "validity": "3 MONTHS",
+                        "planName": "New Karnataka HD",
+                        "desc": "Channels : 64 /RS 867 : 97 DAYS"
+                      },
+                      {
+                        "amount": "3196",
+                        "validity": "1 YEAR",
+                        "planName": "Dabang Sports",
+                        "desc": "Channels : 97 / RS 871 : 97 DAYS / RS 1741 : 195 DAYS / RS 3196 : 360 DAYS"
+                      },
+                      {
+                        "amount": "3192",
+                        "validity": "1 YEAR",
+                        "planName": "WB Dabang Sports",
+                        "desc": "Channels : 85 / RS 872 : 97 DAYS / RS 1742 : 195 DAYS / RS 3192 : 360 DAYS"
+                      },
+                      {
+                        "amount": "3193",
+                        "validity": "1 YEAR",
+                        "planName": "Guj Dabang Sports",
+                        "desc": "Channels : 87 / RS 873 : 97 DAYS / RS 1743 : 195 DAYS / RS 3193 : 360 DAYS"
+                      },
+                      {
+                        "amount": "3201",
+                        "validity": "1 YEAR",
+                        "planName": "Hindi Value Lite HD Pack (ZEE-TV18)_New",
+                        "desc": "Channels : 85 / RS 868 : 97 DAYS / RS 1746 : 195 DAYS / RS 3201 : 360 DAYS"
+                      },
+                      {
+                        "amount": "3202",
+                        "validity": "1 YEAR",
+                        "planName": "Gujarat Value Lite HD Pack (ZEE-TV18)",
+                        "desc": "Channels : 85 / RS 869 : 97 DAYS / RS 1733 : 195 DAYS / RS 3202 : 360 DAYS"
+                      },
+                      {
+                        "amount": "3212",
+                        "validity": "1 YEAR",
+                        "planName": "Hindi Value Lite HD Pack",
+                        "desc": "Channels : 78 / RS 876 : 97 DAYS / RS 1752 : 195 DAYS / RS 3212 : 360 DAYS"
+                      },
+                      {
+                        "amount": "3223",
+                        "validity": "1 YEAR",
+                        "planName": "AP Value Lite SD",
+                        "desc": "Channels : 75 / RS 879 : 97 DAYS / RS 1758 : 195 DAYS / RS 3223 : 360 DAYS"
+                      },
+                      {
+                        "amount": "295",
+                        "validity": "1 MONTHS",
+                        "planName": "New TN HD Pack",
+                        "desc": "Channels : 66"
+                      },
+                      {
+                        "amount": "3246",
+                        "validity": "1 YEAR",
+                        "planName": "MAH Value Lite SD",
+                        "desc": "Channels : 92 / RS 884 : 97 DAYS / RS 1769 : 195 DAYS / RS 3246 : 360 DAYS"
+                      },
+                      {
+                        "amount": "3196",
+                        "validity": "1 YEAR",
+                        "planName": "Oriya Dabang Sports",
+                        "desc": "Channels : 85 / RS 886 : 97 DAYS / RS 1771 : 195 DAYS / RS 3196 : 360 DAYS"
+                      },
+                      {
+                        "amount": "3564",
+                        "validity": "1 YEAR",
+                        "planName": "Kerala Value Lite HD ",
+                        "desc": "Channels : 65 / RS 972 : 97 DAYS / RS 1944 : 195 DAYS / RS 3564 360 DAYS"
+                      },
+                      {
+                        "amount": "3653",
+                        "validity": "1 YEAR",
+                        "planName": "WB Value Sports lite Pack",
+                        "desc": "Channels : 107 / RS 1973 : 195 DAYS / RS 3653 : 360 DAYS "
+                      },
+                      {
+                        "amount": "3654",
+                        "validity": "1 YEAR",
+                        "planName": "Hindi Value Sports lite Pack",
+                        "desc": "Channels : 110 / RS 1994 : 195 DAYS / RS 3654 : 360 DAYS"
+                      },
+                      {
+                        "amount": "3663",
+                        "validity": "1 YEAR",
+                        "planName": "Orissa Value Sports SD ",
+                        "desc": "Channels : 107 / RS 1001 : 97 DAYS / RS 1998 : 195 / RS 3663 : 360 DAYS"
+                      },
+                      {
+                        "amount": "3664",
+                        "validity": "1 YEAR",
+                        "planName": "Kerala Value Plus SD ",
+                        "desc": "Channels : 90 / RS 1002 : 97 DAYS / RS 2001 : 195 DAYS / RS 3664 : 360 DAYS"
+                      },
+                      {
+                        "amount": "3662",
+                        "validity": "1 YEAR",
+                        "planName": "AP Value Lite HD Pack",
+                        "desc": "Channels : 75 / RS 999 : 97 DAYS / RS 1997 : 195 DAYS / RS 3662 : 360 DAYS"
+                      },
+                      {
+                        "amount": "3686",
+                        "validity": "1 YEAR",
+                        "planName": "MAH Value Sports lite",
+                        "desc": "Channels : 106 / RS 2011 : 195 DAYS / RS 3686 : 360 DAYS "
+                      },
+                      {
+                        "amount": "3696",
+                        "validity": "1 YEAR",
+                        "planName": "Gujarat Value Sports SD",
+                        "desc": "Channels : 110 / RS 1008 : 97 DAYS / RS 2016 : 195 DAYS / RS 3696 : 360 DAYS"
+                      },
+                      {
+                        "amount": "3741",
+                        "validity": "1 YEAR",
+                        "planName": "TN Value Sports SD",
+                        "desc": "Channels : 98 / RS 1021 : 97 DAYS / RS 2041 : 195 DAYS / RS 3741 : 360 DAYS"
+                      },
+                      {
+                        "amount": "343",
+                        "validity": "1 MONTHS",
+                        "planName": "Karnataka Value Plus SD",
+                        "desc": "Channels : 110 "
+                      },
+                      {
+                        "amount": "350",
+                        "validity": "1 MONTHS",
+                        "planName": "AP Value Plus SD",
+                        "desc": "Channels : 105"
+                      },
+                      {
+                        "amount": "3849",
+                        "validity": "1 YEAR",
+                        "planName": "WB Value Lite HD",
+                        "desc": "Channels : 77 / RS 1048 : 97 DAYS / RS 2094 : 195 DAYS / RS 3849 : 360 DAYS"
+                      },
+                      {
+                        "amount": "3861",
+                        "validity": "1 YEAR",
+                        "planName": "Orissa Value Lite HD",
+                        "desc": "Channels : 78 / RS 1053 : 97 DAYS / RS 2096 : 195 DAY / RS 3861 : 360 DAY"
+                      },
+                      {
+                        "amount": "352",
+                        "validity": "1 MONTHS",
+                        "planName": "Hindi Value Sports SD",
+                        "desc": "Channels : 117"
+                      },
+                      {
+                        "amount": "352",
+                        "validity": "1 MONTHS",
+                        "planName": "MAH Value Sports SD plus",
+                        "desc": "Channels : 112"
+                      },
+                      {
+                        "amount": "352",
+                        "validity": "1 MONTHS",
+                        "planName": "WB Value Sports SD plus",
+                        "desc": "Channels : 113"
+                      },
+                      {
+                        "amount": "3952",
+                        "validity": "1 YEAR",
+                        "planName": "Freedom Entertainment HD Pack",
+                        "desc": "Channels : 107 / RS 1007 : 97 / RS 1949 : 195 DAYS / RS 3952 : 360 DAYS"
+                      },
+                      {
+                        "amount": "3953",
+                        "validity": "1 YEAR",
+                        "planName": "MAH Value Lite HD",
+                        "desc": "Channels : 90 / RS 1071 : 97 DAYS / RS 2151 : 195 DAYS / RS 3953 : 360 DAYS"
+                      },
+                      {
+                        "amount": "3954",
+                        "validity": "1 YEAR",
+                        "planName": "Dabang Sports HD",
+                        "desc": "Channels : 93 / RS 1073 : 97 DAYS / RS 2153 : 195 DAYS / RS 3954 : 360 DAYS"
+                      },
+                      {
+                        "amount": "3956",
+                        "validity": "1 YEAR",
+                        "planName": "WB Dabang Sports HD",
+                        "desc": "Channels : 86 / RS 1074 : 97 DAYS / RS 2156 : 195 DAYS / RS 3956 : 360 DAYS"
+                      },
+                      {
+                        "amount": "3957",
+                        "validity": "1 YEAR",
+                        "planName": "Guj Dabang Sports HD",
+                        "desc": "Channels : 91 / RS 1076 : 97 DAYS / RS 2157 : 197 DAYS / RS 3957 : 360 DAYS"
+                      },
+                      {
+                        "amount": "3958",
+                        "validity": "1 YEAR",
+                        "planName": "Marathi Dabang Sports HD",
+                        "desc": "Channels : 86 / RS 1078 : 97 DAYS / RS 2158 : 195 DAYS / RS 3958 : 360 DAYS"
+                      },
+                      {
+                        "amount": "3959",
+                        "validity": "1 YEAR",
+                        "planName": "Oriya Dabang Sports HD",
+                        "desc": "Channels : 87 / RS 1079 : 97 DAYS / RS 2159 : 195 DAYS / RS 3959 : 360 DAYS"
+                      },
+                      {
+                        "amount": "3971",
+                        "validity": "1 YEAR",
+                        "planName": "Karnataka Value Lite HD",
+                        "desc": "Channels : 82 / RS 1072 : 97 DAYS / RS 2152 : 195 DAYS / RS 3971 : 360 DAYS"
+                      },
+                      {
+                        "amount": "3851",
+                        "validity": "1 YEAR",
+                        "planName": "Dabang HD ",
+                        "desc": "Channels : 102 / RS 2101 : 195 DAYS / RS 3851 : 360 DAYS"
+                      },
+                      {
+                        "amount": "4158",
+                        "validity": "1 YEAR",
+                        "planName": "Karnataka Value Sports SD ",
+                        "desc": "Channels : 114 / RS 1134 : 97 DAYS / RS 2268 : 195 DAY / RS 4158 : 360 DAY"
+                      },
+                      {
+                        "amount": "4234",
+                        "validity": "1 YEAR",
+                        "planName": "TN Value Lite HD",
+                        "desc": "Channels : 83 / RS 1155 : 97 DAYS / RS 2311 : 195 DAY / RS 4234 : 360 DAY"
+                      },
+                      {
+                        "amount": "3895",
+                        "validity": "6 MONTHS",
+                        "planName": "MAH Mega 6M HD",
+                        "desc": "Channels : 159 / RS 3896 ME 195 DAYS /"
+                      },
+                      {
+                        "amount": "4291",
+                        "validity": "1 YEAR",
+                        "planName": "AP Value Sports SD",
+                        "desc": "Channels : 109 / RS 1171 : 97 DAYS / RS 2341 : 95 DAYS / RS 4291 : 360 DAY"
+                      },
+                      {
+                        "amount": "4653",
+                        "validity": "1 YEAR",
+                        "planName": "Freedom Sports & Kids HD Pack_Oriya",
+                        "desc": "Channels : 107 / RS 1185 : 97 DAYS / RS 2327 : 195 DAYS / RS 4653 : 60 DAY"
+                      },
+                      {
+                        "amount": "4521",
+                        "validity": "1 YEAR",
+                        "planName": "Freedom Sports & Kids HD Pack_Guj",
+                        "desc": "Channels : 114 / RS 4521 : 360 DAY "
+                      },
+                      {
+                        "amount": "412",
+                        "validity": "1 MONTHS",
+                        "planName": "Kerala Value Plus HD Pack",
+                        "desc": "Channels : 89"
+                      },
+                      {
+                        "amount": "422",
+                        "validity": "1 MONTHS",
+                        "planName": "Karnataka Value Plus HD",
+                        "desc": "Channels : 93"
+                      },
+                      {
+                        "amount": "425",
+                        "validity": "1 MONTHS",
+                        "planName": "TN My Family SD",
+                        "desc": "Channels : 120"
+                      },
+                      {
+                        "amount": "4686",
+                        "validity": "1 YEAR",
+                        "planName": "Freedom Sports & Kids HD",
+                        "desc": "Channels : 119 / RS 4686 : 360 DAYS "
+                      },
+                      {
+                        "amount": "4714",
+                        "validity": "1 YEAR",
+                        "planName": "Freedom Sports & Kids HD Pack_WB",
+                        "desc": "Channels : 116 / RS 4714 : 360 DAY"
+                      },
+                      {
+                        "amount": "4752",
+                        "validity": "1 YEAR",
+                        "planName": "Freedom Sports & Kids HD Pack_Mah",
+                        "desc": "Channels : 114 / RS 4752 : 360 DAYS"
+                      },
+                      {
+                        "amount": "433",
+                        "validity": "1 MONTHS",
+                        "planName": "Kerala Mega SD",
+                        "desc": "Channels : 115"
+                      },
+                      {
+                        "amount": "437",
+                        "validity": "1 MONTHS",
+                        "planName": "MAH My Family SD",
+                        "desc": "Channels : 136"
+                      },
+                      {
+                        "amount": "437",
+                        "validity": "1 MONTHS",
+                        "planName": "WB My Family SD",
+                        "desc": "Channels : 132"
+                      },
+                      {
+                        "amount": "447",
+                        "validity": "1 MONTHS",
+                        "planName": "Karnataka My Family SD",
+                        "desc": "Channels : 120"
+                      },
+                      {
+                        "amount": "449",
+                        "validity": "1 MONTHS",
+                        "planName": "Hindi My Family SD",
+                        "desc": "Channels : 141"
+                      },
+                      {
+                        "amount": "455",
+                        "validity": "1 MONTHS",
+                        "planName": "Gujarat Value Sports HD",
+                        "desc": "Channels : 117"
+                      },
+                      {
+                        "amount": "465",
+                        "validity": "1 MONTHS",
+                        "planName": "TN Mega SD",
+                        "desc": "Channels : 137"
+                      },
+                      {
+                        "amount": "4676",
+                        "validity": "1 YEAR",
+                        "planName": "TN My Family",
+                        "desc": "Channels : 120/ RS 4676 ME Day : 360 /"
+                      },
+                      {
+                        "amount": "472",
+                        "validity": "1 MONTHS",
+                        "planName": "Karnataka Mega SD",
+                        "desc": "Channels : 136"
+                      },
+                      {
+                        "amount": "4763",
+                        "validity": "1 YEAR",
+                        "planName": "Kerala Mega",
+                        "desc": "Channels : 115/Day : 360"
+                      },
+                      {
+                        "amount": "4803",
+                        "validity": "1 YEAR",
+                        "planName": "WB My Family",
+                        "desc": "Channels : 132/Day : 360"
+                      },
+                      {
+                        "amount": "4807",
+                        "validity": "1 YEAR",
+                        "planName": "MAH My Family",
+                        "desc": "Channels : 136/ RS 4807 ME Day : 360"
+                      },
+                      {
+                        "amount": "4809",
+                        "validity": "1 YEAR",
+                        "planName": "Gujarat My Family",
+                        "desc": "Channels : 139/Day : 360"
+                      },
+                      {
+                        "amount": "485",
+                        "validity": "1 MONTHS",
+                        "planName": "Hindi Mega SD",
+                        "desc": "Channels : 149"
+                      },
+                      {
+                        "amount": "485",
+                        "validity": "1 MONTHS",
+                        "planName": "MAH Mega SD",
+                        "desc": "Channels : 151"
+                      },
+                      {
+                        "amount": "485",
+                        "validity": "1 MONTHS",
+                        "planName": "WB Mega SD",
+                        "desc": "Channels : 145"
+                      },
+                      {
+                        "amount": "485",
+                        "validity": "1 MONTHS",
+                        "planName": "Gujarat Mega SD",
+                        "desc": "Channels : 154"
+                      },
+                      {
+                        "amount": "4917",
+                        "validity": "1 YEAR",
+                        "planName": "Karnataka My Family",
+                        "desc": "Channels : 120/Day : 360"
+                      },
+                      {
+                        "amount": "4939",
+                        "validity": "1 YEAR",
+                        "planName": "Hindi My Family",
+                        "desc": "Channels : 141 and Day 360"
+                      },
+                      {
+                        "amount": "4948",
+                        "validity": "1 YEAR",
+                        "planName": "Orissa My Family SD",
+                        "desc": "Channels : 137/ RS 4948 ME Day : 360"
+                      },
+                      {
+                        "amount": "495",
+                        "validity": "1 MONTHS",
+                        "planName": "AP Mega SD",
+                        "desc": "Channels : 139"
+                      },
+                      {
+                        "amount": "5006",
+                        "validity": "1 YEAR",
+                        "planName": "Gujarat Value Sports 12M HD",
+                        "desc": "Channels : 117 and Day 360"
+                      },
+                      {
+                        "amount": "503",
+                        "validity": "1 MONTHS",
+                        "planName": "Orissa Mega SD",
+                        "desc": "Channels : 152"
+                      },
+                      {
+                        "amount": "2791",
+                        "validity": "6 MONTHS",
+                        "planName": "Orissa Value Sports HD ",
+                        "desc": "Channels : 112 / RS 1396 : 97 DAYS / RS 2791 : 195 DAYS / RS 5116 : 360 DAY"
+                      },
+                      {
+                        "amount": "5117",
+                        "validity": "1 YEAR",
+                        "planName": "TN Mega",
+                        "desc": "Channels : 137 and Day 360"
+                      },
+                      {
+                        "amount": "2821",
+                        "validity": "6 MONTHS",
+                        "planName": "TN Value Sports HD",
+                        "desc": "Channels : 95 / RS 1412 : 97 DAYS / RS 2821 : 195 DAY / RS 5171 : 360"
+                      },
+                      {
+                        "amount": "518",
+                        "validity": "1 MONTHS",
+                        "planName": "Hindi My Family HD",
+                        "desc": "Channels : 137"
+                      },
+                      {
+                        "amount": "519",
+                        "validity": "1 MONTHS",
+                        "planName": "Kerala Mega HD",
+                        "desc": "Channels : 120"
+                      },
+                      {
+                        "amount": "5192",
+                        "validity": "1 YEAR",
+                        "planName": "Karnataka Mega",
+                        "desc": "Channels : 136 and Day 360"
+                      },
+                      {
+                        "amount": "2849",
+                        "validity": "6 MONTHS",
+                        "planName": "AP My Family SD ",
+                        "desc": "Channels : 134 / RS 1424 : 97 DAYS / RS 2849 : 195 DAYS / RS 5224 : 360 DAY"
+                      },
+                      {
+                        "amount": "2851",
+                        "validity": "6 MONTHS",
+                        "planName": "AP Value Plus HD ",
+                        "desc": "Channels : 107 / RS 1426 : 97 DAYS / RS 2851 : 195 DAY / RS 5226 : 360 DAY"
+                      },
+                      {
+                        "amount": "2868",
+                        "validity": "6 MONTHS",
+                        "planName": "WB Value Sports HD ",
+                        "desc": "Channels : 120 / RS 1434 : 97 DAYS / RS 2868 : 195 DAYS / RS 5258 : 360 DAYS"
+                      },
+                      {
+                        "amount": "2883",
+                        "validity": "6 MONTHS",
+                        "planName": "Hindi Value Sports lite HD",
+                        "desc": "Channels : 118 / RS 2883 : 195 DAYS / RS 5283 : 360 DAYS"
+                      },
+                      {
+                        "amount": "5334",
+                        "validity": "1 YEAR",
+                        "planName": "WB Mega",
+                        "desc": "Channels : 145 and Day 360"
+                      },
+                      {
+                        "amount": "5336",
+                        "validity": "1 YEAR",
+                        "planName": "Hindi Mega",
+                        "desc": "Channels : 149 and Day 360"
+                      },
+                      {
+                        "amount": "5337",
+                        "validity": "1 YEAR",
+                        "planName": "Gujarat Mega",
+                        "desc": "Channels : 154 and Day 360"
+                      },
+                      {
+                        "amount": "5338",
+                        "validity": "1 YEAR",
+                        "planName": "MAH Mega",
+                        "desc": "Channels : 151 and Day 360"
+                      },
+                      {
+                        "amount": "544",
+                        "validity": "1 MONTHS",
+                        "planName": "Karnataka My Family HD",
+                        "desc": "Channels : 118"
+                      },
+                      {
+                        "amount": "5446",
+                        "validity": "1 YEAR",
+                        "planName": "AP Mega",
+                        "desc": "Channels : 139 and Day 360"
+                      },
+                      {
+                        "amount": "2974",
+                        "validity": "6 MONTHS",
+                        "planName": "Hindi Value Sports HD",
+                        "desc": "Channels : 124 / RS 1487 : 97 DAYS / RS 2974 : 195 DAY / RS 5447 : 360 DAYS"
+                      },
+                      {
+                        "amount": "5501",
+                        "validity": "1 YEAR",
+                        "planName": "TN My Family HD",
+                        "desc": "Channels : 113 and Day 360"
+                      },
+                      {
+                        "amount": "3894",
+                        "validity": "6 MONTHS",
+                        "planName": "Orissa Mega",
+                        "desc": "Channels : 152 / RS 5533 ME Day 360 / RS 3894 ME 195 DAYS Channels : 160 /"
+                      },
+                      {
+                        "amount": "562",
+                        "validity": "1 MONTHS",
+                        "planName": "WB My Family HD",
+                        "desc": "Channels : 138"
+                      },
+                      {
+                        "amount": "5698",
+                        "validity": "1 YEAR",
+                        "planName": "Hindi My Family HD",
+                        "desc": "Channels : 137 and Day 360"
+                      },
+                      {
+                        "amount": "5709",
+                        "validity": "1 YEAR",
+                        "planName": "Kerala Mega 12M HD ",
+                        "desc": "Channels : 120 and Day 360"
+                      },
+                      {
+                        "amount": "5984",
+                        "validity": "1 YEAR",
+                        "planName": "Karnataka My Family HD ",
+                        "desc": "Channels : 118 and Day 360"
+                      },
+                      {
+                        "amount": "6052",
+                        "validity": "1 YEAR",
+                        "planName": "Gujarat My Family HD",
+                        "desc": "Channels : 146 and Day 360"
+                      },
+                      {
+                        "amount": "6272",
+                        "validity": "1 YEAR",
+                        "planName": "MAH My Family HD",
+                        "desc": "Channels : 135 and Day 360"
+                      },
+                      {
+                        "amount": "6316",
+                        "validity": "1 YEAR",
+                        "planName": "Orissa My Family HD ",
+                        "desc": "Channels : 144 and Day 360"
+                      },
+                      {
+                        "amount": "6424",
+                        "validity": "1 YEAR",
+                        "planName": "AP My Family HD",
+                        "desc": "Channels : 132 and Day 360"
+                      },
+                      {
+                        "amount": "649",
+                        "validity": "1 MONTHS",
+                        "planName": "Orissa Mega HD",
+                        "desc": "Channels : 160"
+                      },
+                      {
+                        "amount": "6711",
+                        "validity": "1 YEAR",
+                        "planName": "TN Mega HD",
+                        "desc": "Channels : 140 and Day 360"
+                      },
+                      {
+                        "amount": "6787",
+                        "validity": "1 YEAR",
+                        "planName": "Karnataka Mega HD",
+                        "desc": "Channels : 142 and Day 360"
+                      },
+                      {
+                        "amount": "6876",
+                        "validity": "1 YEAR",
+                        "planName": "Hindi Mega HD",
+                        "desc": "Channels : 157/Day : 360"
+                      },
+                      {
+                        "amount": "6877",
+                        "validity": "1 YEAR",
+                        "planName": "Gujarat Mega HD",
+                        "desc": "Channels : 162/Day : 360"
+                      },
+                      {
+                        "amount": "7007",
+                        "validity": "1 YEAR",
+                        "planName": "WB Mega HD ",
+                        "desc": "Channels : 152/Day : 360"
+                      },
+                      {
+                        "amount": "7106",
+                        "validity": "1 YEAR",
+                        "planName": "AP Mega HD",
+                        "desc": "Channels : 145/Day : 360"
+                      },
+                      {
+                        "amount": "7139",
+                        "validity": "1 YEAR",
+                        "planName": "Orissa Mega HD ",
+                        "desc": "Channels : 160/Day : 360"
+                      },
+                      {
+                        "amount": "7141",
+                        "validity": "1 YEAR",
+                        "planName": "MAH Mega 12M HD",
+                        "desc": "Channels : 159/Day : 360"
+                      },
+                      {
+                        "amount": "88.50",
+                        "validity": "1 MONTHS",
+                        "planName": "Star All South Value",
+                        "desc": "15 channels "
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                },
+                "example":{
+                    "code": "0x0201",
+                    "message": "Something went worng, Please try after sometimes.",
+                    "status": "FAILURE"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/service/recharge/offers": {
+      "post": {
+        "tags": [
+          "Recharge APIs"
+        ],
+        "summary": "Offers",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "example": {
+                  "mobile": "7880383325",
+                  "operatorCode": "2"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "basicAuth": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            },
+            "example": "application/json"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "headers": {
+              "Host": {
+                "schema": {
+                  "type": "number",
+                  "example": "127.0.0.1:8000"
+                }
+              },
+              "Date": {
+                "schema": {
+                  "type": "string",
+                  "example": "Sat, 04 May 2024 10:29:41 GMT"
+                }
+              },
+              "Connection": {
+                "schema": {
+                  "type": "string",
+                  "example": "close"
+                }
+              },
+              "X-Powered-By": {
+                "schema": {
+                  "type": "number",
+                  "example": "PHP/8.2.0"
+                }
+              },
+              "Cache-Control": {
+                "schema": {
+                  "type": "string",
+                  "example": "no-cache, private"
+                }
+              },
+              "Content-Type": {
+                "schema": {
+                  "type": "string",
+                  "example": "application/json"
+                }
+              },
+              "X-RateLimit-Limit": {
+                "schema": {
+                  "type": "integer",
+                  "example": "60"
+                }
+              },
+              "X-RateLimit-Remaining": {
+                "schema": {
+                  "type": "integer",
+                  "example": "58"
+                }
+              },
+              "Access-Control-Allow-Origin": {
+                "schema": {
+                  "type": "string",
+                  "example": "*"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                },
+                "example": {
+                  "code": "0x0200",
+                  "status": "SUCCESS",
+                  "message": "Offer Successfully Checked",
+                  "data": {
+                    "mobile": "7880383325",
+                    "plan": [
+                      {
+                        "amount": "155",
+                        "offerText": "Get 1GB data and 24 days of validity at just Rs155",
+                        "desc": "155=Unlimited call, 1GB data aur 300 SMS, 24 din"
+                      },
+                      {
+                        "amount": "239",
+                        "offerText": "Get 1.5GB/day data and 28 days of validity at just Rs239",
+                        "desc": "RC239=Unlimited call, 1.5GB/din, 100SMS/din, 28din"
+                      },
+                      {
+                        "amount": "329",
+                        "offerText": "Get 5GB data and 56 days of validity at just Rs329",
+                        "desc": "329=Unlimited call, 5GB data aur 300 SMS, 56 din"
+                      },
+                      {
+                        "amount": "666",
+                        "offerText": "Get 1.5GB/day data and 84 days of validity at just Rs666",
+                        "desc": "RC666=UL call, 1.5GB/D, 84D (Sirf Rs.222/mahina)"
+                      },
+                      {
+                        "amount": "299",
+                        "offerText": "Get 2GB/day data and 28 days of validity at just Rs299",
+                        "desc": "RC299=Unlimited call, 2GB/din, 100SMS/din,28 din"
+                      },
+                      {
+                        "amount": "209",
+                        "offerText": "Get 1GB/day data and 28 days of validity at just Rs209",
+                        "desc": "RC209=Unltd call, 1GB/din, 100SMS/din, 28 din"
+                      },
+                      {
+                        "amount": "399",
+                        "offerText": "Xstream Play for 28 days & 3GB/day at just Rs399",
+                        "desc": "399=20+ OTTs Xstream Play par,ULCL,3GB/D, 28D"
+                      },
+                      {
+                        "amount": "179",
+                        "offerText": "Get 2GB data and 28 days of validity at just Rs179",
+                        "desc": "RC179=Unlimited call, 2GB data aur 300 SMS, 28 din"
+                      },
+                      {
+                        "amount": "719",
+                        "offerText": "Get 2GB/day data and 84 days of validity at just Rs719",
+                        "desc": "719=Unltd call, 2GB/din aur 100 SMS/din, 84 din"
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                },
+                "example":{
+                    "code": "0x0201",
+                    "message": "Something went worng, Please try after sometimes.",
+                    "status": "FAILURE"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/service/recharge/initiate": {
+      "post": {
+        "tags": [
+          "Recharge APIs"
+        ],
+        "summary": "Recharge Init",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "example": {
+                  "amount": "10",
+                  "clientRefId": "2337438",
+                  "mobile": "7880383325",
+                  "circle": "54",
+                  "operatorCode": "ATEL"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "basicAuth": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "headers": {
+              "Host": {
+                "schema": {
+                  "type": "number",
+                  "example": "127.0.0.1:8000"
+                }
+              },
+              "Date": {
+                "schema": {
+                  "type": "string",
+                  "example": "Mon, 06 May 2024 05:47:05 GMT"
+                }
+              },
+              "Connection": {
+                "schema": {
+                  "type": "string",
+                  "example": "close"
+                }
+              },
+              "X-Powered-By": {
+                "schema": {
+                  "type": "number",
+                  "example": "PHP/8.2.0"
+                }
+              },
+              "Cache-Control": {
+                "schema": {
+                  "type": "string",
+                  "example": "no-cache, private"
+                }
+              },
+              "Content-Type": {
+                "schema": {
+                  "type": "string",
+                  "example": "application/json"
+                }
+              },
+              "X-RateLimit-Limit": {
+                "schema": {
+                  "type": "integer",
+                  "example": "60"
+                }
+              },
+              "X-RateLimit-Remaining": {
+                "schema": {
+                  "type": "integer",
+                  "example": "58"
+                }
+              },
+              "Access-Control-Allow-Origin": {
+                "schema": {
+                  "type": "string",
+                  "example": "*"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                },
+                "example": {
+                  "code": "0x0200",
+                  "status": "SUCCESS",
+                  "message": "Recharge successfully.",
+                  "data": {
+                    "clientRefId": "2345653347438",
+                    "txnId": 4751864,
+                    "operatorTxnId": "6794198934",
+                    "mobile": "8004007231",
+                    "orderId": "REC4087931046300320CC",
+                    "message": "Request is successfull!"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                },
+                "example":{
+                    "code": "0x0201",
+                    "message": "Something went worng, Please try after sometimes.",
+                    "status": "FAILURE"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/service/recharge/status": {
+      "get": {
+        "tags": [
+          "Recharge APIs"
+        ],
+        "summary": "Status Check",
+        "parameters": [
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            },
+            "example": "application/json"
+          }
+        ],
+        "security": [
+          {
+            "basicAuth": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "headers": {
+              "Host": {
+                "schema": {
+                  "type": "number",
+                  "example": "127.0.0.1:8000"
+                }
+              },
+              "Date": {
+                "schema": {
+                  "type": "string",
+                  "example": "Sat, 04 May 2024 10:10:51 GMT"
+                }
+              },
+              "Connection": {
+                "schema": {
+                  "type": "string",
+                  "example": "close"
+                }
+              },
+              "X-Powered-By": {
+                "schema": {
+                  "type": "number",
+                  "example": "PHP/8.2.0"
+                }
+              },
+              "Cache-Control": {
+                "schema": {
+                  "type": "string",
+                  "example": "no-cache, private"
+                }
+              },
+              "Content-Type": {
+                "schema": {
+                  "type": "string",
+                  "example": "application/json"
+                }
+              },
+              "X-RateLimit-Limit": {
+                "schema": {
+                  "type": "integer",
+                  "example": "60"
+                }
+              },
+              "X-RateLimit-Remaining": {
+                "schema": {
+                  "type": "integer",
+                  "example": "59"
+                }
+              },
+              "Access-Control-Allow-Origin": {
+                "schema": {
+                  "type": "string",
+                  "example": "*"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                },
+                "example": {
+                  "code": "0x0200",
+                  "status": "SUCCESS",
+                  "message": "Recharge Success",
+                  "data": {
+                    "mobile": "9651807986",
+                    "operator": "VODAFONE",
+                    "amount": 10,
+                    "status": "success",
+                    "circle": "UP(East)",
+                    "txnId": 4272176,
+                    "operatorTxnId": "MPR2404021320250055",
+                    "orderId": "REC2700893506461518E9D42",
+                    "message": "Success",
+                    "clientRefId": "REC2700893506461518E9D42"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                },
+                "example":{
+                    "code": "0x0201",
+                    "message": "Something went worng, Please try after sometimes.",
+                    "status": "FAILURE"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/service/recharge/complaint": {
+      "post": {
+        "tags": [
+          "Recharge APIs"
+        ],
+        "summary": "Complaint",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "example": {
+                "mobile": "8004007231",
+                "clientRefId": "2345653347438",
+                "remark": "recharge not received",
+                "operatorTxnId": "MPR2404021320250055",
+                "orderId": "REC2700893506461518E9D42",
+                "code": "0x0200",
+                "status": "SUCCESS",
+                "message": "Recharge Success",
+                  "data": {
+                    "mobile": "8004007231",
+                    "operator": "BSNL Topup",
+                    "amount": 10,
+                    "status": "success",
+                    "circle": "UP(East)",
+                    "txnId": 4751864,
+                    "operatorTxnId": "6794198934",
+                    "orderId": "REC4087931046300320CC",
+                    "message": "Success",
+                    "clientRefId": "REC4087931046300320CC"
+                  }
+
+                }
+              } 
+            }
+          }
+        },
+        "security": [
+          {
+            "basicAuth": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            },
+            "example": "application/json"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "headers": {
+              "Host": {
+                "schema": {
+                  "type": "number",
+                  "example": "127.0.0.1:8000"
+                }
+              },
+              "Date": {
+                "schema": {
+                  "type": "string",
+                  "example": "Sat, 04 May 2024 10:20:11 GMT"
+                }
+              },
+              "Connection": {
+                "schema": {
+                  "type": "string",
+                  "example": "close"
+                }
+              },
+              "X-Powered-By": {
+                "schema": {
+                  "type": "number",
+                  "example": "PHP/8.2.0"
+                }
+              },
+              "Cache-Control": {
+                "schema": {
+                  "type": "string",
+                  "example": "no-cache, private"
+                }
+              },
+              "Content-Type": {
+                "schema": {
+                  "type": "string",
+                  "example": "application/json"
+                }
+              },
+              "X-RateLimit-Limit": {
+                "schema": {
+                  "type": "integer",
+                  "example": "60"
+                }
+              },
+              "X-RateLimit-Remaining": {
+                "schema": {
+                  "type": "integer",
+                  "example": "58"
+                }
+              },
+              "Access-Control-Allow-Origin": {
+                "schema": {
+                  "type": "string",
+                  "example": "*"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                },
+                "example": {
+                  "code": "0x0200",
+                  "status": "SUCCESS",
+                  "message": "Complaint Raised Successfully",
+                  "data": {
+                    "complaintId": "10878",
+                    "message": "Request is processed!"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                },
+                "example":{
+                    "code": "0x0201",
+                    "message": "Something went worng, Please try after sometimes.",
+                    "status": "FAILURE"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/service/recharge/complaint/status": {
+      "post": {
+        "tags": [
+          "Recharge APIs"
+        ],
+        "summary": "Complaint Status",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "example": {
+                  "mobile": "8004007231",
+                  "clientRefId": "2345653347438",
+                  "complaintId": "10927"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "basicAuth": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            },
+            "example": "application/json"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "headers": {
+              "Host": {
+                "schema": {
+                  "type": "number",
+                  "example": "127.0.0.1:8000"
+                }
+              },
+              "Date": {
+                "schema": {
+                  "type": "string",
+                  "example": "Sat, 04 May 2024 10:27:21 GMT"
+                }
+              },
+              "Connection": {
+                "schema": {
+                  "type": "string",
+                  "example": "close"
+                }
+              },
+              "X-Powered-By": {
+                "schema": {
+                  "type": "number",
+                  "example": "PHP/8.2.0"
+                }
+              },
+              "Cache-Control": {
+                "schema": {
+                  "type": "string",
+                  "example": "no-cache, private"
+                }
+              },
+              "Content-Type": {
+                "schema": {
+                  "type": "string",
+                  "example": "application/json"
+                }
+              },
+              "X-RateLimit-Limit": {
+                "schema": {
+                  "type": "integer",
+                  "example": "60"
+                }
+              },
+              "X-RateLimit-Remaining": {
+                "schema": {
+                  "type": "integer",
+                  "example": "59"
+                }
+              },
+              "Access-Control-Allow-Origin": {
+                "schema": {
+                  "type": "string",
+                  "example": "*"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                },
+                "example": {
+                  "code": "0x0200",
+                  "status": "SUCCESS",
+                  "message": "Complaint Status Fetched Successfully",
+                  "data": {
+                    "complaintId": 10878,
+                    "complaintStatus": "pending",
+                    "txnId": 4272176,
+                    "rechargeStatus": "success",
+                    "orderId": "REC2700893506461518E9D42",
+                    "clientRefId": "REC2700893506461518E"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                },
+                "example":{
+                    "code": "0x0201",
+                    "message": "Something went worng, Please try after sometimes.",
+                    "status": "FAILURE"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Mobile Info": {
+        "required": [
+          "mobile"
+        ],
+        "type": "object",
+        "properties": {
+          "name": {
+            "description": "The value of the mobile",
+            "type": "string"
+          }
+        }
+      },
+      "Error": {
+        "required": [
+          "error",
+          "message"
+        ],
+        "type": "object",
+        "properties": {
+          "error": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "message": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "securitySchemes": {
+      "basicAuth": {
+        "type": "http",
+        "scheme": "basic"
+      }
+    }
+  }
+}

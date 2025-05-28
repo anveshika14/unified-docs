@@ -1,35 +1,22 @@
 {
   "$schema": "https://mintlify.com/docs.json",
   "theme": "mint",
-  "name": "Mint Starter Kit",
+  "name": "enginify",
   "colors": {
-    "primary": "#16A34A",
-    "light": "#07C983",
-    "dark": "#15803D"
+    "primary": "#2b2b2b",
+    "light": "#cafc81",
+    "dark": "#2b2b2b"
   },
   "favicon": "/favicon.svg",
   "navigation": {
     "tabs": [
       {
-        "tab": "Guides",
+        "tab": "Home",
         "groups": [
           {
             "group": "Get Started",
             "pages": [
-              "/docs/base-docs/index",
-              "/docs/base-docs/quickstart",
-              "development"
-            ]
-          },
-          {
-            "group": "Essentials",
-            "pages": [
-              "essentials/markdown",
-              "essentials/code",
-              "essentials/images",
-              "essentials/settings",
-              "essentials/navigation",
-              "essentials/reusable-snippets"
+              "/docs/base-docs/index"
             ]
           }
         ]
@@ -40,152 +27,277 @@
           {
             "group": "API Documentation",
             "pages": [
-              "api-reference/introduction"
+              "api-reference/introduction",
+              "api-reference/eazype-api/introduction",
+              "api-reference/eazymsg-api/introduction"
             ]
           },
           {
-            "group": " TRAVL TECH API",
-            "pages": [{
-              "group":"Flight",
-              "icon":"plane",
-              "pages":[
-              "api-reference/endpoint/get",
-              "api-reference/endpoint/create",
-              "api-reference/endpoint/delete",
-              "api-reference/endpoint/webhook"]},
+            "group": "API's Endpoints",
+            "pages": [
               {
-                "group":"Bus",
-                "icon":"bus",
-                "pages":[
-                "api-reference/endpoint/get",
-                "api-reference/endpoint/create",
-                "api-reference/endpoint/delete",
-                "api-reference/endpoint/webhook"]},
-                {
-                  "group":"Hotel",
-                  "icon":"hotel",
-                  "pages":[
-                  "api-reference/endpoint/get",
-                  "api-reference/endpoint/create",
-                  "api-reference/endpoint/delete",
-                  "api-reference/endpoint/webhook"]}
-            ]
-          },
-          {
-            "group": "Infopass API",
-            "pages": [{
-              "group":"Identity",
-              "icon":"user",
-              "pages":[
-              "api-reference/endpoint/get"
-         ]},
-              {
-                "group":"Banking",
-                "icon":"landmark",
-                "pages":[
-                "introduction"
-                ]},
-                {
-                  "group":"GSTIN",
-                  "icon":"id-card",
-                  "pages":[
-                  "api-reference/endpoint/get"
-                  ]},
+                "group": "Infopass API",
+                "pages": [
+                  {
+                    "group": "Identity",
+                    "icon": "user",
+                    "pages": [
+                      "api-reference/infopass-api/endpoint/identity/aadhar-basic",
+                      "api-reference/infopass-api/endpoint/identity/aadhar-otp-send",
+                      "api-reference/infopass-api/endpoint/identity/aadhar-otp-verify",
+                      "api-reference/infopass-api/endpoint/identity/pan-comprehensive",
+                      "api-reference/infopass-api/endpoint/identity/pan-lite"
+                    ]
+                  },
+                  {
+                    "group": "Banking",
+                    "icon": "landmark",
+                    "pages": [
+                      "api-reference/infopass-api/endpoint/bank/ifsc-details",
+                      "api-reference/infopass-api/endpoint/bank/upi-verification",
+                      "api-reference/infopass-api/endpoint/bank/verification-pennydrop"
+                    ]
+                  },
+                  {
+                    "group": "GSTIN",
+                    "icon": "id-card",
+                    "pages": [
+                      "api-reference/infopass-api/endpoint/gstin/advance",
+                      "api-reference/infopass-api/endpoint/gstin/by-pan",
+                      "api-reference/infopass-api/endpoint/gstin/filling-false",
+                      "api-reference/infopass-api/endpoint/gstin/filling-true"
+                    ]
+                  },
                   {
                     "group": "Plan",
-                    "icon":"list-check",
+                    "icon": "list-check",
                     "pages": [
-                      "api-reference/endpoint/get"
+                      "api-reference/infopass-api/endpoint/plan/bill-info",
+                      "api-reference/infopass-api/endpoint/plan/circle-list",
+                      "api-reference/infopass-api/endpoint/plan/dth-info",
+                      "api-reference/infopass-api/endpoint/plan/operator-info",
+                      "api-reference/infopass-api/endpoint/plan/operator-list",
+                      "api-reference/infopass-api/endpoint/plan/operator-plan",
+                      "api-reference/infopass-api/endpoint/plan/roffer"
                     ]
                   },
                   {
                     "group": "Details",
-                    "icon":"file",
+                    "icon": "file",
                     "pages": [
-                      "api-reference/endpoint/get"
+                      "api-reference/infopass-api/endpoint/details/address-pin",
+                      "api-reference/infopass-api/endpoint/details/ip-info",
+                      "api-reference/infopass-api/endpoint/details/ocr-pan"
                     ]
                   },
                   {
                     "group": "Merchants",
-                    "icon":"square-user",
+                    "icon": "square-user",
                     "pages": [
-                      "api-reference/endpoint/get"
+                      "api-reference/infopass-api/endpoint/merchants/dl",
+                      "api-reference/infopass-api/endpoint/merchants/mca-company",
+                      "api-reference/infopass-api/endpoint/merchants/passport",
+                      "api-reference/infopass-api/endpoint/merchants/voter-id"
                     ]
                   },
                   {
                     "group": "Digilocker",
-                    "icon":"lock",
+                    "icon": "lock",
                     "pages": [
-                      "api-reference/endpoint/get"
+                      "api-reference/infopass-api/endpoint/digilocker/docs-download",
+                      "api-reference/infopass-api/endpoint/digilocker/docs-list",
+                      "api-reference/infopass-api/endpoint/digilocker/initiate",
+                      "api-reference/infopass-api/endpoint/digilocker/status-and-verify"
                     ]
                   },
                   {
                     "group": "TAN",
-                    "icon":"file",
+                    "icon": "file",
                     "pages": [
-                      "api-reference/endpoint/get"
+                      "api-reference/infopass-api/endpoint/tan/advance",
+                      "api-reference/infopass-api/endpoint/tan/lite"
                     ]
                   },
                   {
                     "group": "C-KYC",
-                    "icon":"user-check",
+                    "icon": "user-check",
                     "pages": [
-                      "api-reference/endpoint/get"
+                      "api-reference/infopass-api/endpoint/ckyc/download",
+                      "api-reference/infopass-api/endpoint/ckyc/search"
                     ]
                   },
                   {
                     "group": "Shop",
-                    "icon":"shop",
+                    "icon": "shop",
                     "pages": [
-                      "api-reference/endpoint/get"
+                      "api-reference/infopass-api/endpoint/shop/details",
+                      "api-reference/infopass-api/endpoint/shop/state"
                     ]
                   }
+                ]
+              },
+              {
+                "group": " Eazype API",
+                "pages": [
+                  "api-reference/eazype-api/endpoints/balance",
+                  "api-reference/eazype-api/endpoints/check-status",
+                  "api-reference/eazype-api/endpoints/complaint-status",
+                  "api-reference/eazype-api/endpoints/complaint",
+                  "api-reference/eazype-api/endpoints/dth-info",
+                  "api-reference/eazype-api/endpoints/dth-plan",
+                  "api-reference/eazype-api/endpoints/mobile-info",
+                  "api-reference/eazype-api/endpoints/mobile-plan",
+                  "api-reference/eazype-api/endpoints/offers",
+                  "api-reference/eazype-api/endpoints/operator-dth",
+                  "api-reference/eazype-api/endpoints/operator-mobile",
+                  "api-reference/eazype-api/endpoints/recharge-init"
+                ]
+              },
+              {
+                "group": "Eazymsg API",
+                "pages": [
+                  {
+                    "group": "SMS",
+                    "icon": "message",
+                    "pages": [
+                      {
+                        "group": "Contacts",
+                        "icon": "list",
+                        "pages": [
+                          "api-reference/eazymsg-api/endpoints/sms/contacts/contact-list",
+                          "api-reference/eazymsg-api/endpoints/sms/contacts/create-contact",
+                          "api-reference/eazymsg-api/endpoints/sms/contacts/create-group",
+                          "api-reference/eazymsg-api/endpoints/sms/contacts/group-list",
+                          "api-reference/eazymsg-api/endpoints/sms/contacts/update-contact",
+                          "api-reference/eazymsg-api/endpoints/sms/contacts/update-group"
+                        ]
+                      },
+                      {
+                        "group": "Send SMS",
+                        "icon": "comment-sms",
+                        "pages": [
+                          "api-reference/eazymsg-api/endpoints/sms/send-sms/with-variable",
+                          "api-reference/eazymsg-api/endpoints/sms/send-sms/without-variable"
+                        ]
+                      },
+                      {
+                        "group": "Templates",
+                        "icon": "image",
+                        "pages": [
+                          "api-reference/eazymsg-api/endpoints/sms/templates/add-template",
+                          "api-reference/eazymsg-api/endpoints/sms/templates/template-list",
+                          "api-reference/eazymsg-api/endpoints/sms/templates/update-template"
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "group": "SMS OTP",
+                    "icon": "share",
+                    "pages": [
+                      "api-reference/eazymsg-api/endpoints/sms-otp/send",
+                      "api-reference/eazymsg-api/endpoints/sms-otp/verify"
+                    ]
+                  },
+                  {
+                    "group": "Send OTP",
+                    "icon": "paper-plane",
+                    "pages": [
+                      "api-reference/eazymsg-api/endpoints/send-otp/send",
+                      "api-reference/eazymsg-api/endpoints/send-otp/verify"
+                    ]
+                  }
+                ]
+              }
             ]
           }
         ]
       },
       {
-        
-        "tab": "TRAVL TECH",
+        "tab": "Eazype",
         "groups": [
           {
-            "group": "TRAVL Tech",
+            "group": "Introduction",
             "pages": [
-              "/docs/travl_docs/introduction"
+              "/docs/eazype-docs/introduction"
             ]
-          }]
+          },
+          {
+            "group": "API Documentation",
+            "pages": [
+              "api-reference/eazype-api/introduction"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "Infopass",
+        "groups": [
+          {
+            "group": "Introduction",
+            "pages": [
+              "/docs/infopass-docs/introduction"
+            ]
+          },
+          {
+            "group": "Products",
+            "pages": [
+              "products/eazype",
+              "products/eazymsg"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "Eazymsg",
+        "groups": [
+          {
+            "group": "Introduction",
+            "pages": [
+              "/docs/eazymsg-docs/introduction"
+            ]
+          },
+          {
+            "group": "API Documentation",
+            "pages": [
+              "api-reference/eazymsg-api/introduction"
+            ]
+          }
+        ]
       }
-
     ],
     "global": {
-      "anchors": [
+      "dropdowns": [
         {
-          "anchor": "Documentation",
-          "href": "https://mintlify.com/docs",
-          "icon": "book-open-cover"
+          "dropdown": "Eazymsg",
+          "icon": "globe",
+          "description": "eazymsg.com",
+          "href": "https://eazymsg.com/"
         },
         {
-          "anchor": "Community",
-          "href": "https://mintlify.com/community",
-          "icon": "slack"
+          "dropdown": "Eazype",
+          "icon": "globe",
+          "description": "eazype.com",
+          "href": "https://eazype.com"
         },
         {
-          "anchor": "Blog",
-          "href": "https://mintlify.com/blog",
-          "icon": "newspaper"
+          "dropdown": "Infopass",
+          "icon": "globe",
+          "description": "infopass.in",
+          "href": "https://infopass.in"
         }
       ]
     }
   },
   "logo": {
-    "light": "/logo/light.svg",
-    "dark": "/logo/dark.svg"
+    "light": "/logo/logo_light.webp",
+    "dark": "/logo/logo_dark.png"
   },
   "navbar": {
     "links": [
       {
         "label": "Support",
-        "href": "mailto:hi@mintlify.com"
+        "href": "mailto:info@enginify.in"
       }
     ],
     "primary": {

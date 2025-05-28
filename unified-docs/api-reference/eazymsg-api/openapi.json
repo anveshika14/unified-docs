@@ -1,0 +1,2751 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "OpenAPI Eazymsg API",
+    "description": "Eazymsg API showcases messaging features with examples for Bulk SMS, Email, WhatsApp Business API, Push Notifications, and Google RCS",
+    "license": {
+      "name": "MIT"
+    },
+    "version": "1.0.0"
+  },
+  "servers": [
+    {
+      "url": "https://eazymsg.com"
+    }
+  ],
+  "paths": {
+    "/api/v1/group": {
+      "post": {
+        "tags": [
+          "SMS > Contacts"
+        ],
+        "summary": "Create Group",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "example": {
+                  "authKey": "{{key}}",
+                  "name": "Group SS71",
+                  "description": "ddd"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "headers": {
+              "Host": {
+                "schema": {
+                  "type": "number",
+                  "example": "127.0.0.1:8000"
+                }
+              },
+              "Date": {
+                "schema": {
+                  "type": "string",
+                  "example": "Wed, 19 Jun 2024 05:35:45 GMT"
+                }
+              },
+              "Connection": {
+                "schema": {
+                  "type": "string",
+                  "example": "close"
+                }
+              },
+              "X-Powered-By": {
+                "schema": {
+                  "type": "number",
+                  "example": "PHP/8.2.0"
+                }
+              },
+              "Cache-Control": {
+                "schema": {
+                  "type": "string",
+                  "example": "no-cache, private"
+                }
+              },
+              "Content-Type": {
+                "schema": {
+                  "type": "string",
+                  "example": "application/json"
+                }
+              },
+              "X-RateLimit-Limit": {
+                "schema": {
+                  "type": "integer",
+                  "example": "60"
+                }
+              },
+              "X-RateLimit-Remaining": {
+                "schema": {
+                  "type": "integer",
+                  "example": "58"
+                }
+              },
+              "Access-Control-Allow-Origin": {
+                "schema": {
+                  "type": "string",
+                  "example": "*"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                },
+                "examples": {
+                  "example-0": {
+                    "summary": "Success",
+                    "value": {
+                      "code": "0x0200",
+                      "message": "Group Added Successfully.",
+                      "status": "SUCCESS",
+                      "data": {
+                        "groupId": "GS4359F"
+                      }
+                    }
+                  },
+                  "example-1": {
+                    "summary": "failed",
+                    "value": {
+                      "code": "0x0202",
+                      "status": "FAILURE",
+                      "message": "The name has already been taken.",
+                      "data": {
+                        "name": [
+                          "The name has already been taken."
+                        ]
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                },
+                "example":{
+                    "code": "0x0201",
+                    "message": "Something went worng, Please try after sometimes.",
+                    "status": "FAILURE"
+                }
+              }
+            }
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "SMS > Contacts"
+        ],
+        "summary": "List Group",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "headers": {
+              "Host": {
+                "schema": {
+                  "type": "number",
+                  "example": "127.0.0.1:8000"
+                }
+              },
+              "Date": {
+                "schema": {
+                  "type": "string",
+                  "example": "Wed, 19 Jun 2024 05:32:48 GMT"
+                }
+              },
+              "Connection": {
+                "schema": {
+                  "type": "string",
+                  "example": "close"
+                }
+              },
+              "X-Powered-By": {
+                "schema": {
+                  "type": "number",
+                  "example": "PHP/8.2.0"
+                }
+              },
+              "Cache-Control": {
+                "schema": {
+                  "type": "string",
+                  "example": "no-cache, private"
+                }
+              },
+              "Content-Type": {
+                "schema": {
+                  "type": "string",
+                  "example": "application/json"
+                }
+              },
+              "X-RateLimit-Limit": {
+                "schema": {
+                  "type": "integer",
+                  "example": "60"
+                }
+              },
+              "X-RateLimit-Remaining": {
+                "schema": {
+                  "type": "integer",
+                  "example": "59"
+                }
+              },
+              "Access-Control-Allow-Origin": {
+                "schema": {
+                  "type": "string",
+                  "example": "*"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                },
+                "example": {
+                  "code": "0x0200",
+                  "message": "Record fetched successfully.",
+                  "status": "SUCCESS",
+                  "data": [
+                    {
+                      "groupId": "GS7555F",
+                      "name": "Group SS1",
+                      "description": null,
+                      "status": "active",
+                      "createdAt": "19-Jun-2024 10:58 AM",
+                      "updatedAt": "19-Jun-2024 10:58 AM"
+                    },
+                    {
+                      "groupId": "GS90904",
+                      "name": "Group SS",
+                      "description": null,
+                      "status": "active",
+                      "createdAt": "19-Jun-2024 10:56 AM",
+                      "updatedAt": "19-Jun-2024 10:56 AM"
+                    },
+                    {
+                      "groupId": "S9526482233211201",
+                      "name": "Group K",
+                      "description": "A group can be described as a collection of individuals who come together for a common purpose, interest, or goal. Here's a detailed description",
+                      "status": "active",
+                      "createdAt": "13-May-2024 11:43 AM",
+                      "updatedAt": "13-May-2024 11:43 AM"
+                    },
+                    {
+                      "groupId": "S95264822222211201",
+                      "name": "Group H",
+                      "description": "A group can be described as a collection of individuals who come together for a common purpose, interest, or goal. Here's a detailed description",
+                      "status": "active",
+                      "createdAt": "13-May-2024 11:43 AM",
+                      "updatedAt": "13-May-2024 11:43 AM"
+                    },
+                    {
+                      "groupId": "S95264822221122201",
+                      "name": "Group G",
+                      "description": "A group can be described as a collection of individuals who come together for a common purpose, interest, or goal. Here's a detailed description",
+                      "status": "active",
+                      "createdAt": "13-May-2024 11:43 AM",
+                      "updatedAt": "13-May-2024 11:43 AM"
+                    },
+                    {
+                      "groupId": "S952648262122201",
+                      "name": "Group F",
+                      "description": "A group can be described as a collection of individuals who come together for a common purpose, interest, or goal. Here's a detailed description",
+                      "status": "active",
+                      "createdAt": "13-May-2024 11:43 AM",
+                      "updatedAt": "13-May-2024 11:43 AM"
+                    },
+                    {
+                      "groupId": "S952648260302201",
+                      "name": "Group E",
+                      "description": "A group can be described as a collection of individuals who come together for a common purpose, interest, or goal. Here's a detailed description",
+                      "status": "active",
+                      "createdAt": "13-May-2024 11:43 AM",
+                      "updatedAt": "13-May-2024 11:43 AM"
+                    },
+                    {
+                      "groupId": "S9526482603049001",
+                      "name": "Group D",
+                      "description": "A grou",
+                      "status": "active",
+                      "createdAt": "13-May-2024 11:43 AM",
+                      "updatedAt": "22-May-2024 12:36 PM"
+                    },
+                    {
+                      "groupId": "S952793722222001",
+                      "name": "Group C",
+                      "description": "A group can be described as a collection of individuals who come together for a common purpose, interest, or goal. Here's a detailed description",
+                      "status": "active",
+                      "createdAt": "08-May-2024 01:10 PM",
+                      "updatedAt": "22-May-2024 02:27 PM"
+                    },
+                    {
+                      "groupId": "S952793333222001",
+                      "name": "Group B",
+                      "description": "A group can be described as a collection of individuals who come together for a common purpose, interest, or goal. Here's a detailed description",
+                      "status": "active",
+                      "createdAt": "08-May-2024 01:10 PM",
+                      "updatedAt": "08-May-2024 01:10 PM"
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                },
+                "example":{
+                    "code": "0x0201",
+                    "message": "Something went worng, Please try after sometimes.",
+                    "status": "FAILURE"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/group/GS37498": {
+      "patch": {
+        "tags": [
+          "SMS > Contacts"
+        ],
+        "summary": "Update Group",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "example": {
+                  "authKey": "{{key}}",
+                  "name": "Group K",
+                  "description": "SMS Are Pending In Tripada From Last Tripada check Shree Tripada Team"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "headers": {
+              "Connection": {
+                "schema": {
+                  "type": "string",
+                  "example": "Keep-Alive"
+                }
+              },
+              "Keep-Alive": {
+                "schema": {
+                  "type": "string",
+                  "example": "timeout=5, max=100"
+                }
+              },
+              "x-powered-by": {
+                "schema": {
+                  "type": "number",
+                  "example": "PHP/8.2.16"
+                }
+              },
+              "cache-control": {
+                "schema": {
+                  "type": "string",
+                  "example": "no-cache, private"
+                }
+              },
+              "content-type": {
+                "schema": {
+                  "type": "string",
+                  "example": "application/json"
+                }
+              },
+              "x-ratelimit-limit": {
+                "schema": {
+                  "type": "integer",
+                  "example": "60"
+                }
+              },
+              "x-ratelimit-remaining": {
+                "schema": {
+                  "type": "integer",
+                  "example": "58"
+                }
+              },
+              "access-control-allow-origin": {
+                "schema": {
+                  "type": "string",
+                  "example": "*"
+                }
+              },
+              "content-length": {
+                "schema": {
+                  "type": "integer",
+                  "example": "80"
+                }
+              },
+              "content-encoding": {
+                "schema": {
+                  "type": "string",
+                  "example": "br"
+                }
+              },
+              "vary": {
+                "schema": {
+                  "type": "string",
+                  "example": "Accept-Encoding"
+                }
+              },
+              "date": {
+                "schema": {
+                  "type": "string",
+                  "example": "Tue, 18 Jun 2024 13:37:09 GMT"
+                }
+              },
+              "server": {
+                "schema": {
+                  "type": "string",
+                  "example": "LiteSpeed"
+                }
+              },
+              "platform": {
+                "schema": {
+                  "type": "string",
+                  "example": "hostinger"
+                }
+              },
+              "content-security-policy": {
+                "schema": {
+                  "type": "string",
+                  "example": "upgrade-insecure-requests"
+                }
+              },
+              "alt-svc": {
+                "schema": {
+                  "type": "string",
+                  "example": "h3=\":443\"; ma=2592000, h3-29=\":443\"; ma=2592000, h3-Q050=\":443\"; ma=2592000, h3-Q046=\":443\"; ma=2592000, h3-Q043=\":443\"; ma=2592000, quic=\":443\"; ma=2592000; v=\"43,46\""
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                },
+                "examples": {
+                  "example-0": {
+                    "summary": "Success",
+                    "value": {
+                      "code": "0x0200",
+                      "message": "Group Updated Successfully.",
+                      "status": "SUCCESS"
+                    }
+                  },
+                  "example-1": {
+                    "summary": "Failed",
+                    "value": {
+                      "code": "0x0202",
+                      "status": "FAILURE",
+                      "message": "Group name already exists."
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                },
+                "example":{
+                    "code": "0x0201",
+                    "message": "Something went worng, Please try after sometimes.",
+                    "status": "FAILURE"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/contact": {
+      "post": {
+        "tags": [
+          "SMS > Contacts"
+        ],
+        "summary": "Create Contact",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "example": {
+                  "authKey": "{{key}}",
+                  "name": "Anil",
+                  "email": "amsXXX@gmail.com",
+                  "number": "XXXXXX6813",
+                  "groupId": "GS362B"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "headers": {
+              "Connection": {
+                "schema": {
+                  "type": "string",
+                  "example": "Keep-Alive"
+                }
+              },
+              "Keep-Alive": {
+                "schema": {
+                  "type": "string",
+                  "example": "timeout=5, max=100"
+                }
+              },
+              "x-powered-by": {
+                "schema": {
+                  "type": "number",
+                  "example": "PHP/8.2.16"
+                }
+              },
+              "cache-control": {
+                "schema": {
+                  "type": "string",
+                  "example": "no-cache, private"
+                }
+              },
+              "content-type": {
+                "schema": {
+                  "type": "string",
+                  "example": "application/json"
+                }
+              },
+              "x-ratelimit-limit": {
+                "schema": {
+                  "type": "integer",
+                  "example": "60"
+                }
+              },
+              "x-ratelimit-remaining": {
+                "schema": {
+                  "type": "integer",
+                  "example": "58"
+                }
+              },
+              "access-control-allow-origin": {
+                "schema": {
+                  "type": "string",
+                  "example": "*"
+                }
+              },
+              "content-length": {
+                "schema": {
+                  "type": "integer",
+                  "example": "111"
+                }
+              },
+              "content-encoding": {
+                "schema": {
+                  "type": "string",
+                  "example": "br"
+                }
+              },
+              "vary": {
+                "schema": {
+                  "type": "string",
+                  "example": "Accept-Encoding"
+                }
+              },
+              "date": {
+                "schema": {
+                  "type": "string",
+                  "example": "Wed, 19 Jun 2024 06:15:54 GMT"
+                }
+              },
+              "server": {
+                "schema": {
+                  "type": "string",
+                  "example": "LiteSpeed"
+                }
+              },
+              "platform": {
+                "schema": {
+                  "type": "string",
+                  "example": "hostinger"
+                }
+              },
+              "content-security-policy": {
+                "schema": {
+                  "type": "string",
+                  "example": "upgrade-insecure-requests"
+                }
+              },
+              "alt-svc": {
+                "schema": {
+                  "type": "string",
+                  "example": "h3=\":443\"; ma=2592000, h3-29=\":443\"; ma=2592000, h3-Q050=\":443\"; ma=2592000, h3-Q046=\":443\"; ma=2592000, h3-Q043=\":443\"; ma=2592000, quic=\":443\"; ma=2592000; v=\"43,46\""
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                },
+                "examples": {
+                  "example-0": {
+                    "summary": "Success",
+                    "value": {
+                      "code": "0x0200",
+                      "message": "Contact Added Successfully.",
+                      "status": "SUCCESS",
+                      "data": {
+                        "contactId": "CO5498A"
+                      }
+                    }
+                  },
+                  "example-1": {
+                    "summary": "Failed",
+                    "value": {
+                      "code": "0x0202",
+                      "status": "FAILURE",
+                      "message": "The number already exists this group"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                },
+                "example":{
+                    "code": "0x0201",
+                    "message": "Something went worng, Please try after sometimes.",
+                    "status": "FAILURE"
+                }
+              }
+            }
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "SMS > Contacts"
+        ],
+        "summary": "List Contact",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "headers": {
+              "Connection": {
+                "schema": {
+                  "type": "string",
+                  "example": "Keep-Alive"
+                }
+              },
+              "Keep-Alive": {
+                "schema": {
+                  "type": "string",
+                  "example": "timeout=5, max=100"
+                }
+              },
+              "x-powered-by": {
+                "schema": {
+                  "type": "number",
+                  "example": "PHP/8.2.16"
+                }
+              },
+              "cache-control": {
+                "schema": {
+                  "type": "string",
+                  "example": "no-cache, private"
+                }
+              },
+              "content-type": {
+                "schema": {
+                  "type": "string",
+                  "example": "application/json"
+                }
+              },
+              "x-ratelimit-limit": {
+                "schema": {
+                  "type": "integer",
+                  "example": "60"
+                }
+              },
+              "x-ratelimit-remaining": {
+                "schema": {
+                  "type": "integer",
+                  "example": "58"
+                }
+              },
+              "access-control-allow-origin": {
+                "schema": {
+                  "type": "string",
+                  "example": "*"
+                }
+              },
+              "content-length": {
+                "schema": {
+                  "type": "integer",
+                  "example": "451"
+                }
+              },
+              "content-encoding": {
+                "schema": {
+                  "type": "string",
+                  "example": "br"
+                }
+              },
+              "vary": {
+                "schema": {
+                  "type": "string",
+                  "example": "Accept-Encoding"
+                }
+              },
+              "date": {
+                "schema": {
+                  "type": "string",
+                  "example": "Wed, 19 Jun 2024 06:17:08 GMT"
+                }
+              },
+              "server": {
+                "schema": {
+                  "type": "string",
+                  "example": "LiteSpeed"
+                }
+              },
+              "platform": {
+                "schema": {
+                  "type": "string",
+                  "example": "hostinger"
+                }
+              },
+              "content-security-policy": {
+                "schema": {
+                  "type": "string",
+                  "example": "upgrade-insecure-requests"
+                }
+              },
+              "alt-svc": {
+                "schema": {
+                  "type": "string",
+                  "example": "h3=\":443\"; ma=2592000, h3-29=\":443\"; ma=2592000, h3-Q050=\":443\"; ma=2592000, h3-Q046=\":443\"; ma=2592000, h3-Q043=\":443\"; ma=2592000, quic=\":443\"; ma=2592000; v=\"43,46\""
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                },
+                "example": {
+                  "code": "0x0200",
+                  "message": "Record fetched successfully.",
+                  "status": "SUCCESS",
+                  "data": [
+                    {
+                      "contactId": "CO5498A",
+                      "groupName": "Group SSE",
+                      "groupId": "GS362B",
+                      "name": "Anil",
+                      "email": "amsXXX@gmail.com",
+                      "number": "XXXXXX6833",
+                      "status": "active",
+                      "createdAt": "19-Jun-2024 11:45 AM",
+                      "updatedAt": "19-Jun-2024 11:45 AM"
+                    },
+                    {
+                      "contactId": "CO33444",
+                      "groupName": "Group SSE",
+                      "groupId": "GS362B",
+                      "name": "Anil",
+                      "email": "amsXXX@gmail.com",
+                      "number": "XXXXXX6811",
+                      "status": "active",
+                      "createdAt": "19-Jun-2024 10:25 AM",
+                      "updatedAt": "19-Jun-2024 10:25 AM"
+                    },
+                    {
+                      "contactId": "CO7782E",
+                      "groupName": null,
+                      "groupId": null,
+                      "name": "Anil",
+                      "email": "amsXXX@gmail.com",
+                      "number": "XXXXXX6811",
+                      "status": "active",
+                      "createdAt": "19-Jun-2024 10:22 AM",
+                      "updatedAt": "19-Jun-2024 10:22 AM"
+                    },
+                    {
+                      "contactId": "CO31075",
+                      "groupName": null,
+                      "groupId": null,
+                      "name": "Anil",
+                      "email": "amXXX@gmail.com",
+                      "number": "XXXXXX6821",
+                      "status": "active",
+                      "createdAt": "18-Jun-2024 07:46 PM",
+                      "updatedAt": "18-Jun-2024 07:46 PM"
+                    },
+                    {
+                      "contactId": null,
+                      "groupName": null,
+                      "groupId": null,
+                      "name": "Anil",
+                      "email": "amXXX@gmail.com",
+                      "number": "XXXXXX6822",
+                      "status": "active",
+                      "createdAt": "18-Jun-2024 07:41 PM",
+                      "updatedAt": "18-Jun-2024 07:41 PM"
+                    },
+                    {
+                      "contactId": null,
+                      "groupName": null,
+                      "groupId": null,
+                      "name": "Anil",
+                      "email": "amXXX@gmail.com",
+                      "number": "XXXXXX6822",
+                      "status": "active",
+                      "createdAt": "18-Jun-2024 07:41 PM",
+                      "updatedAt": "18-Jun-2024 07:41 PM"
+                    },
+                    {
+                      "contactId": null,
+                      "groupName": null,
+                      "groupId": null,
+                      "name": "Anil",
+                      "email": "amXXX@gmail.com",
+                      "number": "XXXXXX6822",
+                      "status": "active",
+                      "createdAt": "18-Jun-2024 07:27 PM",
+                      "updatedAt": "18-Jun-2024 07:27 PM"
+                    },
+                    {
+                      "contactId": null,
+                      "groupName": null,
+                      "groupId": null,
+                      "name": "Anil",
+                      "email": "amXXX@gmail.com",
+                      "number": "XXXXXX6822",
+                      "status": "active",
+                      "createdAt": "18-Jun-2024 07:22 PM",
+                      "updatedAt": "18-Jun-2024 07:22 PM"
+                    },
+                    {
+                      "contactId": null,
+                      "groupName": "Test groups",
+                      "groupId": "TG34155",
+                      "name": "Anil",
+                      "email": "aniXXX@enginify.in",
+                      "number": "XXXXXX4111",
+                      "status": "active",
+                      "createdAt": "12-Jun-2024 06:58 PM",
+                      "updatedAt": "12-Jun-2024 06:58 PM"
+                    },
+                    {
+                      "contactId": null,
+                      "groupName": "Test groups",
+                      "groupId": "TG34155",
+                      "name": "Anil",
+                      "email": "anisXXX@enginify.in",
+                      "number": "XXXXXX7944",
+                      "status": "active",
+                      "createdAt": "12-Jun-2024 06:51 PM",
+                      "updatedAt": "12-Jun-2024 06:51 PM"
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                },
+                "example":{
+                    "code": "0x0201",
+                    "message": "Something went worng, Please try after sometimes.",
+                    "status": "FAILURE"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/contact/CO33444": {
+      "patch": {
+        "tags": [
+          "SMS > Contacts"
+        ],
+        "summary": "Update Contact",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "example": {
+                  "authKey": "{{key}}",
+                  "name": "ASDF SSAD",
+                  "email": "ansssj@email.com",
+                  "number": "XXXXXX4138"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "headers": {
+              "Date": {
+                "schema": {
+                  "type": "string",
+                  "example": "Mon, 13 May 2024 12:23:30 GMT"
+                }
+              },
+              "Content-Type": {
+                "schema": {
+                  "type": "string",
+                  "example": "application/json"
+                }
+              },
+              "Transfer-Encoding": {
+                "schema": {
+                  "type": "string",
+                  "example": "chunked"
+                }
+              },
+              "Connection": {
+                "schema": {
+                  "type": "string",
+                  "example": "keep-alive"
+                }
+              },
+              "x-powered-by": {
+                "schema": {
+                  "type": "number",
+                  "example": "PHP/8.2.16"
+                }
+              },
+              "cache-control": {
+                "schema": {
+                  "type": "string",
+                  "example": "no-cache, private"
+                }
+              },
+              "x-ratelimit-limit": {
+                "schema": {
+                  "type": "integer",
+                  "example": "60"
+                }
+              },
+              "x-ratelimit-remaining": {
+                "schema": {
+                  "type": "integer",
+                  "example": "59"
+                }
+              },
+              "access-control-allow-origin": {
+                "schema": {
+                  "type": "string",
+                  "example": "*"
+                }
+              },
+              "vary": {
+                "schema": {
+                  "type": "string",
+                  "example": "Accept-Encoding"
+                }
+              },
+              "platform": {
+                "schema": {
+                  "type": "string",
+                  "example": "hostinger"
+                }
+              },
+              "content-security-policy": {
+                "schema": {
+                  "type": "string",
+                  "example": "upgrade-insecure-requests"
+                }
+              },
+              "x-turbo-charged-by": {
+                "schema": {
+                  "type": "string",
+                  "example": "LiteSpeed"
+                }
+              },
+              "CF-Cache-Status": {
+                "schema": {
+                  "type": "string",
+                  "example": "DYNAMIC"
+                }
+              },
+              "Report-To": {
+                "schema": {
+                  "type": "string",
+                  "example": "{\"endpoints\":[{\"url\":\"https:\\/\\/a.nel.cloudflare.com\\/report\\/v4?s=%2FDYNvX4mBy30Xzk2Srf3AWnUBrz6mx8Tgrlgsj52rJ29mpkpycgm2CuZMYKVwzWA2csOzpYoRShiOdVcSui8tmvNIQG2kHi2XBrAoNhwY9Keo578PO7TNj5aHSvGzg%3D%3D\"}],\"group\":\"cf-nel\",\"max_age\":604800}"
+                }
+              },
+              "NEL": {
+                "schema": {
+                  "type": "string",
+                  "example": "{\"success_fraction\":0,\"report_to\":\"cf-nel\",\"max_age\":604800}"
+                }
+              },
+              "Server": {
+                "schema": {
+                  "type": "string",
+                  "example": "cloudflare"
+                }
+              },
+              "CF-RAY": {
+                "schema": {
+                  "type": "string",
+                  "example": "88329ebf09ad3fee-SIN"
+                }
+              },
+              "Content-Encoding": {
+                "schema": {
+                  "type": "string",
+                  "example": "br"
+                }
+              },
+              "alt-svc": {
+                "schema": {
+                  "type": "string",
+                  "example": "h3=\":443\"; ma=86400"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                },
+                "examples": {
+                  "example-0": {
+                    "summary": "Success",
+                    "value": {
+                      "code": "0x0200",
+                      "message": "Contact Added Successfully.",
+                      "status": "SUCCESS"
+                    }
+                  },
+                  "example-1": {
+                    "summary": "Failed",
+                    "value": {
+                      "code": "0x0202",
+                      "status": "FAILURE",
+                      "message": "The number already exists"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                },
+                "example":{
+                    "code": "0x0201",
+                    "message": "Something went worng, Please try after sometimes.",
+                    "status": "FAILURE"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/sms/template": {
+      "post": {
+        "tags": [
+          "SMS > Templates"
+        ],
+        "summary": "Add Template",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "example": {
+                  "authKey": "{{key}}",
+                  "senderId": "ENGNFY",
+                  "templateName": "Test1addS",
+                  "dltTemplateId": "333333333333333",
+                  "template": "SMS Are Pending In Tripada From Last Tripada check Shree Tripada Team {#var#}"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "headers": {
+              "Connection": {
+                "schema": {
+                  "type": "string",
+                  "example": "Keep-Alive"
+                }
+              },
+              "Keep-Alive": {
+                "schema": {
+                  "type": "string",
+                  "example": "timeout=5, max=100"
+                }
+              },
+              "x-powered-by": {
+                "schema": {
+                  "type": "number",
+                  "example": "PHP/8.2.16"
+                }
+              },
+              "cache-control": {
+                "schema": {
+                  "type": "string",
+                  "example": "no-cache, private"
+                }
+              },
+              "content-type": {
+                "schema": {
+                  "type": "string",
+                  "example": "application/json"
+                }
+              },
+              "x-ratelimit-limit": {
+                "schema": {
+                  "type": "integer",
+                  "example": "60"
+                }
+              },
+              "x-ratelimit-remaining": {
+                "schema": {
+                  "type": "integer",
+                  "example": "57"
+                }
+              },
+              "access-control-allow-origin": {
+                "schema": {
+                  "type": "string",
+                  "example": "*"
+                }
+              },
+              "content-length": {
+                "schema": {
+                  "type": "integer",
+                  "example": "118"
+                }
+              },
+              "content-encoding": {
+                "schema": {
+                  "type": "string",
+                  "example": "br"
+                }
+              },
+              "vary": {
+                "schema": {
+                  "type": "string",
+                  "example": "Accept-Encoding"
+                }
+              },
+              "date": {
+                "schema": {
+                  "type": "string",
+                  "example": "Wed, 19 Jun 2024 09:33:05 GMT"
+                }
+              },
+              "server": {
+                "schema": {
+                  "type": "string",
+                  "example": "LiteSpeed"
+                }
+              },
+              "platform": {
+                "schema": {
+                  "type": "string",
+                  "example": "hostinger"
+                }
+              },
+              "content-security-policy": {
+                "schema": {
+                  "type": "string",
+                  "example": "upgrade-insecure-requests"
+                }
+              },
+              "alt-svc": {
+                "schema": {
+                  "type": "string",
+                  "example": "h3=\":443\"; ma=2592000, h3-29=\":443\"; ma=2592000, h3-Q050=\":443\"; ma=2592000, h3-Q046=\":443\"; ma=2592000, h3-Q043=\":443\"; ma=2592000, quic=\":443\"; ma=2592000; v=\"43,46\""
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                },
+                "examples": {
+                  "example-0": {
+                    "summary": "Success",
+                    "value": {
+                      "code": "0x0200",
+                      "message": "Template Added Successfully.",
+                      "status": "SUCCESS",
+                      "data": {
+                        "templateId": "TMP6219F4F94"
+                      }
+                    }
+                  },
+                  "example-1": {
+                    "summary": "Failed",
+                    "value": {
+                      "code": "0x0202",
+                      "status": "FAILURE",
+                      "message": "The template name already exists."
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                },
+                "example":{
+                    "code": "0x0201",
+                    "message": "Something went worng, Please try after sometimes.",
+                    "status": "FAILURE"
+                }
+              }
+            }
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "SMS > Templates"
+        ],
+        "summary": "Template List",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "headers": {
+              "Connection": {
+                "schema": {
+                  "type": "string",
+                  "example": "Keep-Alive"
+                }
+              },
+              "Keep-Alive": {
+                "schema": {
+                  "type": "string",
+                  "example": "timeout=5, max=100"
+                }
+              },
+              "x-powered-by": {
+                "schema": {
+                  "type": "number",
+                  "example": "PHP/8.2.16"
+                }
+              },
+              "cache-control": {
+                "schema": {
+                  "type": "string",
+                  "example": "no-cache, private"
+                }
+              },
+              "content-type": {
+                "schema": {
+                  "type": "string",
+                  "example": "application/json"
+                }
+              },
+              "x-ratelimit-limit": {
+                "schema": {
+                  "type": "integer",
+                  "example": "60"
+                }
+              },
+              "x-ratelimit-remaining": {
+                "schema": {
+                  "type": "integer",
+                  "example": "59"
+                }
+              },
+              "access-control-allow-origin": {
+                "schema": {
+                  "type": "string",
+                  "example": "*"
+                }
+              },
+              "content-length": {
+                "schema": {
+                  "type": "integer",
+                  "example": "755"
+                }
+              },
+              "content-encoding": {
+                "schema": {
+                  "type": "string",
+                  "example": "br"
+                }
+              },
+              "vary": {
+                "schema": {
+                  "type": "string",
+                  "example": "Accept-Encoding"
+                }
+              },
+              "date": {
+                "schema": {
+                  "type": "string",
+                  "example": "Wed, 19 Jun 2024 07:57:44 GMT"
+                }
+              },
+              "server": {
+                "schema": {
+                  "type": "string",
+                  "example": "LiteSpeed"
+                }
+              },
+              "platform": {
+                "schema": {
+                  "type": "string",
+                  "example": "hostinger"
+                }
+              },
+              "content-security-policy": {
+                "schema": {
+                  "type": "string",
+                  "example": "upgrade-insecure-requests"
+                }
+              },
+              "alt-svc": {
+                "schema": {
+                  "type": "string",
+                  "example": "h3=\":443\"; ma=2592000, h3-29=\":443\"; ma=2592000, h3-Q050=\":443\"; ma=2592000, h3-Q046=\":443\"; ma=2592000, h3-Q043=\":443\"; ma=2592000, quic=\":443\"; ma=2592000; v=\"43,46\""
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                },
+                "example": {
+                  "code": "0x0200",
+                  "message": "Record fetched successfully.",
+                  "status": "SUCCESS",
+                  "data": [
+                    {
+                      "senderId": "ENGNFY",
+                      "templateId": "TMP55E9BD5",
+                      "templateName": "Test1a3123S",
+                      "dltTemplateId": "333333333333333",
+                      "templates": "SMS Are Pending In Tripada From Last Tripada check Shree Tripada Team {#var#}",
+                      "status": "active",
+                      "createdAt": "19-Jun-2024 07:32 AM",
+                      "updatedAt": null
+                    },
+                    {
+                      "senderId": "ENGNFY",
+                      "templateId": "TMP55E9BD5",
+                      "templateName": "Test1a3123S",
+                      "dltTemplateId": "333333333333333",
+                      "templates": "SMS Are Pending In Tripada From Last Tripada check Shree Tripada Team {#var#}",
+                      "status": "active",
+                      "createdAt": "19-Jun-2024 07:32 AM",
+                      "updatedAt": null
+                    },
+                    {
+                      "senderId": "ENGNFY",
+                      "templateId": "TMP93562803B",
+                      "templateName": "Test1a3123",
+                      "dltTemplateId": "333333333333333",
+                      "templates": "SMS Are Pending In Tripada From Last Tripada check Shree Tripada Team {#var#}",
+                      "status": "active",
+                      "createdAt": "19-Jun-2024 07:14 AM",
+                      "updatedAt": null
+                    },
+                    {
+                      "senderId": "ENGNFY",
+                      "templateId": "TMP93562803B",
+                      "templateName": "Test1a3123",
+                      "dltTemplateId": "333333333333333",
+                      "templates": "SMS Are Pending In Tripada From Last Tripada check Shree Tripada Team {#var#}",
+                      "status": "active",
+                      "createdAt": "19-Jun-2024 07:14 AM",
+                      "updatedAt": null
+                    },
+                    {
+                      "senderId": "ENGNFY",
+                      "templateId": "1207171706761788918",
+                      "templateName": "Welcome2",
+                      "dltTemplateId": "1201171567964313622",
+                      "templates": "Welcome to {#var#},\n\nWe're excited to have you on board. Get ready to explore the best of tech with us. If you have any questions, feel free to reach out. Enjoy!\n\n-Enginify",
+                      "status": "blocked",
+                      "createdAt": "12-Jun-2024 12:35 PM",
+                      "updatedAt": "12-Jun-2024 12:35 PM"
+                    },
+                    {
+                      "senderId": "ENGNFY",
+                      "templateId": "1207171706761788918",
+                      "templateName": "Welcome2",
+                      "dltTemplateId": "1201171567964313622",
+                      "templates": "Welcome to {#var#},\n\nWe're excited to have you on board. Get ready to explore the best of tech with us. If you have any questions, feel free to reach out. Enjoy!\n\n-Enginify",
+                      "status": "blocked",
+                      "createdAt": "12-Jun-2024 12:35 PM",
+                      "updatedAt": "12-Jun-2024 12:35 PM"
+                    },
+                    {
+                      "senderId": "ENGNFY",
+                      "templateId": "1207171678794832079",
+                      "templateName": "WelcomeTem",
+                      "dltTemplateId": "1201171567964313622",
+                      "templates": "Hi!\n\nIt’s {#var#} from {#var#}. Thrilled you’ve joined us! 🚀\n\nAccess your dashboard by clicking this link: {#var#}.\n\nText me if you’re stuck.\n\nBest!\n\n- Enginif",
+                      "status": "blocked",
+                      "createdAt": "12-Jun-2024 12:10 PM",
+                      "updatedAt": "12-Jun-2024 12:10 PM"
+                    },
+                    {
+                      "senderId": "ENGNFY",
+                      "templateId": "1207171678794832079",
+                      "templateName": "WelcomeTem",
+                      "dltTemplateId": "1201171567964313622",
+                      "templates": "Hi!\n\nIt’s {#var#} from {#var#}. Thrilled you’ve joined us! 🚀\n\nAccess your dashboard by clicking this link: {#var#}.\n\nText me if you’re stuck.\n\nBest!\n\n- Enginif",
+                      "status": "blocked",
+                      "createdAt": "12-Jun-2024 12:10 PM",
+                      "updatedAt": "12-Jun-2024 12:10 PM"
+                    },
+                    {
+                      "senderId": "ENGNFY",
+                      "templateId": "1207171678372351466",
+                      "templateName": "Test",
+                      "dltTemplateId": "1201171567964313622",
+                      "templates": "Dear User,\n\nYour OTP for login to {#var#} is\n{#var#}. Valid for 5 minutes. Please do not share\nthis OTP.\n\n- Enginify ",
+                      "status": "blocked",
+                      "createdAt": "11-Jun-2024 01:17 PM",
+                      "updatedAt": "11-Jun-2024 01:17 PM"
+                    },
+                    {
+                      "senderId": "ENGNFY",
+                      "templateId": "1207171678372351466",
+                      "templateName": "Test",
+                      "dltTemplateId": "1201171567964313622",
+                      "templates": "Dear User,\n\nYour OTP for login to {#var#} is\n{#var#}. Valid for 5 minutes. Please do not share\nthis OTP.\n\n- Enginify ",
+                      "status": "blocked",
+                      "createdAt": "11-Jun-2024 01:17 PM",
+                      "updatedAt": "11-Jun-2024 01:17 PM"
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                },
+                "example":{
+                    "code": "0x0201",
+                    "message": "Something went worng, Please try after sometimes.",
+                    "status": "FAILURE"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/sms/template/TMP46658D5DE": {
+      "patch": {
+        "tags": [
+          "SMS > Templates"
+        ],
+        "summary": "Update Template",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "example": {
+                  "authKey": "{{key}}",
+                  "senderId": "EZYMSG,ENGNFY",
+                  "templateName": "Send OTP Test ",
+                  "dltTemplateId": "1207171678372351433",
+                  "template": "Dear User"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "headers": {
+              "Connection": {
+                "schema": {
+                  "type": "string",
+                  "example": "Keep-Alive"
+                }
+              },
+              "Keep-Alive": {
+                "schema": {
+                  "type": "string",
+                  "example": "timeout=5, max=100"
+                }
+              },
+              "x-powered-by": {
+                "schema": {
+                  "type": "number",
+                  "example": "PHP/8.2.16"
+                }
+              },
+              "cache-control": {
+                "schema": {
+                  "type": "string",
+                  "example": "no-cache, private"
+                }
+              },
+              "content-type": {
+                "schema": {
+                  "type": "string",
+                  "example": "application/json"
+                }
+              },
+              "x-ratelimit-limit": {
+                "schema": {
+                  "type": "integer",
+                  "example": "60"
+                }
+              },
+              "x-ratelimit-remaining": {
+                "schema": {
+                  "type": "integer",
+                  "example": "55"
+                }
+              },
+              "access-control-allow-origin": {
+                "schema": {
+                  "type": "string",
+                  "example": "*"
+                }
+              },
+              "content-length": {
+                "schema": {
+                  "type": "integer",
+                  "example": "83"
+                }
+              },
+              "content-encoding": {
+                "schema": {
+                  "type": "string",
+                  "example": "br"
+                }
+              },
+              "vary": {
+                "schema": {
+                  "type": "string",
+                  "example": "Accept-Encoding"
+                }
+              },
+              "date": {
+                "schema": {
+                  "type": "string",
+                  "example": "Wed, 19 Jun 2024 09:32:00 GMT"
+                }
+              },
+              "server": {
+                "schema": {
+                  "type": "string",
+                  "example": "LiteSpeed"
+                }
+              },
+              "platform": {
+                "schema": {
+                  "type": "string",
+                  "example": "hostinger"
+                }
+              },
+              "content-security-policy": {
+                "schema": {
+                  "type": "string",
+                  "example": "upgrade-insecure-requests"
+                }
+              },
+              "alt-svc": {
+                "schema": {
+                  "type": "string",
+                  "example": "h3=\":443\"; ma=2592000, h3-29=\":443\"; ma=2592000, h3-Q050=\":443\"; ma=2592000, h3-Q046=\":443\"; ma=2592000, h3-Q043=\":443\"; ma=2592000, quic=\":443\"; ma=2592000; v=\"43,46\""
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                },
+                "examples": {
+                  "example-0": {
+                    "summary": "Success",
+                    "value": {
+                      "code": "0x0200",
+                      "message": "Template updated successfully.",
+                      "status": "SUCCESS"
+                    }
+                  },
+                  "example-1": {
+                    "summary": "Failed",
+                    "value": {
+                      "code": "0x0202",
+                      "status": "FAILURE",
+                      "message": "invalid template id"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                },
+                "example":{
+                    "code": "0x0201",
+                    "message": "Something went worng, Please try after sometimes.",
+                    "status": "FAILURE"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/sms/send": {
+      "post": {
+        "tags": [
+          "SMS > Send Sms"
+        ],
+        "summary": "Send Sms",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "example": {
+                  "templateId": "TMP50174B02F",
+                  "groupId": "CO19765",
+                  "message": "Dear User,\r\n\r\nYour OTP for login to Anil is\r\n123456. Valid for 5 minutes. Please do not share\r\nthis OTP.\r\n\r\n- Enginify",
+                  "method": "group",
+                  "authKey": "{{key}}"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "headers": {
+              "Connection": {
+                "schema": {
+                  "type": "string",
+                  "example": "Keep-Alive"
+                }
+              },
+              "Keep-Alive": {
+                "schema": {
+                  "type": "string",
+                  "example": "timeout=5, max=100"
+                }
+              },
+              "x-powered-by": {
+                "schema": {
+                  "type": "number",
+                  "example": "PHP/8.2.16"
+                }
+              },
+              "cache-control": {
+                "schema": {
+                  "type": "string",
+                  "example": "no-cache, private"
+                }
+              },
+              "content-type": {
+                "schema": {
+                  "type": "string",
+                  "example": "application/json"
+                }
+              },
+              "x-ratelimit-limit": {
+                "schema": {
+                  "type": "integer",
+                  "example": "60"
+                }
+              },
+              "x-ratelimit-remaining": {
+                "schema": {
+                  "type": "integer",
+                  "example": "59"
+                }
+              },
+              "access-control-allow-origin": {
+                "schema": {
+                  "type": "string",
+                  "example": "*"
+                }
+              },
+              "content-length": {
+                "schema": {
+                  "type": "integer",
+                  "example": "127"
+                }
+              },
+              "content-encoding": {
+                "schema": {
+                  "type": "string",
+                  "example": "br"
+                }
+              },
+              "vary": {
+                "schema": {
+                  "type": "string",
+                  "example": "Accept-Encoding"
+                }
+              },
+              "date": {
+                "schema": {
+                  "type": "string",
+                  "example": "Wed, 19 Jun 2024 11:54:23 GMT"
+                }
+              },
+              "server": {
+                "schema": {
+                  "type": "string",
+                  "example": "LiteSpeed"
+                }
+              },
+              "platform": {
+                "schema": {
+                  "type": "string",
+                  "example": "hostinger"
+                }
+              },
+              "content-security-policy": {
+                "schema": {
+                  "type": "string",
+                  "example": "upgrade-insecure-requests"
+                }
+              },
+              "alt-svc": {
+                "schema": {
+                  "type": "string",
+                  "example": "h3=\":443\"; ma=2592000, h3-29=\":443\"; ma=2592000, h3-Q050=\":443\"; ma=2592000, h3-Q046=\":443\"; ma=2592000, h3-Q043=\":443\"; ma=2592000, quic=\":443\"; ma=2592000; v=\"43,46\""
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                },
+                "examples": {
+                  "example-0": {
+                    "summary": "Success Send Sms",
+                    "value": {
+                      "code": "0x0200",
+                      "message": "SMS Submitted Successfully",
+                      "status": "SUCCESS",
+                      "data": {
+                        "requestId": "6672c6ef3293703e568b45cf"
+                      }
+                    }
+                  },
+                  "example-1": {
+                    "summary": "Success Multiple No",
+                    "value": {
+                      "code": "0x0200",
+                      "message": "SMS Submitted Successfully",
+                      "status": "SUCCESS",
+                      "data": {
+                        "requestId": "6672c8ec329370ad568b47c5"
+                      }
+                    }
+                  },
+                  "example-2": {
+                    "summary": "Success With Group",
+                    "value": {
+                      "code": "0x0200",
+                      "message": "SMS Submitted Successfully",
+                      "status": "SUCCESS",
+                      "data": {
+                        "requestId": "6672cd50329370be378b48cf"
+                      }
+                    }
+                  },
+                  "example-3": {
+                    "summary": "Success With Timestamp",
+                    "value": {
+                      "code": "0x0206",
+                      "status": "PENDING",
+                      "message": "Sms is pending",
+                      "data": {
+                        "orderRefId": "SMS34002DC"
+                      }
+                    }
+                  },
+                  "example-4": {
+                    "summary": "Success With Timestamp Single Contact",
+                    "value": {
+                      "code": "0x0206",
+                      "status": "PENDING",
+                      "message": "Sms is pending",
+                      "data": {
+                        "orderRefId": "SMS2986AE78"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                },
+                "example":{
+                    "code": "0x0201",
+                    "message": "Something went worng, Please try after sometimes.",
+                    "status": "FAILURE"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/sms/send/with/variable": {
+      "post": {
+        "tags": [
+          "SMS > Send SMS With Variable"
+        ],
+        "summary": "Send SMS With Var",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "example": {
+                  "templateId": "TMP50174B02F",
+                  "groupId": "TG58999",
+                  "method": "group",
+                  "authKey": "{{key}}",
+                  "var1": "Anil",
+                  "var2": "123432"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "headers": {
+              "Connection": {
+                "schema": {
+                  "type": "string",
+                  "example": "Keep-Alive"
+                }
+              },
+              "Keep-Alive": {
+                "schema": {
+                  "type": "string",
+                  "example": "timeout=5, max=100"
+                }
+              },
+              "x-powered-by": {
+                "schema": {
+                  "type": "number",
+                  "example": "PHP/8.2.16"
+                }
+              },
+              "cache-control": {
+                "schema": {
+                  "type": "string",
+                  "example": "no-cache, private"
+                }
+              },
+              "content-type": {
+                "schema": {
+                  "type": "string",
+                  "example": "application/json"
+                }
+              },
+              "x-ratelimit-limit": {
+                "schema": {
+                  "type": "integer",
+                  "example": "60"
+                }
+              },
+              "x-ratelimit-remaining": {
+                "schema": {
+                  "type": "integer",
+                  "example": "59"
+                }
+              },
+              "access-control-allow-origin": {
+                "schema": {
+                  "type": "string",
+                  "example": "*"
+                }
+              },
+              "content-length": {
+                "schema": {
+                  "type": "integer",
+                  "example": "127"
+                }
+              },
+              "content-encoding": {
+                "schema": {
+                  "type": "string",
+                  "example": "br"
+                }
+              },
+              "vary": {
+                "schema": {
+                  "type": "string",
+                  "example": "Accept-Encoding"
+                }
+              },
+              "date": {
+                "schema": {
+                  "type": "string",
+                  "example": "Wed, 19 Jun 2024 12:56:46 GMT"
+                }
+              },
+              "server": {
+                "schema": {
+                  "type": "string",
+                  "example": "LiteSpeed"
+                }
+              },
+              "platform": {
+                "schema": {
+                  "type": "string",
+                  "example": "hostinger"
+                }
+              },
+              "content-security-policy": {
+                "schema": {
+                  "type": "string",
+                  "example": "upgrade-insecure-requests"
+                }
+              },
+              "alt-svc": {
+                "schema": {
+                  "type": "string",
+                  "example": "h3=\":443\"; ma=2592000, h3-29=\":443\"; ma=2592000, h3-Q050=\":443\"; ma=2592000, h3-Q046=\":443\"; ma=2592000, h3-Q043=\":443\"; ma=2592000, quic=\":443\"; ma=2592000; v=\"43,46\""
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                },
+                "examples": {
+                  "example-0": {
+                    "summary": "Success",
+                    "value": {
+                      "code": "0x0200",
+                      "message": "SMS Submitted Successfully",
+                      "status": "SUCCESS",
+                      "data": {
+                        "requestId": "6672d58e329370db2e8b4651"
+                      }
+                    }
+                  },
+                  "example-1": {
+                    "summary": "Success With Multiple Mobile",
+                    "value": {
+                      "code": "0x0200",
+                      "message": "SMS Submitted Successfully",
+                      "status": "SUCCESS",
+                      "data": {
+                        "requestId": "6672d659329370ee478b4597"
+                      }
+                    }
+                  },
+                  "example-2": {
+                    "summary": "Success With Group",
+                    "value": {
+                      "code": "0x0200",
+                      "message": "SMS Submitted Successfully",
+                      "status": "SUCCESS",
+                      "data": {
+                        "requestId": "6672d6ea329370ee478b4655"
+                      }
+                    }
+                  },
+                  "example-3": {
+                    "summary": "Success With Timestamp",
+                    "value": {
+                      "code": "0x0200",
+                      "message": "SMS Submitted Successfully",
+                      "status": "SUCCESS",
+                      "data": {
+                        "requestId": "6672d6ea329370ee478b4655"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                },
+                "example":{
+                    "code": "0x0201",
+                    "message": "Something went worng, Please try after sometimes.",
+                    "status": "FAILURE"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/sms/otp/send": {
+      "post": {
+        "tags": [
+          "Send OTP"
+        ],
+        "summary": "Send OTP",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "example": {
+                  "authKey": "{{key}}",
+                  "mobile": "XXXXXX4138"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            },
+            "example": "application/json"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "headers": {
+              "Connection": {
+                "schema": {
+                  "type": "string",
+                  "example": "Keep-Alive"
+                }
+              },
+              "Keep-Alive": {
+                "schema": {
+                  "type": "string",
+                  "example": "timeout=5, max=100"
+                }
+              },
+              "x-powered-by": {
+                "schema": {
+                  "type": "number",
+                  "example": "PHP/8.2.16"
+                }
+              },
+              "cache-control": {
+                "schema": {
+                  "type": "string",
+                  "example": "no-cache, private"
+                }
+              },
+              "content-type": {
+                "schema": {
+                  "type": "string",
+                  "example": "application/json"
+                }
+              },
+              "x-ratelimit-limit": {
+                "schema": {
+                  "type": "integer",
+                  "example": "60"
+                }
+              },
+              "x-ratelimit-remaining": {
+                "schema": {
+                  "type": "integer",
+                  "example": "59"
+                }
+              },
+              "access-control-allow-origin": {
+                "schema": {
+                  "type": "string",
+                  "example": "*"
+                }
+              },
+              "content-length": {
+                "schema": {
+                  "type": "integer",
+                  "example": "152"
+                }
+              },
+              "content-encoding": {
+                "schema": {
+                  "type": "string",
+                  "example": "br"
+                }
+              },
+              "vary": {
+                "schema": {
+                  "type": "string",
+                  "example": "Accept-Encoding"
+                }
+              },
+              "date": {
+                "schema": {
+                  "type": "string",
+                  "example": "Wed, 19 Jun 2024 13:33:39 GMT"
+                }
+              },
+              "server": {
+                "schema": {
+                  "type": "string",
+                  "example": "LiteSpeed"
+                }
+              },
+              "platform": {
+                "schema": {
+                  "type": "string",
+                  "example": "hostinger"
+                }
+              },
+              "content-security-policy": {
+                "schema": {
+                  "type": "string",
+                  "example": "upgrade-insecure-requests"
+                }
+              },
+              "alt-svc": {
+                "schema": {
+                  "type": "string",
+                  "example": "h3=\":443\"; ma=2592000, h3-29=\":443\"; ma=2592000, h3-Q050=\":443\"; ma=2592000, h3-Q046=\":443\"; ma=2592000, h3-Q043=\":443\"; ma=2592000, quic=\":443\"; ma=2592000; v=\"43,46\""
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                },
+                "example": {
+                  "code": "0x0200",
+                  "message": "SMS Submitted Successfully",
+                  "status": "SUCCESS",
+                  "data": {
+                    "requestId": 320287173,
+                    "otpRefId": "SMS7775C771",
+                    "mobile": "XXXXXX4138"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                },
+                "example":{
+                    "code": "0x0201",
+                    "message": "Something went worng, Please try after sometimes.",
+                    "status": "FAILURE"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/sms/otp/verify": {
+      "post": {
+        "tags": [
+          "Send OTP"
+        ],
+        "summary": "OTP Verify",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "example": {
+                  "authKey": "{{key}}",
+                  "otpRefId": "SMS6287B600",
+                  "otp": "123456"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "headers": {
+              "Host": {
+                "schema": {
+                  "type": "number",
+                  "example": "127.0.0.1:8000"
+                }
+              },
+              "Date": {
+                "schema": {
+                  "type": "string",
+                  "example": "Tue, 21 May 2024 13:16:01 GMT"
+                }
+              },
+              "Connection": {
+                "schema": {
+                  "type": "string",
+                  "example": "close"
+                }
+              },
+              "X-Powered-By": {
+                "schema": {
+                  "type": "number",
+                  "example": "PHP/8.2.0"
+                }
+              },
+              "Cache-Control": {
+                "schema": {
+                  "type": "string",
+                  "example": "no-cache, private"
+                }
+              },
+              "Content-Type": {
+                "schema": {
+                  "type": "string",
+                  "example": "application/json"
+                }
+              },
+              "X-RateLimit-Limit": {
+                "schema": {
+                  "type": "integer",
+                  "example": "60"
+                }
+              },
+              "X-RateLimit-Remaining": {
+                "schema": {
+                  "type": "integer",
+                  "example": "59"
+                }
+              },
+              "Access-Control-Allow-Origin": {
+                "schema": {
+                  "type": "string",
+                  "example": "*"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                },
+                "example": {
+                  "code": "0x0200",
+                  "message": "OTP verify successful",
+                  "status": "SUCCESS"
+                }
+              }
+            }
+          },
+          "202": {
+            "description": "Unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                },
+                "example":{
+                   "code": "0x0202",
+                   "status": "FAILURE",
+                   "message": "Invalid otp ref id"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                },
+                "example":{
+                    "code": "0x0201",
+                    "message": "Something went worng, Please try after sometimes.",
+                    "status": "FAILURE"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/otp/send": {
+      "post": {
+        "tags": [
+          "All Channel Send OTP"
+        ],
+        "summary": "Send Otp",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "example": {
+                  "authKey": "{{key}}",
+                  "email": "pawXXXX@enginify.in",
+                  "isUniqueOTP": "0"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            },
+            "example": "application/json"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "headers": {
+              "Connection": {
+                "schema": {
+                  "type": "string",
+                  "example": "Keep-Alive"
+                }
+              },
+              "Keep-Alive": {
+                "schema": {
+                  "type": "string",
+                  "example": "timeout=5, max=100"
+                }
+              },
+              "x-powered-by": {
+                "schema": {
+                  "type": "number",
+                  "example": "PHP/8.2.16"
+                }
+              },
+              "cache-control": {
+                "schema": {
+                  "type": "string",
+                  "example": "no-cache, private"
+                }
+              },
+              "content-type": {
+                "schema": {
+                  "type": "string",
+                  "example": "application/json"
+                }
+              },
+              "x-ratelimit-limit": {
+                "schema": {
+                  "type": "integer",
+                  "example": "60"
+                }
+              },
+              "x-ratelimit-remaining": {
+                "schema": {
+                  "type": "integer",
+                  "example": "58"
+                }
+              },
+              "access-control-allow-origin": {
+                "schema": {
+                  "type": "string",
+                  "example": "*"
+                }
+              },
+              "content-length": {
+                "schema": {
+                  "type": "integer",
+                  "example": "164"
+                }
+              },
+              "content-encoding": {
+                "schema": {
+                  "type": "string",
+                  "example": "br"
+                }
+              },
+              "vary": {
+                "schema": {
+                  "type": "string",
+                  "example": "Accept-Encoding"
+                }
+              },
+              "date": {
+                "schema": {
+                  "type": "string",
+                  "example": "Thu, 13 Jun 2024 06:33:44 GMT"
+                }
+              },
+              "server": {
+                "schema": {
+                  "type": "string",
+                  "example": "LiteSpeed"
+                }
+              },
+              "platform": {
+                "schema": {
+                  "type": "string",
+                  "example": "hostinger"
+                }
+              },
+              "content-security-policy": {
+                "schema": {
+                  "type": "string",
+                  "example": "upgrade-insecure-requests"
+                }
+              },
+              "alt-svc": {
+                "schema": {
+                  "type": "string",
+                  "example": "h3=\":443\"; ma=2592000, h3-29=\":443\"; ma=2592000, h3-Q050=\":443\"; ma=2592000, h3-Q046=\":443\"; ma=2592000, h3-Q043=\":443\"; ma=2592000, quic=\":443\"; ma=2592000; v=\"43,46\""
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                },
+                "example": {
+                  "code": "0x0200",
+                  "message": "OTP send",
+                  "status": "SUCCESS",
+                  "data": {
+                    "requestId": 299123229,
+                    "otpRefId": "OTP5745F17F",
+                    "mobile": "XXXXXX4138",
+                    "email": "kumaXXXX@gmail.com"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                },
+                "example":{
+                    "code": "0x0201",
+                    "message": "Something went worng, Please try after sometimes.",
+                    "status": "FAILURE"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/otp/verify": {
+      "post": {
+        "tags": [
+          "All Channel Send OTP"
+        ],
+        "summary": "Verify OTP",
+        "parameters": [
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            },
+            "example": "application/json"
+          },
+          {
+            "name": "authKey",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            },
+            "example": "{{key}}"
+          },
+          {
+            "name": "otpRefId",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            },
+            "example": "OTP62357362"
+          },
+          {
+            "name": "otp",
+            "in": "query",
+            "schema": {
+              "type": "integer"
+            },
+            "example": "123456"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "headers": {
+              "Connection": {
+                "schema": {
+                  "type": "string",
+                  "example": "Keep-Alive"
+                }
+              },
+              "Keep-Alive": {
+                "schema": {
+                  "type": "string",
+                  "example": "timeout=5, max=100"
+                }
+              },
+              "x-powered-by": {
+                "schema": {
+                  "type": "number",
+                  "example": "PHP/8.2.16"
+                }
+              },
+              "cache-control": {
+                "schema": {
+                  "type": "string",
+                  "example": "no-cache, private"
+                }
+              },
+              "content-type": {
+                "schema": {
+                  "type": "string",
+                  "example": "application/json"
+                }
+              },
+              "x-ratelimit-limit": {
+                "schema": {
+                  "type": "integer",
+                  "example": "60"
+                }
+              },
+              "x-ratelimit-remaining": {
+                "schema": {
+                  "type": "integer",
+                  "example": "59"
+                }
+              },
+              "access-control-allow-origin": {
+                "schema": {
+                  "type": "string",
+                  "example": "*"
+                }
+              },
+              "content-length": {
+                "schema": {
+                  "type": "integer",
+                  "example": "112"
+                }
+              },
+              "content-encoding": {
+                "schema": {
+                  "type": "string",
+                  "example": "br"
+                }
+              },
+              "vary": {
+                "schema": {
+                  "type": "string",
+                  "example": "Accept-Encoding"
+                }
+              },
+              "date": {
+                "schema": {
+                  "type": "string",
+                  "example": "Thu, 13 Jun 2024 06:49:53 GMT"
+                }
+              },
+              "server": {
+                "schema": {
+                  "type": "string",
+                  "example": "LiteSpeed"
+                }
+              },
+              "platform": {
+                "schema": {
+                  "type": "string",
+                  "example": "hostinger"
+                }
+              },
+              "content-security-policy": {
+                "schema": {
+                  "type": "string",
+                  "example": "upgrade-insecure-requests"
+                }
+              },
+              "alt-svc": {
+                "schema": {
+                  "type": "string",
+                  "example": "h3=\":443\"; ma=2592000, h3-29=\":443\"; ma=2592000, h3-Q050=\":443\"; ma=2592000, h3-Q046=\":443\"; ma=2592000, h3-Q043=\":443\"; ma=2592000, quic=\":443\"; ma=2592000; v=\"43,46\""
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                },
+                "example": {
+                 "code": "0x0200",
+                  "message": "OTP matched",
+                  "status": "SUCCESS"
+                }
+              }
+            }
+          },
+          "202": {
+            "description": "Unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                },
+                "example":{
+                  "code": "0x0202",
+                  "status": "FAILURE",
+                  "message": "OTP expire valid 5 min.",
+                  "data": {
+                    "mobileOTP": 0,
+                    "emailOTP": 0
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                },
+                "example":{
+                    "code": "0x0201",
+                    "message": "Something went worng, Please try after sometimes.",
+                    "status": "FAILURE"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Error": {
+        "required": [
+          "error",
+          "message"
+        ],
+        "type": "object",
+        "properties": {
+          "error": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "message": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "securitySchemes": {
+      "basicAuth": {
+        "type": "http",
+        "scheme": "basic"
+      }
+    }
+  } 
+}

@@ -1,0 +1,181 @@
+---
+title: 'Welcome to Infopass ✨'
+description: 'Welcome to Verification API Documentation! Our powerful API suite is designed to streamline and enhance your verification processes, offering seamless integration for both Identity Verification (KYC) and Business Verification (KYB) services.'
+---
+
+  <Card
+  href="https://infopass.in"
+  >
+    <img
+      src="/images/i1.png"
+      alt="Hero Dark"
+    />
+  </Card>
+
+<Note>
+
+  [Sign up](https://auth.enginify.in/signup) for a free [Infopass](https://infopass.in) account to get started. After registration, you'll receive a client_id and client_secret to build and test all Infopass Verification API using simulated data.
+
+</Note>
+
+## API Overview 🗂️
+
+Our APIs offer comprehensive solutions for:
+
+<CardGroup cols={2}>
+  <Card
+    icon="fingerprint"
+    href="https://infopass.in/identity-verification"
+  >
+    **`Identity Verification (KYC)`**
+
+     \
+    Our KYC API swiftly and securely verifies user identities, ensuring compliance and enhancing trust with minimal effort. Key features include-\
+    **- Real-Time Verification** \
+    **- Document Validation**\
+    **- Biometric Verification**
+  </Card>
+  <Card
+    icon="house-user"
+    href="https://infopass.in/business-verification"
+  >
+    **`Business Verification (KYB)`**
+
+\
+  Our KYB API verifies businesses comprehensively to ensure they comply with regulations and are legitimate. Key Features include-\
+    **- Negative News Diligence**   
+    **- Business Registration Verify**  
+    **- Beneficial Identification**
+  </Card>
+</CardGroup>
+
+## Generating an API Key 🔑
+
+Step-by-Step Guide to Generating an API Key -
+
+<Steps>
+  <Step title="Log In to Your Account">
+    * Visit our [website](https://infopass.in) and [log in](https://infopass.in/login) with your credentials.
+    * If you don't have an account, [sign up](https://auth.enginify.in/signup) for one to get started.
+    <CardGroup cols={1}>
+      <Card
+      >
+        <img
+          src="/images/sign-in.png"
+          alt="Hero Dark"
+        />
+      </Card>
+    </CardGroup>
+  </Step>
+  <Step title="Navigate to the Developer Setting Section">
+   * Once logged in, go to your user dashboard.
+   * Find Profile Section on right corner and click on the "My Profile" icon in the dashboard topbar.
+   <CardGroup cols={1}>
+      <Card
+      >
+        <img
+          src="/images/devtab.png"
+          alt="Hero Dark"
+        />
+      </Card>
+    </CardGroup>
+  </Step>
+  <Step title="Request a New API Key">
+    * In the "Developer" section, click on the "Generate API Key" button.
+    <CardGroup cols={1}>
+      <Card
+      >
+        <img
+          src="/images/apibtn.png"
+          alt="Hero Dark"
+        />
+      </Card>
+    </CardGroup>
+    * You may be asked to provide some details before generating the API key
+     <CardGroup cols={1}>
+      <Card
+      >
+        <img
+          src="/images/modal.png"
+          alt="Hero Dark"
+        />
+      </Card>
+    </CardGroup>
+  </Step>
+  <Step title="Generate and Save Your API Key" >
+    * Click the "Generate" button to create your API key.
+    * Once generated, your API key will be displayed on the screen.
+     <CardGroup cols={1}>
+      <Card
+      >
+        <img
+          src="/images/key.png"
+          alt="Hero Dark"
+        />
+      </Card>
+    </CardGroup>
+  </Step>
+  <Step title="Start Using Your API Key">
+    * Your API key is now ready to use. Include it in your API requests as specified in the [authentication section](/introduction#authenticated-requests) of our documentation.
+    <CardGroup cols={1}>
+        <Card
+        >
+          <img
+            src="/images/table.png"
+            alt="Hero Dark"
+          />
+        </Card>
+      </CardGroup>
+  </Step>
+</Steps>
+
+<Note>
+  Keep your API key secure and do not share it publicly. \
+  If you suspect that your API key has been compromised, regenerate a new one immediately
+</Note>
+
+## API Key Management 🏯️
+
+* **Regenerate Key** : If you need to regenerate your key, follow the same steps as above. The old key will be deactivate.
+
+## Authentication 👩‍🏫️
+
+All API endpoints are authenticated using auth key and picked up from the specification file.
+
+```json
+"security": [
+  {
+    "basicAuth": [
+      "type": "https",
+      "scheme": "basic"
+    ]
+  }
+]
+```
+
+<img
+  src="/images/auth.png"
+  alt="Hero Light"
+/>
+
+## Authenticated requests 🚀️
+
+Enable user authentication via environment variable, each front-end API request includes an API key and OAuth2 token. These authenticate the request. Without proper permissions, the backend responds with a `4XX` error.
+
+
+## API Errors ❌️
+
+If a page loads with no visible data, it could indicate either a lack of data or insufficient user permissions.
+
+If no error message appears on the page, check the browser’s network tab and inspect the API request response for full error details.
+
+<Tip>Learn how to view the network requests in Chrome by following these [instructions](https://developer.chrome.com/docs/devtools/network/)</Tip>
+
+| Error Code | Description |
+| :--------: | :---------: |
+|   `401`    | 	Expired / Invalid OAuth token |
+|   `402`    | 	Record is Invalid |
+|   `403`    | 	Invalid API Key |
+|   `403`    | 	Unauthorized access |
+|   `404`    | 	Record not found |
+|   `500  `    | 	API resource error |
