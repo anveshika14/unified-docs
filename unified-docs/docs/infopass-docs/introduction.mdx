@@ -138,26 +138,6 @@ Step-by-Step Guide to Generating an API Key -
 
 * **Regenerate Key** : If you need to regenerate your key, follow the same steps as above. The old key will be deactivate.
 
-## Authentication 👩‍🏫️
-
-All API endpoints are authenticated using auth key and picked up from the specification file.
-
-```json
-"security": [
-  {
-    "basicAuth": [
-      "type": "https",
-      "scheme": "basic"
-    ]
-  }
-]
-```
-
-<img
-  src="/images/auth.png"
-  alt="Hero Light"
-/>
-
 ## Authenticated requests 🚀️
 
 Enable user authentication via environment variable, each front-end API request includes an API key and OAuth2 token. These authenticate the request. Without proper permissions, the backend responds with a `4XX` error.
