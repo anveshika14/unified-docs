@@ -1,7 +1,8 @@
 {
   "$schema": "https://mintlify.com/docs.json",
-  "theme": "mint",
+  "theme":"mint",
   "name": "enginify",
+
   "colors": {
     "primary": "#2b2b2b",
     "light": "#cafc81",
@@ -9,6 +10,7 @@
   },
   "favicon": "/favicon.svg",
   "navigation": {
+    
     "tabs": [
       {
         "tab": "Home",
@@ -289,8 +291,20 @@
             ]
           }
         ]
+      },
+      {
+        "tab":"Change Log",
+        "groups": [
+          {
+            "group": "Change Log",
+            "pages": [
+              "/docs/base-docs/Updates"
+            ]
+          }
+        ]
       }
     ],
+
     "global": {"anchors": [
       {
       "anchor": "Go to our website ",
@@ -340,5 +354,4 @@
       "linkedin": "https://www.linkedin.com/company/enginify"
     }
   }
-
 }
