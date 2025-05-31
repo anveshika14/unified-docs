@@ -8,9 +8,17 @@
     "light": "#cafc81",
     "dark": "#2b2b2b"
   },
+  "contextual": {
+   "options": [
+     "copy",
+     "view",
+     "chatgpt",
+     "claude"
+   ]
+ }
+,
   "favicon": "/favicon.svg",
   "navigation": {
-    
     "tabs": [
       {
         "tab": "Home",
@@ -299,6 +307,17 @@
             "group": "Change Log",
             "pages": [
               "/docs/base-docs/Updates"
+            ]
+          }
+        ]
+      },
+      {
+        "tab":"Status",
+        "groups": [
+          {
+            "group": "API Status",
+            "pages": [
+              "/docs/base-docs/status"
             ]
           }
         ]
