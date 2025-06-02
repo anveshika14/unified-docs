@@ -1,6 +1,6 @@
 ---
 title: 'API Status'
-icon: "list"
+icon: "signal"
 ---
 <Check> All systems are operational </Check>
 <CardGroup cols={3}>
@@ -14,21 +14,48 @@ icon: "list"
       <Tooltip tip="Operational">Normal</Tooltip>
    </Card>
 </CardGroup>
+<br/>
+<br/>
 
-## Feedback Form
+# Feedback Form
 
 
-<form action="https://formspree.io/f/xpwrzwbe" method="POST">
+<form action="/submit" method="POST">
   <label>
-    Your email:
-    <input type="email" name="email"/>
+    Your Name* :
+    <input type="text" name="name"
+    style={{
+      width: '100%',
+      height: '50px',
+      padding:'10px',
+      borderRadius: '7px',
+      border: '1px solid #cafc81',
+      background: 'transparent'
+    }}/>
+  </label>
+
+  <label>
+    Your email* :
+    <input type="email" name="email"
+    style={{
+      width: '100%',
+      height: '50px',
+      padding:'10px',
+      borderRadius: '7px',
+      border: '1px solid #cafc81',
+      background: 'transparent'
+    }}/>
   </label>
 
    <label>
-    Your Message:
+    Your Message* :
     <input type="text" name="text" style={{
-      height: '50px',
-      width: '200px'
+      height: '100px',
+      width: '100%',
+      borderRadius: '7px',
+      padding: '10px',
+      border: '1px solid #cafc81',
+      background: 'transparent'
     }}/>
   </label>
 <br/>
@@ -40,10 +67,10 @@ icon: "list"
         borderRadius: '4px',
         fontSize: '16px',
         cursor: 'pointer',
-        marginTop: '10px'
+        marginTop: '20px',
+        height: '40px',
+        width:'100px'
       }}
-    >
-      Send
-    </button>
+    >Send</button>
 </form>
 
