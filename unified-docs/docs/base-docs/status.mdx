@@ -4,13 +4,46 @@ icon: "list"
 ---
 <Check> All systems are operational </Check>
 <CardGroup cols={3}>
-   <Card title="Eazype API" icon="circle-check">
+   <Card title="Eazype API" icon="circle-check" href="https://status.enginify.in/">
       <Tooltip tip="Operational">Normal</Tooltip>
    </Card>
-    <Card title="Eazymsg API" icon="circle-check">
+    <Card title="Eazymsg API" icon="circle-check" href="https://status.enginify.in/">
       <Tooltip tip="Operational">Normal</Tooltip>
    </Card>
-    <Card title="Infopass API" icon="circle-check">
+    <Card title="Infopass API" icon="circle-check" href="https://status.enginify.in/">
       <Tooltip tip="Operational">Normal</Tooltip>
    </Card>
 </CardGroup>
+
+## Feedback Form
+
+
+<form action="https://formspree.io/f/xpwrzwbe" method="POST">
+  <label>
+    Your email:
+    <input type="email" name="email"/>
+  </label>
+
+   <label>
+    Your Message:
+    <input type="text" name="text" style={{
+      height: '50px',
+      width: '200px'
+    }}/>
+  </label>
+<br/>
+  <button
+      style={{
+        backgroundColor: '#cafc81',
+        color: 'black',
+        border: 'none',
+        borderRadius: '4px',
+        fontSize: '16px',
+        cursor: 'pointer',
+        marginTop: '10px'
+      }}
+    >
+      Send
+    </button>
+</form>
+
