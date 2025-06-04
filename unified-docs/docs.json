@@ -3,19 +3,22 @@
   "theme":"mint",
   "name": "enginify",
   "background":{
-    "decoration":"gradient"
+    "decoration":"gradient",
+    "color":{
+      "dark": "#131426"
+    }
   },
-  "appearance":{
-    "default":"dark",
+  "appearance": {
+    "default": "dark",
     "strict": true
   },
   "fonts":{
     "family": "Open Sans"
   },
   "colors": {
-    "primary": "#2b2b2b",
-    "light": "#cafc81",
-    "dark": "#2b2b2b"
+    "primary": "#9935e8",
+    "light": "#ffffff",
+    "dark": "#9935e8"
   },
   "contextual": {
    "options": [
@@ -27,8 +30,8 @@
  }
 ,
   "favicon": "/favicon.svg",
+  
   "navigation": {
-      
     "tabs": [
       {
         "tab": "Home",
@@ -72,6 +75,79 @@
             "group": "API's Endpoints",
             "pages": [
               {
+                "group": " Eazype API",
+                "pages": [
+                  "api-reference/eazype-api/endpoints/balance",
+                  "api-reference/eazype-api/endpoints/check-status",
+                  "api-reference/eazype-api/endpoints/complaint-status",
+                  "api-reference/eazype-api/endpoints/complaint",
+                  "api-reference/eazype-api/endpoints/dth-info",
+                  "api-reference/eazype-api/endpoints/dth-plan",
+                  "api-reference/eazype-api/endpoints/mobile-info",
+                  "api-reference/eazype-api/endpoints/mobile-plan",
+                  "api-reference/eazype-api/endpoints/offers",
+                  "api-reference/eazype-api/endpoints/operator-dth",
+                  "api-reference/eazype-api/endpoints/operator-mobile",
+                  "api-reference/eazype-api/endpoints/recharge-init"
+                ]
+              },
+              {
+                "group": "Eazymsg API",
+                "pages": [
+                  {
+                    "group": "SMS",
+                    "icon": "message",
+                    "pages": [
+                      {
+                        "group": "Contacts",
+                        "icon": "list",
+                        "pages": [
+                          "api-reference/eazymsg-api/endpoints/sms/contacts/contact-list",
+                          "api-reference/eazymsg-api/endpoints/sms/contacts/create-contact",
+                          "api-reference/eazymsg-api/endpoints/sms/contacts/create-group",
+                          "api-reference/eazymsg-api/endpoints/sms/contacts/group-list",
+                          "api-reference/eazymsg-api/endpoints/sms/contacts/update-contact",
+                          "api-reference/eazymsg-api/endpoints/sms/contacts/update-group"
+                        ]
+                      },
+                      {
+                        "group": "Send SMS",
+                        "icon": "comment-sms",
+                        "pages": [
+                          "api-reference/eazymsg-api/endpoints/sms/send-sms/with-variable",
+                          "api-reference/eazymsg-api/endpoints/sms/send-sms/without-variable"
+                        ]
+                      },
+                      {
+                        "group": "Templates",
+                        "icon": "image",
+                        "pages": [
+                          "api-reference/eazymsg-api/endpoints/sms/templates/add-template",
+                          "api-reference/eazymsg-api/endpoints/sms/templates/template-list",
+                          "api-reference/eazymsg-api/endpoints/sms/templates/update-template"
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "group": "SMS OTP",
+                    "icon": "share",
+                    "pages": [
+                      "api-reference/eazymsg-api/endpoints/sms-otp/send",
+                      "api-reference/eazymsg-api/endpoints/sms-otp/verify"
+                    ]
+                  },
+                  {
+                    "group": "Send OTP",
+                    "icon": "paper-plane",
+                    "pages": [
+                      "api-reference/eazymsg-api/endpoints/send-otp/send",
+                      "api-reference/eazymsg-api/endpoints/send-otp/verify"
+                    ]
+                  }
+                ]
+              },
+               {
                 "group": "Infopass API",
                 "pages": [
                   {
@@ -171,79 +247,6 @@
                     ]
                   }
                 ]
-              },
-              {
-                "group": " Eazype API",
-                "pages": [
-                  "api-reference/eazype-api/endpoints/balance",
-                  "api-reference/eazype-api/endpoints/check-status",
-                  "api-reference/eazype-api/endpoints/complaint-status",
-                  "api-reference/eazype-api/endpoints/complaint",
-                  "api-reference/eazype-api/endpoints/dth-info",
-                  "api-reference/eazype-api/endpoints/dth-plan",
-                  "api-reference/eazype-api/endpoints/mobile-info",
-                  "api-reference/eazype-api/endpoints/mobile-plan",
-                  "api-reference/eazype-api/endpoints/offers",
-                  "api-reference/eazype-api/endpoints/operator-dth",
-                  "api-reference/eazype-api/endpoints/operator-mobile",
-                  "api-reference/eazype-api/endpoints/recharge-init"
-                ]
-              },
-              {
-                "group": "Eazymsg API",
-                "pages": [
-                  {
-                    "group": "SMS",
-                    "icon": "message",
-                    "pages": [
-                      {
-                        "group": "Contacts",
-                        "icon": "list",
-                        "pages": [
-                          "api-reference/eazymsg-api/endpoints/sms/contacts/contact-list",
-                          "api-reference/eazymsg-api/endpoints/sms/contacts/create-contact",
-                          "api-reference/eazymsg-api/endpoints/sms/contacts/create-group",
-                          "api-reference/eazymsg-api/endpoints/sms/contacts/group-list",
-                          "api-reference/eazymsg-api/endpoints/sms/contacts/update-contact",
-                          "api-reference/eazymsg-api/endpoints/sms/contacts/update-group"
-                        ]
-                      },
-                      {
-                        "group": "Send SMS",
-                        "icon": "comment-sms",
-                        "pages": [
-                          "api-reference/eazymsg-api/endpoints/sms/send-sms/with-variable",
-                          "api-reference/eazymsg-api/endpoints/sms/send-sms/without-variable"
-                        ]
-                      },
-                      {
-                        "group": "Templates",
-                        "icon": "image",
-                        "pages": [
-                          "api-reference/eazymsg-api/endpoints/sms/templates/add-template",
-                          "api-reference/eazymsg-api/endpoints/sms/templates/template-list",
-                          "api-reference/eazymsg-api/endpoints/sms/templates/update-template"
-                        ]
-                      }
-                    ]
-                  },
-                  {
-                    "group": "SMS OTP",
-                    "icon": "share",
-                    "pages": [
-                      "api-reference/eazymsg-api/endpoints/sms-otp/send",
-                      "api-reference/eazymsg-api/endpoints/sms-otp/verify"
-                    ]
-                  },
-                  {
-                    "group": "Send OTP",
-                    "icon": "paper-plane",
-                    "pages": [
-                      "api-reference/eazymsg-api/endpoints/send-otp/send",
-                      "api-reference/eazymsg-api/endpoints/send-otp/verify"
-                    ]
-                  }
-                ]
               }
             ]
           }
@@ -337,7 +340,9 @@
         ]
       }
     ],
-    "global": {"anchors": [
+    
+    "global": {
+      "anchors": [
       {
       "anchor": "Go to our website ",
       "icon": "house",
@@ -364,7 +369,7 @@
   
   "logo": {
     "light": "/logo/logo_light.webp",
-    "dark": "/logo/logo_dark.png"
+    "dark": "/logo/enginify_logo.png"
   },
   "navbar": {
     "links": [
