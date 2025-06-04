@@ -36,8 +36,8 @@ mode: "custom"
     <button
       style={{
         padding: '10px 20px',
-        backgroundColor: '#cafc81',
-        color: 'black',
+        background: 'linear-gradient(to right,#9935e8,#e85535)',
+        color: 'white',
         border: 'none',
         borderRadius: '4px',
         fontSize: '16px',
@@ -51,29 +51,31 @@ mode: "custom"
   </div>
 </div>
 
-
-<p className="text-center mt-20 mb-10 text-[20px] text-[#000000]  dark:text-white">
-  Our Products
-</p>
-
-<div className="flex justify-center mb-40" >
-    <div className="flex justify-center gap-[200px]" >
-       <a href="https://eazype.com" target="_blank">
-        <img className="block dark:hidden" height="60" width="130" src="/logo/eazypay/logo-white.png" />
-        <img className="hidden dark:block" height="60" width="130" src="/logo/eazypay/logo-black.png" />
-       </a>
-        <a href="https://infopass.in" target="_blank">
-        <img className="block dark:hidden" height="60" width="130" src="/logo/infopass/logo-white.png" />
-        <img className="hidden dark:block" height="60" width="130" src="/logo/infopass/logo-black.png" />
-
-       </a>
-        <a href="https://eazymsg.com" target="_blank">
-        <img className="block dark:hidden" height="60" width="130" src="/logo/eazymsg/logo-white.png" />
-        <img className="hidden dark:block" height="60" width="130" src="/logo/eazymsg/logo-black.png" />
-       </a>
-       
-    </div>
+<div style={{
+  backgroundColor:'#d6d6d6',
+  display: 'flex',
+  height: '100px',
+  justifyContent: 'center',
+  alignItems: 'center',
+  padding: '40px',
+  color: 'black'
+}}>
+   <p style={{fontSize: '13px'}}>**TRUSTED BY <br/>
+   LEADING BRANDS AND STARTUPS**</p>
+  
+   <img src="/images/companies/ub-ae.svg"/>
+   <img src="/images/companies/ub-whole-foods.svg"/>
+   <img src="/images/companies/ub-nokia.svg"/>
+   <img src="/images/companies/ub-starbucks.svg"/>
+   <img src="/images/companies/ub-mars.svg"/>
+   <img src="/images/companies/ub-hilton.svg"/>
+   
+   
+   
 </div>
+
+ 
+
 
 
 <p className="text-center mt-24 mb-7 text-[25px] text-[#000000] dark:text-white">
@@ -86,6 +88,7 @@ mode: "custom"
           <Card
              title="Quickstart"
              icon="play"
+             color="#9935e8"
              href="/docs/base-docs/guides"
              arrow="true"
           >
@@ -94,6 +97,7 @@ mode: "custom"
           <Card
              title="API Reference"
              icon="webhook"
+             color="#9935e8"
              href="/api-reference/introduction"
              arrow="true"
           >
@@ -102,6 +106,7 @@ mode: "custom"
           <Card
              title="Go to our website"
              icon="globe"
+             color="#9935e8"
              href="https://enginify.in/"
              arrow="true"
           >
@@ -111,12 +116,65 @@ mode: "custom"
     </div>
 </div>
 
-<p style={{
-  color: 'white',
-  textAlign: 'center',
-  marginTop: '100px',
-  marginBottom: '20px',
-  display: 'flex',
-  justifyContent: 'center',
-  alignItems:'center'
-}}>© 2025, &nbsp;&nbsp;<a href="https://enginify.in"> Enginify Technologies Pvt. Ltd. </a></p>
+
+<p className="text-center mt-40 text-[35px] text-[#000000] dark:text-white">
+  **How Enginify helps you deliver the best results**
+</p>
+
+<div className="flex justify-center mb-16">
+    <div style={{
+      margin: '40px'
+    }}>
+
+        <CardGroup cols={3} >
+          <Card>
+            <div style={{
+              padding: '30px'
+            }}>
+            <img src="/images/icons/icon1.svg"/><br/><br/>
+            <p style={{
+              fontSize: '23px'
+            }}>**Clear communication**</p>
+            <br/>
+            We build relationships based on integrity and trust, delivering on our promises and maintaining clear communication at all times.
+            </div>
+          </Card>
+
+           <Card>
+            <div style={{
+              padding: '30px'
+            }}>
+            <img src="/images/icons/icon2.svg"/><br/><br/>
+            <p style={{
+              fontSize: '23px'
+            }}>**Customer-Centric Approach**</p>
+            <br/>
+            We prioritize our clients' success, understanding your unique needs and delivering tailored solutions that drive your business growth.
+            </div>
+          </Card>
+
+          <Card>
+            <div style={{
+              padding: '30px'
+            }}>
+            <img src="/images/icons/icon3.svg"/><br/><br/>
+            <p style={{
+              fontSize: '23px'
+            }}>**Innovation and Excellence**</p>
+            <br/>
+            As a team on the cutting edge of technology trends, we consistently deliver innovative, high-quality solutions.
+            </div>
+          </Card>
+
+        </CardGroup>
+    </div>
+</div>
+
+
+<div>
+</div>
+
+<div style={{
+  height:'400px',
+  backgroundColor: '#2b2b2b'
+}}></div>
