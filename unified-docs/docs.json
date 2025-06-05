@@ -1,9 +1,9 @@
 {
   "$schema": "https://mintlify.com/docs.json",
-  "theme":"mint",
+  "theme":"palm",
   "name": "enginify",
   "background":{
-    "decoration":"gradient",
+    "decoration":"windows",
     "color":{
       "dark": "#131426"
     }
@@ -20,15 +20,6 @@
     "light": "#ffffff",
     "dark": "#9935e8"
   },
-  "contextual": {
-   "options": [
-     "copy",
-     "view",
-     "chatgpt",
-     "claude"
-   ]
- }
-,
   "favicon": "/favicon.svg",
   
   "navigation": {
@@ -55,6 +46,60 @@
               "/docs/base-docs/Updates",
               "/docs/base-docs/status"
 
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "Eazype",
+        "groups": [
+          {
+            "group": "Introduction",
+            "pages": [
+              "/docs/eazype-docs/introduction"
+            ]
+          },
+          {
+            "group": "Products",
+            "pages": [
+              "products/infopass",
+              "products/eazymsg"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "Infopass",
+        "groups": [
+          {
+            "group": "Introduction",
+            "pages": [
+              "/docs/infopass-docs/introduction"
+            ]
+          },
+          {
+            "group": "Products",
+            "pages": [
+              "products/eazype",
+              "products/eazymsg"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "Eazymsg",
+        "groups": [
+          {
+            "group": "Introduction",
+            "pages": [
+              "/docs/eazymsg-docs/introduction"
+            ]
+          },
+          {
+            "group": "Products",
+            "pages": [
+              "products/eazype",
+              "products/infopass"
             ]
           }
         ]
@@ -248,60 +293,6 @@
                   }
                 ]
               }
-            ]
-          }
-        ]
-      },
-      {
-        "tab": "Eazype",
-        "groups": [
-          {
-            "group": "Introduction",
-            "pages": [
-              "/docs/eazype-docs/introduction"
-            ]
-          },
-          {
-            "group": "Products",
-            "pages": [
-              "products/infopass",
-              "products/eazymsg"
-            ]
-          }
-        ]
-      },
-      {
-        "tab": "Infopass",
-        "groups": [
-          {
-            "group": "Introduction",
-            "pages": [
-              "/docs/infopass-docs/introduction"
-            ]
-          },
-          {
-            "group": "Products",
-            "pages": [
-              "products/eazype",
-              "products/eazymsg"
-            ]
-          }
-        ]
-      },
-      {
-        "tab": "Eazymsg",
-        "groups": [
-          {
-            "group": "Introduction",
-            "pages": [
-              "/docs/eazymsg-docs/introduction"
-            ]
-          },
-          {
-            "group": "Products",
-            "pages": [
-              "products/eazype",
-              "products/infopass"
             ]
           }
         ]
