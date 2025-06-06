@@ -165,10 +165,10 @@ icon: 'question'
 
 Your feedback is valuable to us, share your feedback here :
 
-<form action="https://formsubmit.co/anveshikashukla6@gmail.com" method="POST">
+<form action="/submit" method="POST">
   <label>
     Your Name* :
-    <input type="text" name="name"
+    <input type="text" name="name" required
     style={{
       width: '100%',
       height: '50px',
@@ -181,7 +181,7 @@ Your feedback is valuable to us, share your feedback here :
 
   <label>
     Your email* :
-    <input type="email" name="email"
+    <input type="email" name="email" required
     style={{
       width: '100%',
       height: '50px',
@@ -194,7 +194,9 @@ Your feedback is valuable to us, share your feedback here :
 
    <label>
     Your Message* :
-    <input type="text" name="text" style={{
+    <input type="text" name="text"  required
+      minlength="10"
+       style={{
       height: '100px',
       width: '100%',
       borderRadius: '7px',
