@@ -3,6 +3,9 @@ title: 'Welcome'
 mode: "custom"
 ---
 
+
+
+
 <div 
   style={{
     height: '530px',
@@ -16,10 +19,15 @@ mode: "custom"
 >
   <div
     style={{
+      background: 'url(https://ik.imagekit.io/neuwx10vxnmeo/enginify/images/how-we-build-bg_L_E2_CgS1A.jpg?updatedAt=1718015721061) no-repeat center center',
+      backgroundSize: 'cover',
       display: 'flex',
       flexDirection: 'column',
       alignItems: 'center',
-      gap: '10px'
+      gap: '10px',
+      borderRadius:'20px',
+      width:'85%',
+      padding:'100px'
     }}
   >
 
@@ -59,6 +67,7 @@ mode: "custom"
     </a>
   </div>
 </div>
+
 
 <div style={{
   display: 'flex',
@@ -107,16 +116,12 @@ the market
 
 
 
- 
-
-
-
 <p className="text-center mt-24 mb-7 text-[25px] text-[#000000] dark:text-white">
    Explore the Docs
 </p>
 
 <div className="flex justify-center mb-40 " >
-     <div>
+     <div style={{marginBottom:'70px'}}>
         <CardGroup cols={3}>
           <Card
              title="Quickstart"
@@ -148,181 +153,3 @@ the market
         </CardGroup>
     </div>
 </div>
-<div style={{
-  backgroundColor: '#e6e7f5 ',
-  display: 'grid',
-  justifyContent: 'center',
-  alignItems: 'center',
-  padding: '100px',
-  color: 'black',
-  gap: '16px',
-  textAlign: 'center'
-}}>
-  <p style={{ fontSize: '35px', fontWeight: 'bold', margin: 0 }}>
-    Our Expertise For Your Success
-  </p>
-  <p style={{ maxWidth: '800px', margin: '0 auto' }}>
-    Using powerful, industry-specific software solutions, our team can help you achieve your business goals.
-  </p>
-
-  <div style={{
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
-    gap: '70px',
-    marginTop: '50px',
-
-    whiteSpace: 'wrap',
-    paddingBottom: '20px'
-  }}>
-    {[
-      ['1.svg', 'Healthcare'],
-      ['2.svg', 'Finance'],
-      ['3.svg', 'Technology'],
-      ['4.svg', 'Retail and E-commerce'],
-      ['5.svg', 'SaaS'],
-      ['6.svg', 'Business services'],
-      ['7.svg', 'Media and entertainment'],
-      ['8.svg', 'AI']
-    ].map(([img, label]) => (
-      <div key={label} style={{
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'center',
-        textAlign: 'center',
-        fontSize:'15px'
-      }}>
-        <img src={`/images/${img}`} alt={label} />
-        <strong style={{ marginTop: '10px' }}>{label}</strong>
-      </div>
-    ))}
-  </div>
-</div>
-
-
-
-
-<p className="text-center mt-40 text-[35px] text-[#000000] dark:text-white">
-  **How Enginify helps you deliver the best results**
-</p>
-
-<div className="flex justify-center mb-16">
-    <div style={{
-      margin: '40px',
-    }}>
-
-        <CardGroup cols={3} >
-          <Card>
-            <div style={{
-              padding: '30px'
-            }}>
-            <img src="/images/icons/icon1.svg"/><br/><br/>
-            <p style={{
-              fontSize: '23px'
-            }}>**Clear communication**</p>
-            <br/>
-            We build relationships based on integrity and trust, delivering on our promises and maintaining clear communication at all times.
-            </div>
-          </Card>
-
-           <Card>
-            <div style={{
-              padding: '30px'
-            }}>
-            <img src="/images/icons/icon2.svg"/><br/><br/>
-            <p style={{
-              fontSize: '23px'
-            }}>**Customer-Centric Approach**</p>
-            <br/>
-            We prioritize our clients' success, understanding your unique needs and delivering tailored solutions that drive your business growth.
-            </div>
-          </Card>
-
-          <Card>
-            <div style={{
-              padding: '30px'
-            }}>
-            <img src="/images/icons/icon3.svg"/><br/><br/>
-            <p style={{
-              fontSize: '23px'
-            }}>**Innovation and Excellence**</p>
-            <br/>
-            As a team on the cutting edge of technology trends, we consistently deliver innovative, high-quality solutions.
-            </div>
-          </Card>
-
-        </CardGroup>
-    </div>
-</div>
-
-<div style={{ 
-  background: 'url(https://ik.imagekit.io/neuwx10vxnmeo/enginify/images/our-values-bg_UY3oDub7d.jpg?updatedAt=1718015730516) no-repeat top center',
-  backgroundSize: 'cover',
-  height: '400px',
-  display: 'flex',
-  flexDirection:'column',
-  justifyContent: 'center',
-  alignItems: 'center',
-  textAlign: 'center', 
-}}>
-   <h2 style={{
-    fontSize:'45px',
-    marginTop:'30px',
-    color:'#e6e7f5 '
-    }}>
-       **Build and scale your business fast with our** 
-      <p style={{
-       background: 'linear-gradient(91deg, #ffbd12 0, #e03d3d 80%)',
-       WebkitBackgroundClip: 'text',
-       WebkitTextFillColor: 'transparent'
-      }}>
-      **world-class tailored solutions**
-</p> </h2>
-    <a href="https://enginify.in/contacts" style={{ textDecoration: 'none' }}>
-    <button
-      style={{
-        padding: '10px 20px',
-        background: 'linear-gradient(to right,#9935e8,#e85535)',
-        color: 'white',
-        border: 'none',
-        borderRadius: '4px',
-        fontSize: '16px',
-        marginTop:'20px',
-        cursor: 'pointer',
-      }}
-    >
-      Let's Chat
-    </button>
-    </a>
-    
-   <div
-  style={{
-    marginTop: '120px',
-    display: 'flex',
-    justifyContent: 'space-evenly',
-    alignItems: 'center',
-    width: '90%',
-    flexWrap: 'wrap'
-  }}
->
-  {/* Left */}
-  <div style={{ flex: 1, textAlign: 'left' }}>
-    © 2025, Enginify Technologies Pvt. Ltd.
-  </div>
-
-  {/* Center */}
-  <div style={{ flex: 1, textAlign: 'center'}}>
-    <a href="https://www.linkedin.com/company/enginify">  <Icon icon="linkedin" size={20}></Icon></a>
-    <a href="https://www.instagram.com/enginify" style={{margin:'20px'}}> <Icon icon="instagram" size={20}></Icon></a>
-    <a href="https://www.facebook.com/enginify">  <Icon icon="facebook" size={20}></Icon></a>
-  </div>
-
-  {/* Right */}
-  <div style={{ flex: 1, textAlign: 'right' }}>
-    <a href="https://enginify.in/privacy-policy" target="_blank">Privacy Policy</a> |
-    <a href="https://enginify.in/term-condition" target="_blank"> Terms & Conditions</a> |
-    <a href="https://enginify.in/refund-policy" target="_blank"> Refund Policy</a>
-  </div>
-</div>
-</div>
-
