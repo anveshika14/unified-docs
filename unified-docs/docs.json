@@ -3,7 +3,7 @@
   "theme":"palm",
   "name": "enginify",
   "background":{
-    "decoration":"windows",
+    "decoration":"gradient",
     "color":{
       "dark": "#131426"
     }
