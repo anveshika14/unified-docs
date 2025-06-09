@@ -161,73 +161,167 @@ icon: 'question'
 </Tabs>
 
  
-# Send Your Feedback
+{/* # Send Your Feedback */}
 
-Your feedback is valuable to us, share your feedback here :
+{/* Your feedback is valuable to us, share your feedback here : */}
 
-<form action="/submit" method="POST">
-  <label>
-    Your Name* :
-    <input type="text" name="name" required
-    style={{
-      width: '100%',
-      height: '50px',
-      padding:'10px',
-      borderRadius: '7px',
-      border: '1px solid #9935e8',
-      background: 'transparent'
-    }}/>
-  </label>
+# Have any queries?
 
-  <label>
-    Your email* :
-    <input type="email" name="email" required
-    style={{
-      width: '100%',
-      height: '50px',
-      padding:'10px',
-      borderRadius: '7px',
-      border: '1px solid #9935e8',
-      background: 'transparent'
-    }}/>
-  </label>
+export const LeadForm = () => {
+  const [formData, setFormData] = useState({
+    fname: '',
+    lname: '',
+    email: '',
+    mobile: '',
+    cname: '',
+    message: '',
+  });
+  const [message, setMessage] = useState('');
+  const [messageColor, setMessageColor] = useState('');
 
-   <label>
-    Your Message* :
-    <input type="text" name="text"  required
-      minlength="10"
-       style={{
-      height: '100px',
-      width: '100%',
-      borderRadius: '7px',
-      padding: '10px',
-      border: '1px solid #9935e8',
-      background: 'transparent'
-    }}/>
-  </label>
-<br/>
-  <button
-      style={{
-        background: 'linear-gradient(to right,#9935e8,#e85535)',
-        color: 'white',
-        border: 'none',
-        borderRadius: '4px',
-        fontSize: '16px',
-        cursor: 'pointer',
-        marginTop: '20px',
-        height: '40px',
-        width:'100px'
-      }}
-    >Send</button>
-</form>
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
+  };
 
+  const handleSubmit = async () => {
+    if (!formData.fname || !formData.lname || !formData.email || !formData.mobile || !formData.message) {
+      setMessageColor('red');
+      setMessage('Please fill all required fields.');
+      return;
+    }
+    if (formData.message.length < 10) {
+      setMessageColor('red');
+      setMessage('Message must be at least 10 characters long.');
+      return;
+    }
 
+    try {
+      const response = await fetch('https://auth.enginify.in/api/lead/generation', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      });
 
-<div style={{
-  display: 'flex',
-  justifyContent: 'end',
-  alignItems: 'right'
- }}>
-   
-  <a href="#top"> <Icon icon="circle-arrow-up" size={20}></Icon> Back to Top</a>
-</div>
+      if (response.ok) {
+        setMessageColor('green');
+        setMessage('Form submitted successfully!');
+        setFormData({
+          fname: '',
+          lname: '',
+          email: '',
+          mobile: '',
+          cname: '',
+          message: '',
+        });
+      } else {
+        setMessageColor('red');
+        setMessage('Submission failed. Please try again.');
+      }
+    } catch (error) {
+      setMessageColor('red');
+      setMessage('An error occurred. Please check your connection.');
+    }
+  };
+
+  return (
+    <div className="w-full mx-auto">
+      <div className="space-y-4">
+        <label className="block">
+          First Name* :
+          <input
+            type="text"
+            name="fname"
+            value={formData.fname}
+            onChange={handleChange}
+            required
+            className="w-full h-[50px] p-2.5 rounded-[7px] border border-[#9935e8] bg-transparent text-white"
+          />
+        </label>
+
+        <label className="block">
+          Last Name* :
+          <input
+            type="text"
+            name="lname"
+            value={formData.lname}
+            onChange={handleChange}
+            required
+            className="w-full h-[50px] p-2.5 rounded-[7px] border border-[#9935e8] bg-transparent text-white"
+          />
+        </label>
+
+        <label className="block">
+          Your email* :
+          <input
+            type="email"
+            name="email"
+            value={formData.email}
+            onChange={handleChange}
+            required
+            className="w-full h-[50px] p-2.5 rounded-[7px] border border-[#9935e8] bg-transparent text-white"
+          />
+        </label>
+
+        <label className="block">
+          Mobile* :
+          <input
+            type="number"
+            name="mobile"
+            value={formData.mobile}
+            onChange={handleChange}
+            required
+            className="w-full h-[50px] p-2.5 rounded-[7px] border border-[#9935e8] bg-transparent text-white"
+          />
+        </label>
+
+        <label className="block">
+          Company Name (Optional) :
+          <input
+            type="text"
+            name="cname"
+            value={formData.cname}
+            onChange={handleChange}
+            className="w-full h-[50px] p-2.5 rounded-[7px] border border-[#9935e8] bg-transparent text-white"
+          />
+        </label>
+
+        <label className="block">
+          Your Message* :
+          <input
+            type="text"
+            name="message"
+            value={formData.message}
+            onChange={handleChange}
+            required
+            minLength="10"
+            className="w-full h-[100px] p-2.5 rounded-[7px] border border-[#9935e8] bg-transparent text-white"
+          />
+        </label>
+
+        <button
+          onClick={handleSubmit}
+          style={{
+            background: 'linear-gradient(to right, #9935e8, #e85535)',
+            color: 'white',
+            border: 'none',
+            borderRadius: '4px',
+            fontSize: '16px',
+            cursor: 'pointer',
+            marginTop: '20px',
+            height: '40px',
+            width: '100px',
+          }}
+        >
+          Send
+        </button>
+
+        <p style={{ marginTop: '15px', fontWeight: 'bold', color: messageColor }}>
+          {message}
+        </p>
+      </div>
+    </div>
+  );
+};
+
+<LeadForm />
