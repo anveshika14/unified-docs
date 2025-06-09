@@ -4,34 +4,125 @@ mode: "custom"
 ---
 
 
+export const Carousel = ({ children, autoPlay = true, interval = 5000 }) => {
+  const [currentIndex, setCurrentIndex] = React.useState(0);
+  const slides = React.Children.toArray(children);
 
+  const nextSlide = () => setCurrentIndex(prev => (prev === slides.length - 1 ? 0 : prev + 1));
+  const prevSlide = () => setCurrentIndex(prev => (prev === 0 ? slides.length - 1 : prev - 1));
 
-<div 
-  style={{
+  React.useEffect(() => {
+    if (!autoPlay) return;
+    const timer = setInterval(nextSlide, interval);
+    return () => clearInterval(timer);
+  }, [currentIndex]);
+
+  return (
+    <div style={{
     height: '530px',
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
     textAlign: 'center',
     color: 'white',
-  }}
-  
->
-  <div
-    style={{
-      background: 'url(https://ik.imagekit.io/neuwx10vxnmeo/enginify/images/how-we-build-bg_L_E2_CgS1A.jpg?updatedAt=1718015721061) no-repeat center center',
-      backgroundSize: 'cover',
-      display: 'flex',
-      flexDirection: 'column',
-      alignItems: 'center',
-      gap: '10px',
-      borderRadius:'20px',
+  }} >
+    <div style={{
+      position: 'relative',
       width:'85%',
-      padding:'100px'
-    }}
-  >
+      margin: '2rem auto',
+      overflow: 'hidden',
+      borderRadius: '8px',
+      boxShadow: '0 4px 12px rgba(0,0,0,0.1)',
+      display:'flex',
+      justifyContent:'center'
+    }}>
+      <div style={{
+        display: 'flex',
+        transform: `translateX(-${currentIndex * 100}%)`,
+        transition: 'transform 0.5s ease'
+      }}>
+        {slides.map((slide, i) => (
+          <div key={i} style={{ minWidth: '100%' }}>{slide}</div>
+        ))}
+      </div>
 
-    <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+      <button onClick={prevSlide} style={{
+        position: 'absolute',
+        top: '50%',
+        left: '10px',
+        transform: 'translateY(-50%)',
+        background: 'rgba(0,0,0,0.5)',
+        color: 'white',
+        border: 'none',
+        borderRadius: '50%',
+        width: '40px',
+        height: '40px',
+        cursor: 'pointer',
+        fontSize: '20px'
+      }}>‹</button>
+
+      <button onClick={nextSlide} style={{
+        position: 'absolute',
+        top: '50%',
+        right: '10px',
+        transform: 'translateY(-50%)',
+        background: 'rgba(0,0,0,0.5)',
+        color: 'white',
+        border: 'none',
+        borderRadius: '50%',
+        width: '40px',
+        height: '40px',
+        cursor: 'pointer',
+        fontSize: '20px'
+      }}>›</button>
+
+      <div style={{
+        position: 'absolute',
+        bottom: '20px',
+        left: '50%',
+        transform: 'translateX(-50%)',
+        display: 'flex',
+        gap: '8px'
+      }}>
+        {slides.map((_, i) => (
+          <button
+            key={i}
+            onClick={() => setCurrentIndex(i)}
+            style={{
+              width: '12px',
+              height: '12px',
+              borderRadius: '50%',
+              border: 'none',
+              background: currentIndex === i ? '#333' : '#ccc',
+              cursor: 'pointer',
+              padding: 0
+            }}
+          />
+        ))}
+      </div>
+    </div>
+    </div>
+  );
+};
+
+
+<Carousel>
+
+  
+  {/* Slide 1 */}
+  <div style={{
+    background: 'url(/images/iconss/image1.webp) no-repeat center center',
+    backgroundSize: 'cover',
+    color: 'white',
+    padding: '80px 20px',
+    textAlign: 'center',
+    height: '400px',
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems:'center'
+  }}>
+     <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
          <h2 style={{fontSize:'45px',marginTop:'10px'}}><span style={{
             background: 'linear-gradient(91deg, #ffbd12 0, #e03d3d 80%)',
             WebkitBackgroundClip: 'text',
@@ -66,7 +157,129 @@ mode: "custom"
     </button>
     </a>
   </div>
-</div>
+
+  {/* Slide 2 */}
+  <div style={{
+    background: 'url(https://ik.imagekit.io/neuwx10vxnmeo/enginify/images/bg-intro-about-us_41LnDHOZA.jpg?updatedAt=1718015717328) no-repeat center center',
+    backgroundSize: 'cover',
+    color: 'white',
+    padding: '80px 20px',
+    textAlign: 'center',
+    height: '400px',
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'center'
+  }}>
+    <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+         <h2 style={{fontSize:'45px',marginTop:'10px'}}>**Build and scale your business
+fast with our**  
+         <span style={{
+            background: 'linear-gradient(91deg, #ffbd12 0, #e03d3d 80%)',
+            WebkitBackgroundClip: 'text',
+            WebkitTextFillColor: 'transparent'
+         }}>**world-class
+tailored solutions**</span></h2>
+    </div>
+     <a href="/docs/base-docs/guides" style={{ textDecoration: 'none' }}>
+    <button
+      style={{
+        padding: '10px 20px',
+        background: 'linear-gradient(to right,#9935e8,#e85535)',
+        color: 'white',
+        border: 'none',
+        borderRadius: '4px',
+        fontSize: '16px',
+        cursor: 'pointer',
+        marginTop: '20px'
+      }}
+    >
+      Let's Chat
+    </button>
+    </a>
+  </div>
+
+
+  {/* Slide 3 */}
+  <div style={{
+    background: 'url(https://picsum.photos/1220/400?random=1)',
+    color: 'white',
+    padding: '80px 20px',
+    textAlign: 'center',
+    height: '400px',
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems:'center'
+  }}>
+    <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+         <h2 style={{fontSize:'45px',marginTop:'10px'}}>**Want to know more about** <span style={{
+            background: 'linear-gradient(91deg, #ffbd12 0, #e03d3d 80%)',
+            WebkitBackgroundClip: 'text',
+            WebkitTextFillColor: 'transparent'
+         }}> **ENGINIFY**</span>**?** </h2>
+         
+
+    </div>
+      
+     <a href="https://enginify.in/services" style={{ textDecoration: 'none' }}>
+    <button
+      style={{
+        padding: '10px 20px',
+        background: 'linear-gradient(to right,#9935e8,#e85535)',
+        color: 'white',
+        border: 'none',
+        borderRadius: '4px',
+        fontSize: '16px',
+        cursor: 'pointer',
+        marginTop: '20px'
+      }}
+    >
+      About Us
+    </button>
+    </a>
+  </div>
+
+   {/* Slide 4 */}
+  <div style={{
+    background: 'url(https://picsum.photos/1220/400?random=2)',
+    color: 'white',
+    padding: '80px 20px',
+    textAlign: 'center',
+    height: '400px',
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems:'center'
+  }}>
+    <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+         <h2 style={{fontSize:'45px',marginTop:'10px'}}>**Want to know more about** <span style={{
+            background: 'linear-gradient(91deg, #ffbd12 0, #e03d3d 80%)',
+            WebkitBackgroundClip: 'text',
+            WebkitTextFillColor: 'transparent'
+         }}> **ENGINIFY**</span>**?** </h2>
+         
+
+    </div>
+      
+     <a href="https://enginify.in/about" style={{ textDecoration: 'none' }}>
+    <button
+      style={{
+        padding: '10px 20px',
+        background: 'linear-gradient(to right,#9935e8,#e85535)',
+        color: 'white',
+        border: 'none',
+        borderRadius: '4px',
+        fontSize: '16px',
+        cursor: 'pointer',
+        marginTop: '20px'
+      }}
+    >
+      About Us
+    </button>
+    </a>
+  </div>
+</Carousel>
 
 
 <div style={{
