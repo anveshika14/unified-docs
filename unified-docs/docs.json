@@ -1,6 +1,6 @@
 {
   "$schema": "https://mintlify.com/docs.json",
-  "theme":"palm",
+  "theme":"mint",
   "name": "enginify",
   "background":{
     "decoration":"gradient",
@@ -9,19 +9,17 @@
     }
   },
   "appearance": {
-    "default": "dark",
-    "strict": true
+    "default": "dark"
   },
   "fonts":{
     "family": "Open Sans"
   },
   "colors": {
     "primary": "#9935e8",
-    "light": "#ffffff",
+    "light": "#b4b5c7",
     "dark": "#9935e8"
   },
-  "favicon": "/favicon.svg",
-  
+  "favicon": "/favicon.ico",
   "navigation": {
     "tabs": [
       {
@@ -45,7 +43,6 @@
               "/docs/base-docs/FAQ",
               "/docs/base-docs/Updates",
               "/docs/base-docs/status"
-
             ]
           }
         ]
