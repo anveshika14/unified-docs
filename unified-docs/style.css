@@ -1,0 +1,50 @@
+#navbar {
+    background: "#ffffff";
+}
+
+footer {
+    margin-top: 2rem;
+}
+
+.bg-primary-dark {
+    border: none;
+    background: linear-gradient(94.67deg, #9935e8 0, #e85535 100%);
+}
+
+.bg-primary-dark:hover {
+    background: #9935e8;
+}
+
+.started {
+    padding: 10px 20px;
+    background: linear-gradient(94.67deg, #9935e8 0, #e85535 100%);
+    color: #ffffff;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 20px;
+    font-weight: bold;
+}
+
+.started:hover {
+    background: #9935e8;
+    color: #ffffff;
+}
+
+.card{
+    background-color: #131426 ;
+}
+
+.card p{
+    color: #ffffff;
+}
+
+.not-prose{
+    color: #ffffff;
+}
+
+.prose p code{
+    background-color: hsla(0, 0%, 100%, .05);
+    color: #ffffff;
+}
+
