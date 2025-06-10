@@ -2,6 +2,7 @@
 title: 'Frequently asked questions'
 description: 'Find answers to common questions about our APIs, including API management, generating API Key, pricing, safety and compliance and using key features.'
 icon: 'question'
+
 ---
 {top}
 
@@ -165,7 +166,9 @@ icon: 'question'
 
 {/* Your feedback is valuable to us, share your feedback here : */}
 
-# Have any queries?
+# Still have questions or need help?
+
+ Send us a message below.
 
 export const LeadForm = () => {
   const [formData, setFormData] = useState({
@@ -193,6 +196,11 @@ export const LeadForm = () => {
     if (formData.message.length < 10) {
       setMessageColor('red');
       setMessage('Message must be at least 10 characters long.');
+      return;
+    }
+    if (formData.mobile.length > 10) {
+      setMessageColor('red');
+      setMessage('Enter valid number.');
       return;
     }
 
@@ -226,102 +234,106 @@ export const LeadForm = () => {
 
   return (
     <div className="w-full mx-auto">
-      <div className="space-y-4">
-        <label className="block">
-          First Name* :
-          <input
-            type="text"
-            name="fname"
-            value={formData.fname}
-            onChange={handleChange}
-            required
-            className="w-full h-[50px] p-2.5 rounded-[7px] border border-[#9935e8] bg-transparent text-white"
-          />
-        </label>
-
-        <label className="block">
-          Last Name* :
-          <input
-            type="text"
-            name="lname"
-            value={formData.lname}
-            onChange={handleChange}
-            required
-            className="w-full h-[50px] p-2.5 rounded-[7px] border border-[#9935e8] bg-transparent text-white"
-          />
-        </label>
-
-        <label className="block">
-          Your email* :
-          <input
-            type="email"
-            name="email"
-            value={formData.email}
-            onChange={handleChange}
-            required
-            className="w-full h-[50px] p-2.5 rounded-[7px] border border-[#9935e8] bg-transparent text-white"
-          />
-        </label>
-
-        <label className="block">
-          Mobile* :
-          <input
-            type="number"
-            name="mobile"
-            value={formData.mobile}
-            onChange={handleChange}
-            required
-            className="w-full h-[50px] p-2.5 rounded-[7px] border border-[#9935e8] bg-transparent text-white"
-          />
-        </label>
-
-        <label className="block">
-          Company Name (Optional) :
-          <input
-            type="text"
-            name="cname"
-            value={formData.cname}
-            onChange={handleChange}
-            className="w-full h-[50px] p-2.5 rounded-[7px] border border-[#9935e8] bg-transparent text-white"
-          />
-        </label>
-
-        <label className="block">
-          Your Message* :
-          <input
-            type="text"
-            name="message"
-            value={formData.message}
-            onChange={handleChange}
-            required
-            minLength="10"
-            className="w-full h-[100px] p-2.5 rounded-[7px] border border-[#9935e8] bg-transparent text-white"
-          />
-        </label>
-
-        <button
-          onClick={handleSubmit}
-          style={{
-            background: 'linear-gradient(to right, #9935e8, #e85535)',
-            color: 'white',
-            border: 'none',
-            borderRadius: '4px',
-            fontSize: '16px',
-            cursor: 'pointer',
-            marginTop: '20px',
-            height: '40px',
-            width: '100px',
-          }}
-        >
-          Send
-        </button>
-
-        <p style={{ marginTop: '15px', fontWeight: 'bold', color: messageColor }}>
-          {message}
-        </p>
-      </div>
+  <div className="space-y-4">
+    <div className="flex gap-4">
+      <label className="w-1/2 block">
+        First Name* :
+        <input
+          type="text"
+          name="fname"
+          value={formData.fname}
+          onChange={handleChange}
+          required
+          className="w-full h-[40px] p-2.5 rounded-[7px] border border-[#9935e8] bg-transparent text-white"
+        />
+      </label>
+      <label className="w-1/2 block">
+        Last Name* :
+        <input
+          type="text"
+          name="lname"
+          value={formData.lname}
+          onChange={handleChange}
+          required
+          className="w-full h-[40px] p-2.5 rounded-[7px] border border-[#9935e8] bg-transparent text-white"
+        />
+      </label>
     </div>
+
+    <div className="flex gap-4">
+      <label className="w-1/2 block">
+        Your email* :
+        <input
+          type="email"
+          name="email"
+          value={formData.email}
+          onChange={handleChange}
+          required
+          className="w-full h-[40px] p-2.5 rounded-[7px] border border-[#9935e8] bg-transparent text-white"
+        />
+      </label>
+      <label className="w-1/2 block">
+        Mobile* :
+        <input
+          type="number"
+          name="mobile"
+          value={formData.mobile}
+          onChange={handleChange}
+          required
+          className="w-full h-[40px] p-2.5 rounded-[7px] border border-[#9935e8] bg-transparent text-white"
+        />
+      </label>
+    </div>
+
+    <label className="block">
+      Company Name (Optional) :
+      <input
+        type="text"
+        name="cname"
+        value={formData.cname}
+        onChange={handleChange}
+        className="w-full h-[40px] p-2.5 rounded-[7px] border border-[#9935e8] bg-transparent text-white"
+      />
+    </label>
+
+    <label className="block">
+      Your Message* :
+      <input
+        type="text"
+        name="message"
+        value={formData.message}
+        onChange={handleChange}
+        required
+        minLength="10"
+        className="w-full h-[100px] p-2.5 rounded-[7px] border border-[#9935e8] bg-transparent text-white"
+      />
+    </label>
+
+    <div >
+      <button
+        className="started px-6 py-2 rounded-[7px] bg-[#9935e8] text-white"
+        onClick={handleSubmit}
+      >
+        Send
+      </button>
+    </div>
+
+    <p style={{ marginTop: '15px', fontWeight: 'bold', color: messageColor }}>
+      {message}
+    </p>
+  </div>
+</div>
+
   );
 };
 
 <LeadForm />
+
+<div style={{
+  display: 'flex',
+  justifyContent: 'end',
+  alignItems: 'right'
+ }} tags={["Back to Top"]}>
+   
+  <a href="#top"> <Icon icon="circle-arrow-up" size={20}></Icon> Back to Top</a>
+</div>
