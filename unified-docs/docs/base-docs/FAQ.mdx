@@ -149,13 +149,15 @@ icon: 'question'
 <Tabs>
    <Tab title="Tab 1">
       <AccordionGroup>
-         <Accordion>
+         <Accordion title="Accordion 1">
+           {/* Add content here */}
          </Accordion>
       </AccordionGroup>
    </Tab>
    <Tab title="Tab 2">
       <AccordionGroup>
-         <Accordion>
+         <Accordion title="Accordion 2">
+           {/* Add content here */}
          </Accordion>
       </AccordionGroup>
    </Tab>
@@ -296,7 +298,7 @@ export const LeadForm = () => {
       />
     </label>
 
-    <label className="block">
+    <label className="block"> 
       Your Message* :
       <input
         type="text"
@@ -335,5 +337,5 @@ export const LeadForm = () => {
   alignItems: 'right'
  }} tags={["Back to Top"]}>
    
-  <a href="#top"> <Icon icon="circle-arrow-up" size={20}></Icon> Back to Top</a>
+  <a href="#top"> <Icon icon="circle-arrow-up" size={20}/> Back to Top</a>
 </div>
