@@ -3,7 +3,6 @@ title: 'Welcome'
 mode: "custom"
 ---
 
-
 export const Carousel = ({ children, autoPlay = true, interval = 5000 }) => {
   const [currentIndex, setCurrentIndex] = React.useState(0);
   const slides = React.Children.toArray(children);
